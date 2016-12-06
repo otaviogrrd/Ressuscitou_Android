@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ressuscitou</string>
+    <string name="app_url">https://play.google.com/store/apps/details?id=br.org.cn.ressuscitou</string>
+    <string name="app_lang">pt</string>
+
+    <!-- Botões main -->
+    <string name="buttonIndiceAlf">Índice Alfabético</string>
+    <string name="buttonIndiceLit">Índice Litúrgico</string>
+    <string name="buttonAcord">Acordes</string>
+    <string name="buttonArpejos">Arpejos</string>
+    <string name="buttonLit">Liturgia</string>
+    <string name="buttonLista">Listas Personalizadas</string>
+    <string name="buttonElec">Eleição</string>
+    <string name="buttonCat">Catecumenato</string>
+    <string name="buttonPrecat">Pré-Catecumenato</string>
+
+    <!-- Alert Dialog Main -->
+    <string name="subtitle">Cantos do Caminho Neocatecumenal</string>
+    <string name="terms">ATENÇÃO\n
+				         Este aplicativo NÃO pode ser utilizado em nenhuma celebração,
+				         deve ser utilizado apenas como apoio aos salmistas 
+				         para ensaios, consultas e preparações.</string>
+    <string name="version">Uma nova versão do Ressuscitou está disponível, deseja baixar agora?</string>
+    <string name="updateLater">Lembrar Depois</string>
+    <string name="updateNow">Atualizar Agora</string>
+
+    <!-- Config texts -->
+    <string name="config">Configurações</string>
+    <string name="wifiOnly">Apenas Redes Wi-Fi\n        Selecione para não usar Dados Móveis</string>
+    <string name="extTxt">Modo Estendido\n        Exibe o refrão completo dos cantos substituindo as reticências (&#8230;) e as barras de BIS</string>
+    <string name="tom">Descubra seu Tom(Espanhol)</string>
+    <string name="limpar">Apagar Transposições Salvas</string>
+    <string name="eraseText">Transposições salvas apagadas</string>
+    <string name="deletedAudio">Cantos apagados</string>
+    <string name="downlAll">Baixar todos os Áudios\n         Somente com Wi-Fi(Aprox.920Mb)</string>
+    <string name="listaAudio">Lista dos áudios baixados\n          Apagar para liberar espaço em disco</string>
+    <string name="listaPersonal">Criar Lista</string>
+
+    <!-- transpor -->
+    <string name="t01">Do/Do-</string>
+    <string name="t02">Do#/Do#-</string>
+    <string name="t03">Re/Re-</string>
+    <string name="t04">Mib</string>
+    <string name="t05">Mi/Mi-</string>
+    <string name="t06">Fa/Fa-</string>
+    <string name="t07">Fa#/Fa#-</string>
+    <string name="t08">Sol/Sol-</string>
+    <string name="t09">Sol#/Sol#-</string>
+    <string name="t10">La/La-</string>
+    <string name="t11">Sib/Sib-</string>
+    <string name="t12">Si/Si-</string>
+    <string name="tSalv">Salvar</string>
+    <string name="tRest">Original</string>
+
+    <!-- Download -->
+    <string name="noWifi">Sem conexão Wi-Fi</string>
+    <string name="noConection">Sem conexão de Internet</string>
+    <string name="usingData">Sem Wi-Fi, usando Dados Móveis</string>
+    <string name="downTxt">Baixando Áudio</string>
+    <string name="downSuc">Download finalizado</string>
+    <string name="downErr">Erro: </string>
+    <string name="conErr">Sem conexão com o servidor</string>
+    <string name="spaceErr">Sem espaço em disco</string>
+
+    <!-- Search -->
+    <string name="searchHint">Buscar&#8230;</string>
+
+</resources>
