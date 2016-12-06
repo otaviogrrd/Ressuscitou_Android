@@ -1,0 +1,65 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.org.cn.ressuscitou"
+    android:versionCode="13"
+    android:versionName="1.4.6" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name="br.org.cn.ressuscitou.CantosClass"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_new"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="br.org.cn.ressuscitou.ActivityMain"
+            android:configChanges="orientation|screenSize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="br.org.cn.ressuscitou.ActivityIndiceLiturgico"
+            android:configChanges="orientation|screenSize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jesus.ressuscitou.ActivityMain" />
+        </activity>
+        <activity
+            android:name="br.org.cn.ressuscitou.ActivityIndiceAlfabetico"
+            android:configChanges="orientation|screenSize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jesus.ressuscitou.ActivityMain" />
+        </activity>
+        <activity
+            android:name="br.org.cn.ressuscitou.ActivityConfiguracoes"
+            android:configChanges="orientation|screenSize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jesus.ressuscitou.ActivityMain" />
+        </activity>
+        <activity
+            android:name="br.org.cn.ressuscitou.ActivityWebView"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme2" >
+        </activity>
+        <activity
+            android:name="br.org.cn.ressuscitou.ActivityImageView"
+            android:configChanges="orientation|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jesus.ressuscitou.ActivityMain" />
+        </activity>
+    </application>
+
+</manifest>
