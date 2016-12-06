@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
@@ -16,7 +15,6 @@ import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.PowerManager;
 import android.os.StatFs;
-import android.util.Base64;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;

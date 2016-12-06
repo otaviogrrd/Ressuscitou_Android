@@ -183,7 +183,7 @@ public class ActivityMain extends Activity {
 	public void info() {
 		mAlertDialog = new AlertDialog.Builder(this);
 		TextView msg = new TextView(this);
-		msg.setText(this.getString(R.string.app_name) + "\n" + this.getString(R.string.subtitle) + "\n\n" + "Vers�o: "
+		msg.setText(this.getString(R.string.app_name) + "\n" + this.getString(R.string.subtitle) + "\n\n" + "Versão: "
 				+ versao + "\n\n" + this.getString(R.string.terms));
 		msg.setPadding(10, 20, 10, 20);
 		msg.setGravity(Gravity.CENTER);
