@@ -101,15 +101,15 @@ public class ActivityIndiceLiturgico extends Activity {
 		String sadve = "ADVENTO";
 		String snata = "NATAL";		
 		String squar = "QUARESMA";
-		String spasc = "P¡SCOA";
+		String spasc = "P√ÅSCOA";
 		String spent = "PENTECOSTES";
-		String svirg = "CANTOS ¿ VIRGEM";
-		String scria = "CANTOS PARA AS CRIAN«AS";
-		String slaud = "LAUDES - V…SPERAS";
+		String svirg = "CANTOS √Ä VIRGEM";
+		String scria = "CANTOS PARA AS CRIAN√áAS";
+		String slaud = "LAUDES - V√âSPERAS";
 		String sentr = "CANTOS DE ENTRADA";
-		String scpaz = "PAZ - APRESENTA«√O DAS OFERENDAS";
-		String sfpao = "FRA«√O DO P√O";
-		String scomu = "COMUNH√O";
+		String scpaz = "PAZ - APRESENTA√á√ÉO DAS OFERENDAS";
+		String sfpao = "FRA√á√ÉO DO P√ÉO";
+		String scomu = "COMUNH√ÉO";
 		String scfin = "CANTO FINAL";
 
 		for (int i = 0; i < data.size(); i++) {
