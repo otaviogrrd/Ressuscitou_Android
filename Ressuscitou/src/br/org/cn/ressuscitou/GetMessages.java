@@ -43,22 +43,15 @@ public class GetMessages extends AsyncTask<String, Integer, String> {
 	@Override
 	protected void onPostExecute(String result) {
 		mWakeLock.release();
-		mAlertDialog = new AlertDialog.Builder(context);
-		// mAlertDialog.setCancelable(false);
-
-		TextView msg = new TextView(context);
-		msg.setText(incMsg + "\n\n" + "Mensagens:" + "\n" + Html.fromHtml(resultado));
-		msg.setPadding(10, 20, 10, 20);
-		msg.setGravity(Gravity.CENTER);
-		mAlertDialog.setView(msg);
-
-		// mAlertDialog.setPositiveButton("OK", new
-		// DialogInterface.OnClickListener() {
-		// @Override
-		// public void onClick(DialogInterface dialog, int which) {
-		// }
-		// });
-		mAlertDialog.show();
+		if (resultado != null) {
+			mAlertDialog = new AlertDialog.Builder(context);
+			TextView msg = new TextView(context);
+			msg.setText(incMsg + "\n\n" + "Mensagens:" + "\n" + Html.fromHtml(resultado));
+			msg.setPadding(10, 20, 10, 20);
+			msg.setGravity(Gravity.CENTER);
+			mAlertDialog.setView(msg);
+			mAlertDialog.show();
+		}
 	}
 
 	@Override
@@ -84,6 +77,7 @@ public class GetMessages extends AsyncTask<String, Integer, String> {
 
 			connection.disconnect();
 		} catch (Exception e) {
+			return null;
 		}
 		return null;
 	}
