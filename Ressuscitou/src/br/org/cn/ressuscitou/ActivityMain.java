@@ -44,6 +44,14 @@ public class ActivityMain extends Activity {
 		cantosClass.popular();
 		settings = getSharedPreferences(PREFS_NAME, 0);
 		editor = settings.edit();
+
+		if (settings.getInt("messageDate", 0) <= new Assist().returnDate()) {
+			final GetMessages messageGetter = new GetMessages(this, "");
+			messageGetter.execute();
+			editor.putInt("messageDate", new Assist().returnDate() + 1);
+			editor.commit();
+		}
+
 		if (!settings.getBoolean("TermosIniciaisLidos", false)) {
 			mAlertDialog = new AlertDialog.Builder(this);
 			mAlertDialog.setCancelable(false);
@@ -133,6 +141,7 @@ public class ActivityMain extends Activity {
 				appVersion = Jsoup
 						.connect(context.getString(R.string.app_url) + "&hl=" + context.getString(R.string.app_lang))
 						.get().select("div[itemprop=softwareVersion]").first().ownText();
+
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -153,6 +162,7 @@ public class ActivityMain extends Activity {
 					mAlertDialog.setCancelable(false);
 
 					mAlertDialog.setMessage(context.getString(R.string.version));
+
 					mAlertDialog.setNegativeButton(context.getString(R.string.updateLater),
 							new DialogInterface.OnClickListener() {
 								@Override
@@ -181,14 +191,19 @@ public class ActivityMain extends Activity {
 	}
 
 	public void info() {
-		mAlertDialog = new AlertDialog.Builder(this);
-		TextView msg = new TextView(this);
-		msg.setText(this.getString(R.string.app_name) + "\n" + this.getString(R.string.subtitle) + "\n\n" + "Versão: "
-				+ versao + "\n\n" + this.getString(R.string.terms));
-		msg.setPadding(10, 20, 10, 20);
-		msg.setGravity(Gravity.CENTER);
-		mAlertDialog.setView(msg);
-		mAlertDialog.show();
+		//mAlertDialog = new AlertDialog.Builder(this);
+		//TextView msg = new TextView(this);
+		String msg = ""; 
+		msg = this.getString(R.string.app_name) + "\n" + this.getString(R.string.subtitle) + "\n\n" + "Versão: "
+				+ versao + "\n\n" + this.getString(R.string.terms);
+		
+		final GetMessages messageGetter = new GetMessages(this, msg);
+		messageGetter.execute();
+		
+		//msg.setPadding(10, 20, 10, 20);
+		//msg.setGravity(Gravity.CENTER);
+		//mAlertDialog.setView(msg);
+		//mAlertDialog.show();
 	}
 
 	public void configuracoes() {

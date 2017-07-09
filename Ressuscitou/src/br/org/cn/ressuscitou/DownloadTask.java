@@ -26,6 +26,7 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 	private ProgressBar mProgressBar;
 	private ImageButton musicButton;
 	private LinearLayout downloader;
+	int fileLength;
 
 	public DownloadTask(Context context, ProgressBar mProgressBar, LinearLayout downloader, ImageButton musicButton) {
 		this.context = context;
@@ -60,8 +61,8 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 		mWakeLock.release();
 		downloader.setVisibility(View.GONE);
 		musicButton.setClickable(true);
-		if (result != null)
-			Toast.makeText(context, context.getString(R.string.downErr) + result, Toast.LENGTH_LONG).show();
+		if (result != null || fileLength == 0)
+			Toast.makeText(context, context.getString(R.string.downErr), Toast.LENGTH_LONG).show();
 		else {
 			Toast.makeText(context, context.getString(R.string.downSuc), Toast.LENGTH_SHORT).show();
 			musicButton.setImageResource(R.drawable.bttnmusic);
@@ -75,24 +76,23 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 		try {
 			URL url = new URL("http://www.cn.org.br/app_ressuscitou/" + nomeCanto + ".mp3");
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-			connection.setRequestProperty("Accept-Encoding", "identity");
+			connection.setRequestProperty("Accept", "application/xml");
+			connection.setRequestProperty("Content-Type", "audio/mpeg");
 			connection.setRequestMethod("GET");
-			connection.setDoOutput(false);
 			connection.connect();
 			int response = connection.getResponseCode();
 
-			if (response<200 || response>299) {
+			if (response < 200 || response > 299) {
 				url = new URL("http://www.imaculadaconceicaodf.com.br/ressuscitou/mp3/" + nomeCanto + ".mp3");
 				connection = (HttpURLConnection) url.openConnection();
-				connection.setRequestProperty("Accept-Encoding", "identity");
 				connection.setRequestMethod("GET");
 				connection.setDoOutput(false);
 				connection.connect();
 				response = connection.getResponseCode();
 			}
 
-			if (response>199 && response<300) {
-				int fileLength = connection.getContentLength();
+			if (response > 199 && response < 300) {
+				fileLength = connection.getContentLength();
 				StatFs stat = new StatFs(Environment.getDataDirectory().getPath());
 				long storage = (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
 
@@ -100,6 +100,7 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 					// download the file
 					InputStream input = connection.getInputStream();
 					FileOutputStream output = context.openFileOutput("temp", Context.MODE_PRIVATE);
+
 					byte data[] = new byte[4096];
 					long total = 0;
 					int count;
@@ -124,11 +125,11 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 				}
 			} else {
 				connection.disconnect();
-				// return context.getString(R.string.conErr);
+				return context.getString(R.string.conErr);
 			}
 		} catch (Exception e) {
+			return context.getString(R.string.conErr);
 		}
 		return null;
 	}
-
 }
