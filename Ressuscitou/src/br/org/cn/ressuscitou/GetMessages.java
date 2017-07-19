@@ -44,9 +44,12 @@ public class GetMessages extends AsyncTask<String, Integer, String> {
 	protected void onPostExecute(String result) {
 		mWakeLock.release();
 		if (resultado != null) {
+			incMsg = incMsg + "\n\n" + "Mensagens:" + "\n" + Html.fromHtml(resultado);
+		}
+		if (incMsg != null) {		
 			mAlertDialog = new AlertDialog.Builder(context);
 			TextView msg = new TextView(context);
-			msg.setText(incMsg + "\n\n" + "Mensagens:" + "\n" + Html.fromHtml(resultado));
+			msg.setText(incMsg);
 			msg.setPadding(10, 20, 10, 20);
 			msg.setGravity(Gravity.CENTER);
 			mAlertDialog.setView(msg);
