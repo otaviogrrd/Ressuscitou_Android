@@ -46,7 +46,7 @@ public class GetMessages extends AsyncTask<String, Integer, String> {
 		if (resultado != null) {
 			incMsg = incMsg + "\n\n" + "Mensagens:" + "\n" + Html.fromHtml(resultado);
 		}
-		if (incMsg != null) {		
+		if (incMsg != "") {		
 			mAlertDialog = new AlertDialog.Builder(context);
 			TextView msg = new TextView(context);
 			msg.setText(incMsg);
@@ -75,7 +75,7 @@ public class GetMessages extends AsyncTask<String, Integer, String> {
 				if (resultado == null)
 					resultado = line;
 				else
-					resultado = resultado + line;
+					resultado = resultado + "\n" + line;
 			}
 
 			connection.disconnect();
