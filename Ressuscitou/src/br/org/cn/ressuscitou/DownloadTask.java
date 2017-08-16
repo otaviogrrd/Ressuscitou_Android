@@ -74,7 +74,7 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 	protected String doInBackground(String... params) {
 		String nomeCanto = params[0];
 		try {
-			URL url = new URL("http://www.cn.org.br/app_ressuscitou/" + nomeCanto + ".mp3");
+			URL url = new URL("https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/audios/" + nomeCanto + ".mp3");
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestProperty("Accept", "application/xml");
 			connection.setRequestProperty("Content-Type", "audio/mpeg");
@@ -82,6 +82,15 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 			connection.connect();
 			int response = connection.getResponseCode();
 
+			if (response < 200 || response > 299) {
+				url = new URL("http://www.cn.org.br/app_ressuscitou/" + nomeCanto + ".mp3");
+				connection = (HttpURLConnection) url.openConnection();
+				connection.setRequestMethod("GET");
+				connection.setDoOutput(false);
+				connection.connect();
+				response = connection.getResponseCode();
+			}
+			
 			if (response < 200 || response > 299) {
 				url = new URL("http://www.imaculadaconceicaodf.com.br/ressuscitou/mp3/" + nomeCanto + ".mp3");
 				connection = (HttpURLConnection) url.openConnection();
