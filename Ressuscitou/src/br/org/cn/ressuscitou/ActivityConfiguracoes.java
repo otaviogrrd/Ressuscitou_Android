@@ -1,6 +1,7 @@
 package br.org.cn.ressuscitou;
 
 import java.io.File;
+
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -37,11 +38,11 @@ public class ActivityConfiguracoes extends Activity {
 	public CheckBox wfOnly;
 	public CheckBox estendido;
 	private TextView downloadAll;
-	private ProgressBar downBar;
-	private LinearLayout downloader;
 	private ArrayList<Canto> data = new ArrayList<Canto>();
 	private ArrayList<String> multDown = new ArrayList<String>();
-	private DownloadTaskMult downloadTaskMult;
+	public ProgressBar downBar;
+	public LinearLayout downloader;
+	public DownloadTaskMult downloadTaskMult;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -180,24 +181,19 @@ public class ActivityConfiguracoes extends Activity {
 
 	@SuppressWarnings("unchecked")
 	public void downloadAll() {
-		if (downloader.getVisibility() == View.GONE) {
-			multDown.clear();
-			String path = getFilesDir().getAbsolutePath();
-			for (int i = 0; i < data.size(); i++) {
-				//if (data.get(i).getUrl() != "") {
-					File file = new File(path, data.get(i).getHtml() + ".mp3");
-					if (!file.exists()) {
-						//multDown.add(data.get(i).getUrl());
-						multDown.add(data.get(i).getHtml());
-					}
-				//}
+		multDown.clear();
+		String path = getFilesDir().getAbsolutePath();
+		for (int i = 0; i < data.size(); i++) {
+			// if (data.get(i).getUrl() != "") {
+			File file = new File(path, data.get(i).getHtml() + ".mp3");
+			if (!file.exists()) {
+				// multDown.add(data.get(i).getUrl());
+				multDown.add(data.get(i).getHtml());
 			}
-			downloader.setVisibility(View.VISIBLE);
-			downloadTaskMult = new DownloadTaskMult(this, downBar, downloader);
-			downloadTaskMult.execute(multDown);
-		} else {
-			apaga();
+			// }
 		}
+		downloadTaskMult = new DownloadTaskMult(this, downBar, downloader);
+		downloadTaskMult.execute(multDown);
 	}
 
 	public void descobrir_tom() {

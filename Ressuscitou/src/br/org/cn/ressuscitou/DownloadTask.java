@@ -1,10 +1,14 @@
 package br.org.cn.ressuscitou;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -26,6 +30,7 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 	private ProgressBar mProgressBar;
 	private ImageButton musicButton;
 	private LinearLayout downloader;
+	final static ArrayList<String> links = new ArrayList<String>();
 	int fileLength;
 
 	public DownloadTask(Context context, ProgressBar mProgressBar, LinearLayout downloader, ImageButton musicButton) {
@@ -44,7 +49,6 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 		PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
 		mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, getClass().getName());
 		mWakeLock.acquire();
-		// mProgressDialog.show();
 	}
 
 	@Override
@@ -61,8 +65,8 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 		mWakeLock.release();
 		downloader.setVisibility(View.GONE);
 		musicButton.setClickable(true);
-		if (result != null || fileLength == 0)
-			Toast.makeText(context, context.getString(R.string.downErr), Toast.LENGTH_LONG).show();
+		if (result != null)
+			Toast.makeText(context, result, Toast.LENGTH_LONG).show();
 		else {
 			Toast.makeText(context, context.getString(R.string.downSuc), Toast.LENGTH_SHORT).show();
 			musicButton.setImageResource(R.drawable.bttnmusic);
@@ -74,71 +78,81 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 	protected String doInBackground(String... params) {
 		String nomeCanto = params[0];
 		try {
-			URL url = new URL("https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/audios/" + nomeCanto + ".mp3");
-			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-			connection.setRequestProperty("Accept", "application/xml");
-			connection.setRequestProperty("Content-Type", "audio/mpeg");
-			connection.setRequestMethod("GET");
-			connection.connect();
-			int response = connection.getResponseCode();
 
-			if (response < 200 || response > 299) {
-				url = new URL("http://www.cn.org.br/app_ressuscitou/" + nomeCanto + ".mp3");
-				connection = (HttpURLConnection) url.openConnection();
+			if (links.size() == 0) {
+				URL url = new URL(context.getString(R.string.link_url));
+				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 				connection.setRequestMethod("GET");
 				connection.setDoOutput(false);
 				connection.connect();
-				response = connection.getResponseCode();
-			}
-			
-			if (response < 200 || response > 299) {
-				url = new URL("http://www.imaculadaconceicaodf.com.br/ressuscitou/mp3/" + nomeCanto + ".mp3");
-				connection = (HttpURLConnection) url.openConnection();
-				connection.setRequestMethod("GET");
-				connection.setDoOutput(false);
-				connection.connect();
-				response = connection.getResponseCode();
-			}
 
-			if (response > 199 && response < 300) {
-				fileLength = connection.getContentLength();
-				StatFs stat = new StatFs(Environment.getDataDirectory().getPath());
-				long storage = (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
+				InputStream in = new BufferedInputStream(connection.getInputStream());
 
-				if (fileLength < storage) {
-					// download the file
-					InputStream input = connection.getInputStream();
-					FileOutputStream output = context.openFileOutput("temp", Context.MODE_PRIVATE);
+				BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-					byte data[] = new byte[4096];
-					long total = 0;
-					int count;
-					while ((count = input.read(data)) != -1) {
-						total += count;
-
-						if (fileLength > 0)
-							publishProgress((int) (total * 100 / fileLength));
-
-						output.write(data, 0, count);
-					}
-					input.close();
-					output.close();
-					connection.disconnect();
-
-					File from = new File(context.getFilesDir(), "temp");
-					File to = new File(context.getFilesDir(), nomeCanto + ".mp3");
-					from.renameTo(to);
-				} else {
-					connection.disconnect();
-					return context.getString(R.string.spaceErr);
+				String line;
+				while ((line = reader.readLine()) != null) {
+					links.add(line);
 				}
-			} else {
+
 				connection.disconnect();
-				return context.getString(R.string.conErr);
 			}
-		} catch (Exception e) {
+
+			for (int j = 0; j < links.size(); j++) {
+
+				// confere se já existe
+				File audio = new File(context.getFilesDir(), nomeCanto + ".mp3");
+				if (audio.exists())
+					break;
+
+				String link = links.get(j);
+
+				URL url = new URL(link + nomeCanto + ".mp3");
+				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+				connection.setRequestProperty("Accept-Encoding", "identity");
+				connection.setRequestMethod("GET");
+				connection.setDoOutput(false);
+				connection.connect();
+				int response = connection.getResponseCode();
+
+				if (response > 199 && response < 300) {
+					int fileLength = connection.getContentLength();
+					StatFs stat = new StatFs(Environment.getDataDirectory().getPath());
+					long storage = (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
+
+					if (fileLength < storage) {
+						// download the file
+						InputStream input = connection.getInputStream();
+						FileOutputStream output = context.openFileOutput("temp", Context.MODE_PRIVATE);
+						byte data[] = new byte[4096];
+						long total = 0;
+						int count;
+						while ((count = input.read(data)) != -1) {
+							total += count;
+
+							if (fileLength > 0)
+								publishProgress((int) (total * 100 / fileLength));
+
+							output.write(data, 0, count);
+						}
+						input.close();
+						output.close();
+						connection.disconnect();
+
+						File from = new File(context.getFilesDir(), "temp");
+						File to = new File(context.getFilesDir(), nomeCanto + ".mp3");
+						from.renameTo(to);
+						return null;
+					} else {
+						connection.disconnect();
+						return context.getString(R.string.spaceErr);
+					}
+				}
+				connection.disconnect();
+			}
 			return context.getString(R.string.conErr);
+		} catch (Exception e) {
+			return context.getString(R.string.downErr);
 		}
-		return null;
 	}
 }
