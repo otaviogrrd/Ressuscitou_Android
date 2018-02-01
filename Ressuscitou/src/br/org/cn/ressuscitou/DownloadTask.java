@@ -68,7 +68,9 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 		if (result != null)
 			Toast.makeText(context, result, Toast.LENGTH_LONG).show();
 		else {
+		    // mensagem de download concluido
 			Toast.makeText(context, context.getString(R.string.downSuc), Toast.LENGTH_SHORT).show();
+		    // muda a imagem do botao de download para de reproduzir
 			musicButton.setImageResource(R.drawable.bttnmusic);
 		}
 	}
@@ -79,6 +81,7 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 		String nomeCanto = params[0];
 		try {
 
+		    // buscar as urls de hospedagem dos audios
 			if (links.size() == 0) {
 				URL url = new URL(context.getString(R.string.link_url));
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -98,16 +101,17 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 				connection.disconnect();
 			}
 
+		    // tentar fazer o downlaod para cada link 
 			for (int j = 0; j < links.size(); j++) {
 
-				// confere se já existe
+				// confere se o arquivo ja existe no dispositivo
 				File audio = new File(context.getFilesDir(), nomeCanto + ".mp3");
 				if (audio.exists())
-					break;
+					audio.delete();	//break;
 
 				String link = links.get(j);
 
-				URL url = new URL(link + nomeCanto + ".mp3");
+				URL url = new URL(link + nomeCanto + ".mp3"); //monta a url final
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 				connection.setRequestProperty("Accept-Encoding", "identity");
 				connection.setRequestMethod("GET");
@@ -121,7 +125,7 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 					long storage = (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
 
 					if (fileLength < storage) {
-						// download the file
+						// download do arquivo
 						InputStream input = connection.getInputStream();
 						FileOutputStream output = context.openFileOutput("temp", Context.MODE_PRIVATE);
 						byte data[] = new byte[4096];
@@ -142,15 +146,15 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 						File from = new File(context.getFilesDir(), "temp");
 						File to = new File(context.getFilesDir(), nomeCanto + ".mp3");
 						from.renameTo(to);
-						return null;
+						return null;//download finalizado com sucesso, finaliza a task
 					} else {
 						connection.disconnect();
-						return context.getString(R.string.spaceErr);
+						return context.getString(R.string.spaceErr);//download incompleto, falta armazenamento, finaliza a task
 					}
 				}
 				connection.disconnect();
 			}
-			return context.getString(R.string.conErr);
+			return context.getString(R.string.conErr); // n?o pegou os links? n?o conectou? n?o baixou em ennhuma tentativa? erro no servidor
 		} catch (Exception e) {
 			return context.getString(R.string.downErr);
 		}
