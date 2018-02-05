@@ -111,11 +111,10 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 
 				String link = links.get(j);
 
-				URL url = new URL(link + nomeCanto + ".mp3"); //monta a url final
+				String urlfinal = new String(link + nomeCanto + ".mp3").replaceAll(" ","%20");//monta a url final
+				URL url = new URL(urlfinal); 
+								
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-				connection.setRequestProperty("Accept-Encoding", "identity");
-				connection.setRequestMethod("GET");
-				connection.setDoOutput(false);
 				connection.connect();
 				int response = connection.getResponseCode();
 
