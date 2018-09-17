@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Ressuscitou</string>
     <string name="app_url">https://play.google.com/store/apps/details?id=br.org.cn.ressuscitou</string>
-    <string name="msg_url">http://imaculadaconceicaodf.com.br/ressuscitou/messages.php</string>
+    <string name="msg_url">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/messages.txt</string>
     <string name="link_url">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/links.txt</string>
     <string name="app_lang">pt</string>
     <!-- Botões main -->
