@@ -1,6 +1,5 @@
 package br.org.cn.ressuscitou;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -40,8 +39,12 @@ public class ActivityMain extends Activity {
 		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
 		getActionBar().hide();
 		setContentView(R.layout.activity_main);
-		CantosClass cantosClass = ((CantosClass) getApplicationContext());
-		cantosClass.popular();
+		try {
+			CantosClass cantosClass = ((CantosClass) getApplicationContext());
+			cantosClass.popular();
+		} catch (Exception e) { //ClassCastException
+			// falha no android 7.0 em um motorola Moto G(4) Plus (athene_f) no dia 10/02/2018 - 5 falhas seguidas sem explicacao
+		}
 		settings = getSharedPreferences(PREFS_NAME, 0);
 		editor = settings.edit();
 
@@ -142,8 +145,8 @@ public class ActivityMain extends Activity {
 						.connect(context.getString(R.string.app_url) + "&hl=" + context.getString(R.string.app_lang))
 						.get().select("div[itemprop=softwareVersion]").first().ownText();
 
-			} catch (IOException e) {
-				e.printStackTrace();
+			} catch (Exception e) {
+				//e.printStackTrace();
 			}
 			return null;
 		}
@@ -191,19 +194,19 @@ public class ActivityMain extends Activity {
 	}
 
 	public void info() {
-		//mAlertDialog = new AlertDialog.Builder(this);
-		//TextView msg = new TextView(this);
-		String msg = ""; 
-		msg = this.getString(R.string.app_name) + "\n" + this.getString(R.string.subtitle) + "\n\n" + "Versão: "
-				+ versao + "\n\n" + this.getString(R.string.terms);
-		
+		// mAlertDialog = new AlertDialog.Builder(this);
+		// TextView msg = new TextView(this);
+		String msg = "";
+		msg = this.getString(R.string.app_name) + "\n" + this.getString(R.string.subtitle) + "\n\n" + this.getString(R.string.versao)
+				+ versao + "\n\n" + this.getString(R.string.terms) + "\n";
+
 		final GetMessages messageGetter = new GetMessages(this, msg);
 		messageGetter.execute();
-		
-		//msg.setPadding(10, 20, 10, 20);
-		//msg.setGravity(Gravity.CENTER);
-		//mAlertDialog.setView(msg);
-		//mAlertDialog.show();
+
+		// msg.setPadding(10, 20, 10, 20);
+		// msg.setGravity(Gravity.CENTER);
+		// mAlertDialog.setView(msg);
+		// mAlertDialog.show();
 	}
 
 	public void configuracoes() {

@@ -43,8 +43,8 @@ public class GetMessages extends AsyncTask<String, Integer, String> {
 	@Override
 	protected void onPostExecute(String result) {
 		mWakeLock.release();
-		if (resultado != null) {
-			incMsg = incMsg + "\n\n" + "Mensagens:" + "\n" + Html.fromHtml(resultado);
+		if (resultado != null && !resultado.isEmpty()) {
+			incMsg = incMsg + context.getString(R.string.mensagens) + "\n" + Html.fromHtml(resultado);
 		}
 		if (incMsg != "") {		
 			mAlertDialog = new AlertDialog.Builder(context);
