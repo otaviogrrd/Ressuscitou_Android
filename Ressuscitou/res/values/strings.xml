@@ -22,6 +22,8 @@
 				         deve ser utilizado apenas como apoio aos salmistas 
 				         para ensaios, consultas e preparações.</string>
     <string name="version">Uma nova versão do Ressuscitou está disponível, deseja baixar agora?</string>
+    <string name="versao">Versão: </string>    
+    <string name="mensagens">Mensagens: </string>    
     <string name="updateLater">Lembrar Depois</string>
     <string name="updateNow">Atualizar Agora</string>
     <!-- Config texts -->
