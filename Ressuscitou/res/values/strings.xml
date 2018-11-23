@@ -4,6 +4,8 @@
     <string name="app_url">https://play.google.com/store/apps/details?id=br.org.cn.ressuscitou</string>
     <string name="msg_url">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/messages.txt</string>
     <string name="link_url">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/links.txt</string>
+    <string name="cantos_versao">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/cantos_versao.txt</string>
+    <string name="cantos_json">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/cantos.json</string>
     <string name="app_lang">pt</string>
     <!-- Botões main -->
     <string name="buttonIndiceAlf">Índice Alfabético</string>
