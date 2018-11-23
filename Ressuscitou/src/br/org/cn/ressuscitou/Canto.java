@@ -20,11 +20,16 @@ public class Canto {
 	boolean comu;
 	boolean cfin;
     String conteudo;
-    
+    String html_base64;
+    String ext_base64;
+
+	public Canto() {
+		
+	}
 	
 	public Canto(String titulo, String html, String url, int categoria, boolean adve, boolean laud, boolean entr,
 			boolean nata, boolean quar, boolean pasc, boolean pent, boolean virg, boolean cria, boolean cpaz,
-			boolean fpao, boolean comu, boolean cfin, String conteudo) {
+			boolean fpao, boolean comu, boolean cfin, String conteudo, String html_base64, String ext_base64) {
 		super();
 		this.titulo = titulo;
 		this.html = html;
@@ -146,6 +151,18 @@ public class Canto {
 	}
 	public void setCfin(boolean cfin) {
 		this.cfin = cfin;
+	}
+	public String getHtml_base64() {
+		return html_base64;
+	}
+	public void setHtml_base64(String html_base64) {
+		this.html_base64 = html_base64;
+	}
+	public String getExt_base64() {
+		return ext_base64;
+	}
+	public void setExt_base64(String ext_base64) {
+		this.ext_base64 = ext_base64;
 	}
 	public String getConteudo() {
 		return conteudo;

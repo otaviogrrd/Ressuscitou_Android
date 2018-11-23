@@ -1,4 +1,4 @@
-package br.org.cn.ressuscitou;
+﻿package br.org.cn.ressuscitou;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -73,7 +73,7 @@ public class ActivityWebView extends Activity {
 		controles = (LinearLayout) findViewById(R.id.controlador);
 		controles.setVisibility(View.GONE);
 
-		if (getIntent().getStringExtra("url").isEmpty())  {
+		if (getIntent().getStringExtra("url").isEmpty()) {
 			musicButton.setVisibility(View.GONE);
 		} else {
 			criaBotoes();
@@ -81,11 +81,10 @@ public class ActivityWebView extends Activity {
 
 		String path = getFilesDir().getAbsolutePath();
 		File file = new File(path, getIntent().getStringExtra("html") + ".mp3");
-		if (file.exists())  {
+		if (file.exists()) {
 			musicButton.setVisibility(View.VISIBLE);
 			criaBotoes();
 		}
-		
 
 		musicButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -147,7 +146,6 @@ public class ActivityWebView extends Activity {
 				criar_botao(dialog, R.id.b10, 10);
 				criar_botao(dialog, R.id.b12, 12);
 
-				
 				Button dialogButton = (Button) dialog.findViewById(R.id.b13);
 				dialogButton.setOnClickListener(new OnClickListener() {
 					@Override
@@ -206,9 +204,9 @@ public class ActivityWebView extends Activity {
 	}
 
 	private void iniciaCanto() {
-		String path = "file:///android_asset/html/";
+		String path = "file:///data/data/br.org.cn.ressuscitou/files/";
 		if (settings.getBoolean("estendido", true)) {
-			path = path + "ext/";
+			path = path + "EXT_";
 		}
 		montaWeb(path + getIntent().getStringExtra("html") + ".HTML");
 
@@ -443,9 +441,9 @@ public class ActivityWebView extends Activity {
 		StringBuilder stringBuilder = new StringBuilder();
 		InputStreamReader inputStreamReader;
 		try {
-			String path = "html/";
+			String path = "file:///data/data/br.org.cn.ressuscitou/files/";
 			if (settings.getBoolean("estendido", true)) {
-				path = path + "ext/"; 
+				path = path + "EXT_";
 			}
 
 			inputStreamReader = new InputStreamReader(

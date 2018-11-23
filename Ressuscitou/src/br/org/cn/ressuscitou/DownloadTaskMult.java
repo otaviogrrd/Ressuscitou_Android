@@ -69,7 +69,7 @@ public class DownloadTaskMult extends AsyncTask<ArrayList<String>, Integer, Stri
 		}
 	}
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "unchecked" })
 	@Override
 	protected String doInBackground(ArrayList<String>... arrayParams) {
 		ArrayList<String> multDown = arrayParams[0];
@@ -110,12 +110,12 @@ public class DownloadTaskMult extends AsyncTask<ArrayList<String>, Integer, Stri
 
 					String link = links.get(j);
 
-					URL url = new URL(link + nomeCanto + ".mp3");
+					String urlfinal = new String(link + nomeCanto + ".mp3").replaceAll(" ", "%20");// monta a url final
+					URL url = new URL(urlfinal);
+
 					HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-					connection.setRequestProperty("Accept-Encoding", "identity");
-					connection.setRequestMethod("GET");
-					connection.setDoOutput(false);
 					connection.connect();
+
 					int response = connection.getResponseCode();
 
 					if (response > 199 && response < 300) {

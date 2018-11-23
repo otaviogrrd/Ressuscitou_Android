@@ -31,6 +31,7 @@ public class ActivityMain extends Activity {
 	private ImageButton optButton;
 	private ImageButton infButton;
 	private String versao = null;
+	private CantosClass cantosClass;
 	Builder mAlertDialog;
 
 	@Override
@@ -39,14 +40,20 @@ public class ActivityMain extends Activity {
 		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
 		getActionBar().hide();
 		setContentView(R.layout.activity_main);
-		try {
-			CantosClass cantosClass = ((CantosClass) getApplicationContext());
-			cantosClass.popular();
-		} catch (Exception e) { //ClassCastException
-			// falha no android 7.0 em um motorola Moto G(4) Plus (athene_f) no dia 10/02/2018 - 5 falhas seguidas sem explicacao
-		}
+
 		settings = getSharedPreferences(PREFS_NAME, 0);
 		editor = settings.edit();
+
+		try {
+			cantosClass = ((CantosClass) getApplicationContext());
+			cantosClass.popular(this);
+		} catch (Exception e) { // ClassCastException
+			// falha no android 7.0 em um motorola Moto G(4) Plus (athene_f) no dia
+			// 10/02/2018 - 5 falhas seguidas sem explicacao
+		}
+
+		final GetCantos cantosGetter = new GetCantos(this, settings.getInt("cantosVersao", 0), cantosClass);
+		cantosGetter.execute();
 
 		if (settings.getInt("messageDate", 0) <= new Assist().returnDate()) {
 			final GetMessages messageGetter = new GetMessages(this, "");
@@ -146,7 +153,7 @@ public class ActivityMain extends Activity {
 						.get().select("div[itemprop=softwareVersion]").first().ownText();
 
 			} catch (Exception e) {
-				//e.printStackTrace();
+				// e.printStackTrace();
 			}
 			return null;
 		}
@@ -197,8 +204,8 @@ public class ActivityMain extends Activity {
 		// mAlertDialog = new AlertDialog.Builder(this);
 		// TextView msg = new TextView(this);
 		String msg = "";
-		msg = this.getString(R.string.app_name) + "\n" + this.getString(R.string.subtitle) + "\n\n" + this.getString(R.string.versao)
-				+ versao + "\n\n" + this.getString(R.string.terms) + "\n";
+		msg = this.getString(R.string.app_name) + "\n" + this.getString(R.string.subtitle) + "\n\n"
+				+ this.getString(R.string.versao) + versao + "\n\n" + this.getString(R.string.terms) + "\n";
 
 		final GetMessages messageGetter = new GetMessages(this, msg);
 		messageGetter.execute();
