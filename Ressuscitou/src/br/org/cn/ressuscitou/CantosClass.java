@@ -64,7 +64,7 @@ public class CantosClass extends Application {
 
 			listCantos.clear();
 			listCantos = gson.fromJson(json, new TypeToken<ArrayList<Canto>>() {
-			}.getType());
+					}.getType());
 
 			for (int i = 0; i < listCantos.size(); i++) {
 				byte[] decodedByteArray = Base64.decode(listCantos.get(i).getExt_base64(), Base64.DEFAULT);

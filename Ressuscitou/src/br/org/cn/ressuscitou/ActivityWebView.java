@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 
@@ -11,6 +12,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
@@ -52,6 +54,7 @@ public class ActivityWebView extends Activity {
 	private boolean threadRunning = false;
 	private int hasTransp = 0;
 	private Dialog dialog;
+	private String html;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,8 @@ public class ActivityWebView extends Activity {
 		settings = getSharedPreferences(PREFS_NAME, 0);
 		editor = settings.edit();
 
+		Intent intent = getIntent();
+		html = intent.getStringExtra("html");
 		iniciaCanto();
 
 		downBar = (ProgressBar) findViewById(R.id.downloadBar);
@@ -80,7 +85,7 @@ public class ActivityWebView extends Activity {
 		}
 
 		String path = getFilesDir().getAbsolutePath();
-		File file = new File(path, getIntent().getStringExtra("html") + ".mp3");
+		File file = new File(path, html + ".mp3");
 		if (file.exists()) {
 			musicButton.setVisibility(View.VISIBLE);
 			criaBotoes();
@@ -204,26 +209,29 @@ public class ActivityWebView extends Activity {
 	}
 
 	private void iniciaCanto() {
-		String path = "file:///data/data/br.org.cn.ressuscitou/files/";
+		String path = "file://" + getFilesDir().getAbsolutePath();
 		if (settings.getBoolean("estendido", true)) {
-			path = path + "EXT_";
+			path = path + "/EXT_";
+		}else {
+			path = path + "/";
 		}
-		montaWeb(path + getIntent().getStringExtra("html") + ".HTML");
+		
+		montaWeb(path + html + ".HTML");
 
-		int transSalv = settings.getInt("TRANSP_" + getIntent().getStringExtra("html"), 0);
+		int transSalv = settings.getInt("TRANSP_" + html, 0);
 		if (transSalv != 0) {
 			transpor(transSalv);
 		}
 	}
 
 	private void salvar() {
-		editor.putInt("TRANSP_" + getIntent().getStringExtra("html"), hasTransp);
+		editor.putInt("TRANSP_" + html, hasTransp);
 		editor.commit();
 	}
 
 	private void play() {
 		String path = getFilesDir().getAbsolutePath();
-		File file = new File(path, getIntent().getStringExtra("html") + ".mp3");
+		File file = new File(path, html + ".mp3");
 		if (file.exists()) {
 			play2();
 		} else {
@@ -250,13 +258,13 @@ public class ActivityWebView extends Activity {
 		if (downloader.getVisibility() == View.GONE) {
 			downloader.setVisibility(View.VISIBLE);
 			final DownloadTask downloadTask = new DownloadTask(this, downBar, downloader, musicButton);
-			downloadTask.execute(getIntent().getStringExtra("html"));
+			downloadTask.execute(html);
 		}
 	}
 
 	private void play2() {
 		String path = getFilesDir().getAbsolutePath();
-		File file = new File(path, getIntent().getStringExtra("html") + ".mp3");
+		File file = new File(path, html + ".mp3");
 		if (file.exists()) {
 			try {
 				mPlayer.setDataSource(file.getAbsolutePath());
@@ -284,7 +292,7 @@ public class ActivityWebView extends Activity {
 
 	public void criaBotoes() {
 		String path = getFilesDir().getAbsolutePath();
-		File file = new File(path, getIntent().getStringExtra("html") + ".mp3");
+		File file = new File(path, html + ".mp3");
 		if (!file.exists()) {
 			musicButton.setImageResource(R.drawable.bttndown);
 		}
@@ -439,17 +447,13 @@ public class ActivityWebView extends Activity {
 
 		String receiveString = "";
 		StringBuilder stringBuilder = new StringBuilder();
-		InputStreamReader inputStreamReader;
 		try {
-			String path = "file:///data/data/br.org.cn.ressuscitou/files/";
+			String file = html + ".HTML";
 			if (settings.getBoolean("estendido", true)) {
-				path = path + "EXT_";
+				file = "EXT_" + file;				
 			}
-
-			inputStreamReader = new InputStreamReader(
-					getAssets().open(path + getIntent().getStringExtra("html") + ".HTML"));
-
-			BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+			InputStream in = this.openFileInput(file);
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 			// Declara��o de vari�veis para logica
 			int pri = 99;
 			// a primeira nota a aparecer no canto (99 = n�o existe ainda)
@@ -505,8 +509,9 @@ public class ActivityWebView extends Activity {
 			fos.write(stringBuilder.toString().getBytes());
 			fos.close();
 
-			montaWeb("file:///data/data/br.org.cn.ressuscitou/files/temp.html");
-		} catch (IOException e) {
+			String path = getFilesDir().getAbsolutePath();
+			montaWeb("file://" + path + "/temp.html");
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

@@ -181,19 +181,28 @@ public class ActivityConfiguracoes extends Activity {
 
 	@SuppressWarnings("unchecked")
 	public void downloadAll() {
+		makeToast(getText(R.string.startDownAll));
 		multDown.clear();
 		String path = getFilesDir().getAbsolutePath();
+		int count = 0;
 		for (int i = 0; i < data.size(); i++) {
 			// if (data.get(i).getUrl() != "") {
 			File file = new File(path, data.get(i).getHtml() + ".mp3");
 			if (!file.exists()) {
 				// multDown.add(data.get(i).getUrl());
 				multDown.add(data.get(i).getHtml());
+				count++;
 			}
 			// }
 		}
+		if (count == 0 )
+			makeToast(getText(R.string.todosBaixados));
+			
+			
 		downloadTaskMult = new DownloadTaskMult(this, downBar, downloader);
 		downloadTaskMult.execute(multDown);
+		makeToast(getText(R.string.startDownAll2).toString() + " " + count + " "
+				+ getText(R.string.startDownAll3).toString());
 	}
 
 	public void descobrir_tom() {

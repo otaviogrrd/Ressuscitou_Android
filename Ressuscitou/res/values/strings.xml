@@ -4,6 +4,7 @@
     <string name="app_url">https://play.google.com/store/apps/details?id=br.org.cn.ressuscitou</string>
     <string name="msg_url">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/messages.txt</string>
     <string name="link_url">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/links.txt</string>
+    <string name="audios_url">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/audios/</string>
     <string name="cantos_versao">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/cantos_versao.txt</string>
     <string name="cantos_json">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/cantos.json</string>
     <string name="app_lang">pt</string>
@@ -32,11 +33,17 @@
     <string name="config">Configurações</string>
     <string name="wifiOnly">Apenas Redes Wi-Fi\n        Selecione para não usar Dados Móveis</string>
     <string name="extTxt">Modo Estendido\n        Exibe o refrão completo dos cantos substituindo as reticências (…) e as barras de BIS</string>
-    <string name="tom">Descubra seu Tom(Espanhol)</string>
+    <string name="tom">Descubra seu Tom</string>
     <string name="limpar">Apagar Transposições Salvas</string>
     <string name="eraseText">Transposições salvas apagadas</string>
     <string name="deletedAudio">Cantos apagados</string>
-    <string name="downlAll">Baixar todos os Áudios\n         Somente com Wi-Fi(Aprox.920Mb)</string>
+    <string name="downlAll">Baixar todos os Áudios\n         Somente com Wi-Fi(Aprox.920Mb)</string>    
+    <string name="startDownAll">Analizando os cantos a serem baixados</string>
+    <string name="startDownAll2">Iniciando o download de:</string>
+    <string name="startDownAll3">cantos.</string>
+    <string name="todosBaixados">Todos cantos já baixados!</string>
+    
+    
     <string name="selecAUD">Selecionar MP3</string>
     
     <string name="listaAudio">Lista dos áudios baixados\n          Apagar para liberar espaço em disco</string>

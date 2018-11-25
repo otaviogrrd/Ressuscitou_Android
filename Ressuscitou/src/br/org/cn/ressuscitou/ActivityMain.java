@@ -3,18 +3,13 @@ package br.org.cn.ressuscitou;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import org.jsoup.Jsoup;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -55,10 +50,10 @@ public class ActivityMain extends Activity {
 		final GetCantos cantosGetter = new GetCantos(this, settings.getInt("cantosVersao", 0), cantosClass);
 		cantosGetter.execute();
 
-		if (settings.getInt("messageDate", 0) <= new Assist().returnDate()) {
+		if (settings.getInt("messageDate", 0) <= returnDate()) {
 			final GetMessages messageGetter = new GetMessages(this, "");
 			messageGetter.execute();
-			editor.putInt("messageDate", new Assist().returnDate() + 1);
+			editor.putInt("messageDate", returnDate() + 1);
 			editor.commit();
 		}
 
@@ -83,14 +78,14 @@ public class ActivityMain extends Activity {
 			});
 			mAlertDialog.show();
 		}
-		if (settings.getInt("remindDate", 0) <= new Assist().returnDate()) {
-			try {
-				versao = this.getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-			} catch (NameNotFoundException e) {
-				e.printStackTrace();
-			}
-			new AppVersion().execute(versao);
+		// if (settings.getInt("remindDate", 0) <= new Assist().returnDate()) {
+		try {
+			versao = this.getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
 		}
+		// new AppVersion().execute(versao);
+		// }
 
 		optButton = (ImageButton) findViewById(R.id.option);
 		optButton.setOnClickListener(new OnClickListener() {
@@ -111,101 +106,101 @@ public class ActivityMain extends Activity {
 		});
 	}
 
-	private class Assist {
-		public int returnDate() {
-			Calendar localCalendar = Calendar.getInstance(TimeZone.getDefault());
-			int currentDay = localCalendar.get(Calendar.DATE);
-			int currentMonth = localCalendar.get(Calendar.MONTH) + 1;
-			int currentYear = localCalendar.get(Calendar.YEAR);
+	public int returnDate() {
+		Calendar localCalendar = Calendar.getInstance(TimeZone.getDefault());
+		int currentDay = localCalendar.get(Calendar.DATE);
+		int currentMonth = localCalendar.get(Calendar.MONTH) + 1;
+		int currentYear = localCalendar.get(Calendar.YEAR);
 
-			String data = "" + currentYear;
+		String data = "" + currentYear;
 
-			if (currentMonth > 9)
-				data = data + currentMonth;
-			else
-				data = data + "0" + currentMonth;
+		if (currentMonth > 9)
+			data = data + currentMonth;
+		else
+			data = data + "0" + currentMonth;
 
-			if (currentDay > 9)
-				data = data + currentDay;
-			else
-				data = data + "0" + currentDay;
+		if (currentDay > 9)
+			data = data + currentDay;
+		else
+			data = data + "0" + currentDay;
 
-			return Integer.parseInt(data);
-
-		}
+		return Integer.parseInt(data);
 	}
 
-	private class AppVersion extends AsyncTask<String, Void, Void> {
-		String appVersion;
-		String curVersion;
-		Context context = ActivityMain.this;
-
-		public static final String PREFS_NAME = "ArqConfiguracao";
-		private SharedPreferences settings;
-		private SharedPreferences.Editor editor;
-
-		@Override
-		protected Void doInBackground(String... params) {
-			curVersion = params[0];// = versao;
-			try {
-				appVersion = Jsoup
-						.connect(context.getString(R.string.app_url) + "&hl=" + context.getString(R.string.app_lang))
-						.get().select("div[itemprop=softwareVersion]").first().ownText();
-
-			} catch (Exception e) {
-				// e.printStackTrace();
-			}
-			return null;
-		}
-
-		@Override
-		protected void onPostExecute(Void result) {
-			if (appVersion != null) {
-				appVersion = appVersion.replaceAll("\\.", "");
-				curVersion = curVersion.replaceAll("\\.", "");
-				while (curVersion.length() < 5)
-					curVersion = curVersion + "0";
-				while (appVersion.length() < 5)
-					appVersion = appVersion + "0";
-				if (Integer.parseInt(appVersion) > Integer.parseInt(curVersion)) {
-					mAlertDialog = new AlertDialog.Builder(context);
-					mAlertDialog.setCancelable(false);
-
-					mAlertDialog.setMessage(context.getString(R.string.version));
-
-					mAlertDialog.setNegativeButton(context.getString(R.string.updateLater),
-							new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									settings = getSharedPreferences(PREFS_NAME, 0);
-									editor = settings.edit();
-									editor.putInt("remindDate", new Assist().returnDate() + 1);
-									editor.commit();
-								}
-							});
-					mAlertDialog.setPositiveButton(context.getString(R.string.updateNow),
-							new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									Intent intent = new Intent(Intent.ACTION_VIEW,
-											Uri.parse(context.getString(R.string.app_url) + "&hl="
-													+ context.getString(R.string.app_lang)));
-									startActivity(intent);
-								}
-							});
-					mAlertDialog.show();
-				}
-			}
-		}
-
-	}
+	// private class AppVersion extends AsyncTask<String, Void, Void> {
+	// String appVersion;
+	// String curVersion;
+	// Context context = ActivityMain.this;
+	//
+	// public static final String PREFS_NAME = "ArqConfiguracao";
+	// private SharedPreferences settings;
+	// private SharedPreferences.Editor editor;
+	//
+	// @Override
+	// protected Void doInBackground(String... params) {
+	// curVersion = params[0];// = versao;
+	// try {
+	// appVersion = Jsoup
+	// .connect(context.getString(R.string.app_url) + "&hl=" +
+	// context.getString(R.string.app_lang))
+	// .get().select("div[itemprop=softwareVersion]").first().ownText();
+	//
+	// } catch (Exception e) {
+	// // e.printStackTrace();
+	// }
+	// return null;
+	// }
+	//
+	// @Override
+	// protected void onPostExecute(Void result) {
+	// if (appVersion != null) {
+	// appVersion = appVersion.replaceAll("\\.", "");
+	// curVersion = curVersion.replaceAll("\\.", "");
+	// while (curVersion.length() < 5)
+	// curVersion = curVersion + "0";
+	// while (appVersion.length() < 5)
+	// appVersion = appVersion + "0";
+	// if (Integer.parseInt(appVersion) > Integer.parseInt(curVersion)) {
+	// mAlertDialog = new AlertDialog.Builder(context);
+	// mAlertDialog.setCancelable(false);
+	//
+	// mAlertDialog.setMessage(context.getString(R.string.version));
+	//
+	// mAlertDialog.setNegativeButton(context.getString(R.string.updateLater),
+	// new DialogInterface.OnClickListener() {
+	// @Override
+	// public void onClick(DialogInterface dialog, int which) {
+	// settings = getSharedPreferences(PREFS_NAME, 0);
+	// editor = settings.edit();
+	// editor.putInt("remindDate", new Assist().returnDate() + 1);
+	// editor.commit();
+	// }
+	// });
+	// mAlertDialog.setPositiveButton(context.getString(R.string.updateNow),
+	// new DialogInterface.OnClickListener() {
+	// @Override
+	// public void onClick(DialogInterface dialog, int which) {
+	// Intent intent = new Intent(Intent.ACTION_VIEW,
+	// Uri.parse(context.getString(R.string.app_url) + "&hl="
+	// + context.getString(R.string.app_lang)));
+	// startActivity(intent);
+	// }
+	// });
+	// mAlertDialog.show();
+	// }
+	// }
+	// }
+	//
+	// }
 
 	public void info() {
 		// mAlertDialog = new AlertDialog.Builder(this);
 		// TextView msg = new TextView(this);
 		String msg = "";
-		msg = this.getString(R.string.app_name) + "\n" + this.getString(R.string.subtitle) + "\n\n"
-				+ this.getString(R.string.versao) + versao + "\n\n" + this.getString(R.string.terms) + "\n";
+		msg = this.getString(R.string.app_name) + "\n" 				 // nome
+				+ this.getString(R.string.subtitle) + "\n\n"    	 // subtitulo
+				+ this.getString(R.string.versao) + versao			 // versao
+				+ "\n\n" + this.getString(R.string.terms) + "\n";    // termos
 
 		final GetMessages messageGetter = new GetMessages(this, msg);
 		messageGetter.execute();
