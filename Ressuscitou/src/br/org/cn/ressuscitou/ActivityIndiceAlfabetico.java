@@ -1,4 +1,4 @@
-package br.org.cn.ressuscitou;
+ï»¿package br.org.cn.ressuscitou;
 
 import java.util.ArrayList;
 
@@ -47,7 +47,7 @@ public class ActivityIndiceAlfabetico extends Activity {
 		}
 		ListView listview = (ListView) findViewById(R.id.listview);
 		listview.removeAllViewsInLayout();// adicionado 26/04 para ver se para o
-											// bug da lista crescendo só
+											// bug da lista crescendo sï¿½
 		AdapterIndiceAlf adapter = new AdapterIndiceAlf(this, data);
 		listview.setAdapter(adapter);
 		adapter2 = adapter;

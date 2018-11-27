@@ -6,8 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.InvocationTargetException;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Dialog;
@@ -24,13 +22,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.widget.ZoomButtonsController;
 
 public class ActivityWebView extends Activity {
 
@@ -209,13 +207,13 @@ public class ActivityWebView extends Activity {
 	}
 
 	private void iniciaCanto() {
-		String path = "file://" + getFilesDir().getAbsolutePath();
+		String path = "file://" + getApplicationContext().getFilesDir().getAbsolutePath();
 		if (settings.getBoolean("estendido", true)) {
 			path = path + "/EXT_";
-		}else {
+		} else {
 			path = path + "/";
 		}
-		
+
 		montaWeb(path + html + ".HTML");
 
 		int transSalv = settings.getInt("TRANSP_" + html, 0);
@@ -380,35 +378,14 @@ public class ActivityWebView extends Activity {
 	public void montaWeb(String link) {
 		webView = (WebView) findViewById(R.id.webView1);
 		webView.setWebChromeClient(new WebChromeClient());
-		webView.getSettings().setDefaultTextEncodingName("iso-8859-1");
+		webView.getSettings().setAppCacheEnabled(false);
+		webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+		webView.getSettings().setDefaultTextEncodingName("UTF-8");
 		webView.getSettings().setBuiltInZoomControls(true);
 		webView.getSettings().setSupportZoom(true);
 		webView.getSettings().setBuiltInZoomControls(true);
-		// webView.getSettings().setDisplayZoomControls(false);
-		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-			// Use the API 11+ calls to disable the controls
-			new Runnable() {
-				@Override
-				public void run() {
-					webView.getSettings().setDisplayZoomControls(false);
-				}
-			}.run();
-		} else {
-			ZoomButtonsController zoom_controll = null;
-			try {
-				zoom_controll = (ZoomButtonsController) webView.getClass().getMethod("getZoomButtonsController")
-						.invoke(webView);
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				e.printStackTrace();
-			} catch (NoSuchMethodException e) {
-				e.printStackTrace();
-			}
-			zoom_controll.getContainer().setVisibility(View.GONE);
-		}
+		webView.getSettings().setDisplayZoomControls(false);
+		webView.clearCache(true);
 		webView.loadUrl(link);
 	}
 
@@ -450,58 +427,63 @@ public class ActivityWebView extends Activity {
 		try {
 			String file = html + ".HTML";
 			if (settings.getBoolean("estendido", true)) {
-				file = "EXT_" + file;				
+				file = "EXT_" + file;
 			}
 			InputStream in = this.openFileInput(file);
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
-			// Declara��o de vari�veis para logica
+			// Declaracao de variaveis para logica
 			int pri = 99;
-			// a primeira nota a aparecer no canto (99 = n�o existe ainda)
+			// a primeira nota a aparecer no canto (99 = nao existe ainda)
 			int dif = 0;
 
 			while ((receiveString = bufferedReader.readLine()) != null) {
-				// Encontrar as linhas vermelhas
-				if (receiveString.contains("FF0000")) {
-					// N�o sendo <H2> o titulo significa que � nota
-					if (!receiveString.contains("<H2>")) {
-						// Para nao bagun�ar a l�gica do replace precisamos
-						// substituir todas as notas por valores
-						// temporarios(@xx)
-						// primeiro os especiais(#) depois o resto
-						receiveString = receiveString.replace("Do#", escalaTmp[2]).replace("Fa#", escalaTmp[7])
-								.replace("Sol#", escalaTmp[9]);
-						for (int i = 0; i < escalaTmp.length; i++) {
-							receiveString = receiveString.replace(escala[i], escalaTmp[i]);
-						}
-						// L�gica para descobrir a primeira nota:
-						if (pri == 99) {
-							String x = "@";
-							for (int i = 0; i < receiveString.length(); i++) {
-								if (receiveString.charAt(i) == x.charAt(0)) {
-									pri = Integer.parseInt(receiveString.substring(i + 1, i + 3));
-									// dif = quantas casas vai subir ou descer
-									dif = Math.abs(numero - pri);
-									break;
-								}
-							}
-						}
-						if ((pri > numero) && !(dif == 0)) {
-							for (int i = 12; i > 0; i--) {
-								receiveString = receiveString.replace(escalaTmp[i], escala[i + 12 - dif]);
-							}
-						}
-						if ((pri < numero) && !(dif == 0)) {
-							for (int i = 0; i < escalaTmp.length; i++) {
-								receiveString = receiveString.replace(escalaTmp[i], escala[i + dif]);
-							}
-						}
-						if (pri - numero == 0) {
-							for (int i = 0; i < escalaTmp.length; i++) {
-								receiveString = receiveString.replace(escalaTmp[i], escala[i]);
-							}
+				// Loop apenas nas linhas vermelhas
+				if (!receiveString.contains("FF0000")) {
+					stringBuilder.append(receiveString).append("\n");
+					continue;
+				}
+				// Se for vermelho e possui o <H2> encontramos o titulo, ignore o titulo
+				if (receiveString.contains("<H2>")) {
+					stringBuilder.append(receiveString).append("\n");
+					continue;
+				}
+				// Para nao baguncar a logica do replace precisamos
+				// substituir todas as notas por valores
+				// temporarios(@xx)
+				// primeiro os especiais(#) depois o resto
+				receiveString = receiveString.replace("Do#", escalaTmp[2]).replace("Fa#", escalaTmp[7]).replace("Sol#",
+						escalaTmp[9]);
+				for (int i = 0; i < escalaTmp.length; i++) {
+					receiveString = receiveString.replace(escala[i], escalaTmp[i]);
+				}
+				// Logica para descobrir a primeira nota:
+				if (pri == 99) {
+					String x = "@";
+					for (int i = 0; i < receiveString.length(); i++) {
+						if (receiveString.charAt(i) == x.charAt(0)) {
+							pri = Integer.parseInt(receiveString.substring(i + 1, i + 3));
+							// dif = quantas casas vai subir ou descer
+							dif = Math.abs(numero - pri);
+							break;
 						}
 					}
 				}
+				if ((pri > numero) && !(dif == 0)) {
+					for (int i = 12; i > 0; i--) {
+						receiveString = receiveString.replace(escalaTmp[i], escala[i + 12 - dif]);
+					}
+				}
+				if ((pri < numero) && !(dif == 0)) {
+					for (int i = 0; i < escalaTmp.length; i++) {
+						receiveString = receiveString.replace(escalaTmp[i], escala[i + dif]);
+					}
+				}
+				if (pri - numero == 0) {
+					for (int i = 0; i < escalaTmp.length; i++) {
+						receiveString = receiveString.replace(escalaTmp[i], escala[i]);
+					}
+				}
+
 				stringBuilder.append(receiveString).append("\n");
 			}
 

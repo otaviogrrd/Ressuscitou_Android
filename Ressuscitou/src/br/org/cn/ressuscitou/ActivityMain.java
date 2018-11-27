@@ -47,7 +47,7 @@ public class ActivityMain extends Activity {
 			// 10/02/2018 - 5 falhas seguidas sem explicacao
 		}
 
-		final GetCantos cantosGetter = new GetCantos(this, settings.getInt("cantosVersao", 0), cantosClass);
+		final GetCantos cantosGetter = new GetCantos(getApplicationContext(), settings.getInt("cantosVersao", 0), cantosClass);
 		cantosGetter.execute();
 
 		if (settings.getInt("messageDate", 0) <= returnDate()) {

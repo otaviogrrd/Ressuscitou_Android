@@ -53,24 +53,31 @@ public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 			convertView = layoutInflater.inflate(R.layout.item_indice_alf, null);
 			holder = new ViewHolder();
 			holder.titulo = (TextView) convertView.findViewById(R.id.title);
-			holder.img = (ImageView) convertView.findViewById(R.id.ball); 
+			holder.img1 = (ImageView) convertView.findViewById(R.id.img1); 
+			holder.img2 = (ImageView) convertView.findViewById(R.id.img2); 
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
 		holder.titulo.setText(listData.get(position).getTitulo());
-		if(listData.get(position).getCategoria() == 1)holder.img.setImageResource(R.drawable.dotwhite);
-		if(listData.get(position).getCategoria() == 2)holder.img.setImageResource(R.drawable.dotblue);
-		if(listData.get(position).getCategoria() == 3)holder.img.setImageResource(R.drawable.dotgreen);
-		if(listData.get(position).getCategoria() == 4)holder.img.setImageResource(R.drawable.dotbeige);
-
+		if(listData.get(position).getCategoria() == 1)holder.img2.setImageResource(R.drawable.dotwhite);
+		if(listData.get(position).getCategoria() == 2)holder.img2.setImageResource(R.drawable.dotblue);
+		if(listData.get(position).getCategoria() == 3)holder.img2.setImageResource(R.drawable.dotgreen);
+		if(listData.get(position).getCategoria() == 4)holder.img2.setImageResource(R.drawable.dotbeige);
+		
+		if(listData.get(position).getUrl().toString().isEmpty()) {
+			holder.img1.setImageResource(R.drawable.aud_n);
+		}else {
+			holder.img1.setImageResource(R.drawable.aud_y);
+		}
 
 		return convertView;
 	}
 	static class ViewHolder {
 		TextView titulo;
-		ImageView img;
+		ImageView img1;
+		ImageView img2;
 	}
 	@Override
 	public Filter getFilter() {

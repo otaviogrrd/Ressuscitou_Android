@@ -18,7 +18,7 @@ import android.os.PowerManager;
 public class GetCantos extends AsyncTask<String, Integer, String> {
 
 	private Context context;
-	private 	CantosClass cantosClass;
+	private CantosClass cantosClass;
 	private int cantosVersao;
 	private PowerManager.WakeLock mWakeLock;
 	public static final String PREFS_NAME = "ArqConfiguracao";
@@ -41,7 +41,7 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 
 	@Override
 	protected void onPostExecute(String result) {
-		mWakeLock.release();
+		mWakeLock.release();			
 	}
 
 	@Override
@@ -80,18 +80,15 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 				in.close();
 				output.close();
 				connection.disconnect();
+				
 
 				settings = context.getSharedPreferences(PREFS_NAME, 0);
 				editor = settings.edit();
 				editor.putInt("cantosVersao", Integer.parseInt(resultado));
 				editor.commit();
-
-				try {
-					cantosClass.popular(context);
-				} catch (Exception e) { // ClassCastException
-					// falha no android 7.0 em um motorola Moto G(4) Plus (athene_f) no dia
-					// 10/02/2018 - 5 falhas seguidas sem explicacao
-				}
+				
+				cantosClass.popular(context);
+				return "sucess";
 			}
 		} catch (Exception e) {
 			return null;

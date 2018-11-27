@@ -38,7 +38,7 @@
     <string name="eraseText">Transposições salvas apagadas</string>
     <string name="deletedAudio">Cantos apagados</string>
     <string name="downlAll">Baixar todos os Áudios\n         Somente com Wi-Fi(Aprox.920Mb)</string>    
-    <string name="startDownAll">Analizando os cantos a serem baixados</string>
+    <string name="startDownAll">Analisando os cantos a serem baixados</string>
     <string name="startDownAll2">Iniciando o download de:</string>
     <string name="startDownAll3">cantos.</string>
     <string name="todosBaixados">Todos cantos já baixados!</string>

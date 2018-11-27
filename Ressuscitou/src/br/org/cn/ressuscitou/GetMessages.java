@@ -40,6 +40,7 @@ public class GetMessages extends AsyncTask<String, Integer, String> {
 		mWakeLock.acquire();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onPostExecute(String result) {
 		mWakeLock.release();

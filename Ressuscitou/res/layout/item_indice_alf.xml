@@ -6,7 +6,14 @@
     android:padding="5dip" >
 
     <ImageView
-        android:id="@+id/ball"
+        android:id="@+id/img1"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center_vertical"
+        android:paddingRight="5dp" />
+    
+    <ImageView
+        android:id="@+id/img2"
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:layout_gravity="center_vertical"
