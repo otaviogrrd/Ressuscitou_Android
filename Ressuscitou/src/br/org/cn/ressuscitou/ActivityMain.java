@@ -47,7 +47,9 @@ public class ActivityMain extends Activity {
 			// 10/02/2018 - 5 falhas seguidas sem explicacao
 		}
 
-		final GetCantos cantosGetter = new GetCantos(getApplicationContext(), settings.getInt("cantosVersao", 0), cantosClass);
+		editor.putInt("cantosVersaoAssets", 10);
+		editor.commit();
+		final GetCantos cantosGetter = new GetCantos(getApplicationContext(), settings.getInt("cantosVersaoAssets", 0), cantosClass);
 		cantosGetter.execute();
 
 		if (settings.getInt("messageDate", 0) <= returnDate()) {
@@ -200,7 +202,7 @@ public class ActivityMain extends Activity {
 		msg = this.getString(R.string.app_name) + "\n" 				 // nome
 				+ this.getString(R.string.subtitle) + "\n\n"    	 // subtitulo
 				+ this.getString(R.string.versao) + versao			 // versao
-				+ "\n\n" + this.getString(R.string.terms) + "\n";    // termos
+				+ "\n\n" + this.getString(R.string.terms) + "\n\n";  // termos
 
 		final GetMessages messageGetter = new GetMessages(this, msg);
 		messageGetter.execute();

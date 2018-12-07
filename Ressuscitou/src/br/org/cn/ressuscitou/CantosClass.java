@@ -20,18 +20,6 @@ public class CantosClass extends Application {
 	public static final String PREFS_NAME = "ArqConfiguracao";
 	private SharedPreferences settings;
 
-//	private void copyFile(InputStream in, OutputStream out) throws IOException {
-//		byte[] buffer = new byte[1024];
-//		int read;
-//		while ((read = in.read(buffer)) != -1) {
-//			out.write(buffer, 0, read);
-//		}
-//		in.close();
-//		in = null;
-//		out.flush();
-//		out.close();
-//		out = null;
-//	}
 
 	public void popular(Context context) {
 
@@ -40,22 +28,17 @@ public class CantosClass extends Application {
 		try {
 
 			InputStream in = null;
-//			OutputStream out = null;
-//			AssetManager assetManager = getAssets();
-//			in = assetManager.open("styles.css");
-//			out = getApplicationContext().openFileOutput("styles.css", Context.MODE_PRIVATE);
-//			copyFile(in, out);
 
 			in = getApplicationContext().getAssets().open("cantos.json");
 
 			settings = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
-			if (settings.getInt("cantosVersao", 0) > 0) {
+			if (settings.getInt("cantosVersaoDown", 0) > settings.getInt("cantosVersaoAssets", 0)) {
 				String path = getFilesDir().getAbsolutePath();
 				File file = new File(path, "cantos.json");
 				if (file.exists()) {
 					in = getApplicationContext().openFileInput("cantos.json");
 				} else {
-					final GetCantos cantosGetter = new GetCantos(getApplicationContext(), settings.getInt("cantosVersao", 0), this);
+					final GetCantos cantosGetter = new GetCantos(getApplicationContext(), settings.getInt("cantosVersaoAssets", 0), this);
 					cantosGetter.execute();
 				}
 			}

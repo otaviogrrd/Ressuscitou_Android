@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.PowerManager;
+import android.widget.Toast;
 
 @SuppressLint("Wakelock")
 public class GetCantos extends AsyncTask<String, Integer, String> {
@@ -40,8 +41,18 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 	}
 
 	@Override
+	protected void onProgressUpdate(Integer... progress) {
+		super.onProgressUpdate(progress);
+		if ( progress[0] == 50 )
+		Toast.makeText(context, context.getString(R.string.atuaCantos), Toast.LENGTH_SHORT).show();
+
+		if ( progress[0] == 100 )
+		Toast.makeText(context, context.getString(R.string.atuaCantosOk), Toast.LENGTH_LONG).show();
+	}
+
+	@Override
 	protected void onPostExecute(String result) {
-		mWakeLock.release();			
+		mWakeLock.release();
 	}
 
 	@Override
@@ -64,6 +75,9 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 			connection.disconnect();
 
 			if (cantosVersao < Integer.parseInt(resultado)) {
+
+				publishProgress(50);
+
 				url = new URL(context.getString(R.string.cantos_json));
 				connection = (HttpURLConnection) url.openConnection();
 				connection.setRequestMethod("GET");
@@ -80,14 +94,14 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 				in.close();
 				output.close();
 				connection.disconnect();
-				
 
 				settings = context.getSharedPreferences(PREFS_NAME, 0);
 				editor = settings.edit();
-				editor.putInt("cantosVersao", Integer.parseInt(resultado));
+				editor.putInt("cantosVersaoDown", Integer.parseInt(resultado));
 				editor.commit();
-				
+
 				cantosClass.popular(context);
+				publishProgress(100);
 				return "sucess";
 			}
 		} catch (Exception e) {

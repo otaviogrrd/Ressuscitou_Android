@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+
     <string name="app_name">Ressuscitou</string>
     <string name="app_url">https://play.google.com/store/apps/details?id=br.org.cn.ressuscitou</string>
     <string name="msg_url">https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/messages.txt</string>
@@ -25,27 +26,28 @@
 				         deve ser utilizado apenas como apoio aos salmistas 
 				         para ensaios, consultas e preparações.</string>
     <string name="version">Uma nova versão do Ressuscitou está disponível, deseja baixar agora?</string>
-    <string name="versao">Versão: </string>    
-    <string name="mensagens">Mensagens: </string>    
+    <string name="versao">Versão: </string>
+    <string name="mensagens">Mensagens: </string>
     <string name="updateLater">Lembrar Depois</string>
     <string name="updateNow">Atualizar Agora</string>
+    <string name="atuaCantos">Atualizanndo os Cantos</string>
+    <string name="atuaCantosOk">A lista de Cantos foi Atualizada! Reinicie o App.</string>
+
     <!-- Config texts -->
     <string name="config">Configurações</string>
     <string name="wifiOnly">Apenas Redes Wi-Fi\n        Selecione para não usar Dados Móveis</string>
     <string name="extTxt">Modo Estendido\n        Exibe o refrão completo dos cantos substituindo as reticências (…) e as barras de BIS</string>
+    <string name="escalaAmericanaTxt">Cifras Americanas</string>
     <string name="tom">Descubra seu Tom</string>
     <string name="limpar">Apagar Transposições Salvas</string>
     <string name="eraseText">Transposições salvas apagadas</string>
     <string name="deletedAudio">Cantos apagados</string>
-    <string name="downlAll">Baixar todos os Áudios\n         Somente com Wi-Fi(Aprox.920Mb)</string>    
+    <string name="downlAll">Baixar todos os Áudios\n         Somente com Wi-Fi(Aprox.920Mb)</string>
     <string name="startDownAll">Analisando os cantos a serem baixados</string>
     <string name="startDownAll2">Iniciando o download de:</string>
     <string name="startDownAll3">cantos.</string>
     <string name="todosBaixados">Todos cantos já baixados!</string>
-    
-    
     <string name="selecAUD">Selecionar MP3</string>
-    
     <string name="listaAudio">Lista dos áudios baixados\n          Apagar para liberar espaço em disco</string>
     <string name="listaPersonal">Criar Lista</string>
     <!-- transpor -->
@@ -61,6 +63,18 @@
     <string name="t10">La/La-</string>
     <string name="t11">Sib/Sib-</string>
     <string name="t12">Si/Si-</string>
+    <string name="a01">C/Cm</string>
+    <string name="a02">C#/C#m</string>
+    <string name="a03">D/Dm</string>
+    <string name="a04">Eb/Ebm</string>
+    <string name="a05">E/Em</string>
+    <string name="a06">F/Fm</string>
+    <string name="a07">F#/F#m</string>
+    <string name="a08">G/Gm</string>
+    <string name="a09">G#/G#m</string>
+    <string name="a10">A/Am</string>
+    <string name="a11">Bb/Bbm</string>
+    <string name="a12">B/Bm</string>
     <string name="tSalv">Salvar</string>
     <string name="tRest">Original</string>
     <!-- Download -->
@@ -75,4 +89,5 @@
     <string name="spaceErr">Sem espaço em disco</string>
     <!-- Search -->
     <string name="searchHint">Buscar…</string>
+
 </resources>

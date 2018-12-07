@@ -3,26 +3,36 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="5dip" >
+    android:padding="2dp" >
 
     <ImageView
         android:id="@+id/img1"
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:layout_gravity="center_vertical"
-        android:paddingRight="5dp" />
-    
-    <ImageView
-        android:id="@+id/img2"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_gravity="center_vertical"
-        android:paddingRight="5dp" />
+        android:layout_gravity="center_vertical" />
+
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/dotwhite"
+            android:gravity="center"
+            android:textColor="#333333"
+            android:textSize="12sp"
+            android:typeface="sans" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:textColor="#333333"
         android:textStyle="bold"
         android:typeface="sans" />

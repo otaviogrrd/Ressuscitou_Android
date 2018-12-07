@@ -1,11 +1,11 @@
 package br.org.cn.ressuscitou;
 
-
 public class Canto {
 	String titulo;
     String html;
     String url;
 	int categoria;
+    String numero;
 	boolean adve;
 	boolean laud;
 	boolean entr;
@@ -27,14 +27,15 @@ public class Canto {
 		
 	}
 	
-	public Canto(String titulo, String html, String url, int categoria, boolean adve, boolean laud, boolean entr,
+	public Canto(String titulo, String html, String url, int categoria, String numero, boolean adve, boolean laud, boolean entr,
 			boolean nata, boolean quar, boolean pasc, boolean pent, boolean virg, boolean cria, boolean cpaz,
-			boolean fpao, boolean comu, boolean cfin, String conteudo, String html_base64, String ext_base64) {
+			boolean fpao, boolean comu, boolean cfin, String conteudo) {
 		super();
 		this.titulo = titulo;
 		this.html = html;
 		this.url = url;
 		this.categoria = categoria;
+		this.numero = numero;
 		this.adve = adve;
 		this.laud = laud;
 		this.entr = entr;
@@ -169,6 +170,12 @@ public class Canto {
 	}
 	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
+	}
+	public String getNumero() {
+		return numero;
+	}
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
 
 

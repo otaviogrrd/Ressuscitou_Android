@@ -35,8 +35,10 @@ public class ActivityConfiguracoes extends Activity {
 	private TextView limparTxt;
 	private TextView wifiTxt;
 	private TextView extTxt;
+	private TextView escalaAmericanaTxt;
 	public CheckBox wfOnly;
 	public CheckBox estendido;
+	public CheckBox escalaAmericana;
 	private TextView downloadAll;
 	private ArrayList<Canto> data = new ArrayList<Canto>();
 	private ArrayList<String> multDown = new ArrayList<String>();
@@ -103,6 +105,25 @@ public class ActivityConfiguracoes extends Activity {
 				txt_marca_chckBox(wfOnly, "wfOnly");
 			}
 		});
+	
+		
+		escalaAmericana = (CheckBox) findViewById(R.id.escalaAmericana);
+		if (settings.getBoolean("escalaAmericana", false))
+			escalaAmericana.setChecked(true);
+		escalaAmericana.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				marca_chckBox(escalaAmericana, "escalaAmericana");
+			}
+		});
+		escalaAmericanaTxt = (TextView) findViewById(R.id.escalaAmericanaTxt);
+		escalaAmericanaTxt.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				txt_marca_chckBox(escalaAmericana, "escalaAmericana");
+			}
+		});
+	
 
 		estendido = (CheckBox) findViewById(R.id.extend);
 		if (settings.getBoolean("estendido", true))
@@ -112,7 +133,7 @@ public class ActivityConfiguracoes extends Activity {
 			public void onClick(View arg0) {
 				marca_chckBox(estendido, "estendido");
 			}
-		});
+		});	
 		extTxt = (TextView) findViewById(R.id.extTxt);
 		extTxt.setOnClickListener(new OnClickListener() {
 			@Override
@@ -162,6 +183,7 @@ public class ActivityConfiguracoes extends Activity {
 		editor.commit();
 		marca_chckBox(wfOnly, "wfOnly");
 		marca_chckBox(estendido, "estendido");
+		marca_chckBox(escalaAmericana, "escalaAmericana");
 		makeToast(getText(R.string.eraseText));
 	}
 
@@ -186,23 +208,22 @@ public class ActivityConfiguracoes extends Activity {
 		String path = getFilesDir().getAbsolutePath();
 		int count = 0;
 		for (int i = 0; i < data.size(); i++) {
-			// if (data.get(i).getUrl() != "") {
-			File file = new File(path, data.get(i).getHtml() + ".mp3");
-			if (!file.exists()) {
-				// multDown.add(data.get(i).getUrl());
-				multDown.add(data.get(i).getHtml());
-				count++;
+			if (!data.get(i).getUrl().toString().isEmpty()) {
+				File file = new File(path, data.get(i).getHtml() + ".mp3");
+				if (!file.exists()) {
+					multDown.add(data.get(i).getHtml());
+					count++;
+				}
 			}
-			// }
 		}
-		if (count == 0 )
+		if (count == 0) {
 			makeToast(getText(R.string.todosBaixados));
-			
-			
-		downloadTaskMult = new DownloadTaskMult(this, downBar, downloader);
-		downloadTaskMult.execute(multDown);
-		makeToast(getText(R.string.startDownAll2).toString() + " " + count + " "
-				+ getText(R.string.startDownAll3).toString());
+		} else {
+			downloadTaskMult = new DownloadTaskMult(this, downBar, downloader);
+			downloadTaskMult.execute(multDown);
+			makeToast(getText(R.string.startDownAll2).toString() + " " + count + " "
+					+ getText(R.string.startDownAll3).toString());
+		}
 	}
 
 	public void descobrir_tom() {

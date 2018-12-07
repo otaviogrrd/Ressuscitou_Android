@@ -1,6 +1,6 @@
 package br.org.cn.ressuscitou;
 
-
+import java.io.File;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,47 +53,62 @@ public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 			convertView = layoutInflater.inflate(R.layout.item_indice_alf, null);
 			holder = new ViewHolder();
 			holder.titulo = (TextView) convertView.findViewById(R.id.title);
-			holder.img1 = (ImageView) convertView.findViewById(R.id.img1); 
-			holder.img2 = (ImageView) convertView.findViewById(R.id.img2); 
+			holder.numero = (TextView) convertView.findViewById(R.id.number);
+			holder.img1 = (ImageView) convertView.findViewById(R.id.img1);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
 		holder.titulo.setText(listData.get(position).getTitulo());
-		if(listData.get(position).getCategoria() == 1)holder.img2.setImageResource(R.drawable.dotwhite);
-		if(listData.get(position).getCategoria() == 2)holder.img2.setImageResource(R.drawable.dotblue);
-		if(listData.get(position).getCategoria() == 3)holder.img2.setImageResource(R.drawable.dotgreen);
-		if(listData.get(position).getCategoria() == 4)holder.img2.setImageResource(R.drawable.dotbeige);
+		holder.numero.setText(listData.get(position).getNumero());
 		
-		if(listData.get(position).getUrl().toString().isEmpty()) {
+		if (listData.get(position).getCategoria() == 1)
+			holder.numero.setBackgroundResource(R.drawable.dotwhite);
+		if (listData.get(position).getCategoria() == 2)
+		holder.numero.setBackgroundResource(R.drawable.dotblue);
+		if (listData.get(position).getCategoria() == 3)
+		holder.numero.setBackgroundResource(R.drawable.dotgreen);
+		if (listData.get(position).getCategoria() == 4)
+		holder.numero.setBackgroundResource(R.drawable.dotbeige);
+
+		if (listData.get(position).getUrl().toString().isEmpty()) {
 			holder.img1.setImageResource(R.drawable.aud_n);
-		}else {
-			holder.img1.setImageResource(R.drawable.aud_y);
+		} else {
+			Context context = parent.getContext();
+			String path = context.getApplicationContext().getFilesDir().getAbsolutePath();
+			File file = new File(path, listData.get(position).getHtml() + ".mp3");
+			if (file.exists()) {
+				holder.img1.setImageResource(R.drawable.aud_d);
+			} else {
+				holder.img1.setImageResource(R.drawable.aud_y);
+			}
 		}
 
 		return convertView;
 	}
+
 	static class ViewHolder {
 		TextView titulo;
+		TextView numero;
 		ImageView img1;
-		ImageView img2;
 	}
+
 	@Override
 	public Filter getFilter() {
 		Filter filter = new Filter() {
 
 			@SuppressWarnings("unchecked")
 			@Override
-			protected void publishResults(CharSequence constraint,FilterResults results) {
+			protected void publishResults(CharSequence constraint, FilterResults results) {
 				listData = (ArrayList<Canto>) results.values; // has the filtered values
-				notifyDataSetChanged();  // notifies the data with new filtered values
+				notifyDataSetChanged(); // notifies the data with new filtered values
 			}
 
 			@SuppressLint("DefaultLocale")
 			@Override
 			protected FilterResults performFiltering(CharSequence constraint) {
-				FilterResults results = new FilterResults();        // Holds the results of a filtering operation in values
+				FilterResults results = new FilterResults(); // Holds the results of a filtering operation in values
 				List<Canto> FilteredArrList = new ArrayList<Canto>();
 
 				if (mOriginalValues == null) {

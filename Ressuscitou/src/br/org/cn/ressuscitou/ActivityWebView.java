@@ -136,18 +136,33 @@ public class ActivityWebView extends Activity {
 				dialog.setContentView(R.layout.custom);
 				dialog.show();
 
-				criar_botao(dialog, R.id.b01, 01);
-				criar_botao(dialog, R.id.b03, 03);
-				criar_botao(dialog, R.id.b05, 05);
-				criar_botao(dialog, R.id.b07, 07);
-				criar_botao(dialog, R.id.b09, 9);
-				criar_botao(dialog, R.id.b11, 11);
-				criar_botao(dialog, R.id.b02, 02);
-				criar_botao(dialog, R.id.b04, 04);
-				criar_botao(dialog, R.id.b06, 06);
-				criar_botao(dialog, R.id.b08, 8);
-				criar_botao(dialog, R.id.b10, 10);
-				criar_botao(dialog, R.id.b12, 12);
+				if (settings.getBoolean("escalaAmericana", false)) {
+					criar_botao(dialog, R.id.b01, "01", context.getString(R.string.a01));
+					criar_botao(dialog, R.id.b03, "03", context.getString(R.string.a03));
+					criar_botao(dialog, R.id.b05, "05", context.getString(R.string.a05));
+					criar_botao(dialog, R.id.b07, "07", context.getString(R.string.a07));
+					criar_botao(dialog, R.id.b09, "09", context.getString(R.string.a09));
+					criar_botao(dialog, R.id.b11, "11", context.getString(R.string.a11));
+					criar_botao(dialog, R.id.b02, "02", context.getString(R.string.a02));
+					criar_botao(dialog, R.id.b04, "04", context.getString(R.string.a04));
+					criar_botao(dialog, R.id.b06, "06", context.getString(R.string.a06));
+					criar_botao(dialog, R.id.b08, "08", context.getString(R.string.a08));
+					criar_botao(dialog, R.id.b10, "10", context.getString(R.string.a10));
+					criar_botao(dialog, R.id.b12, "12", context.getString(R.string.a12));
+				} else {
+					criar_botao(dialog, R.id.b01, "01", context.getString(R.string.t01));
+					criar_botao(dialog, R.id.b03, "03", context.getString(R.string.t03));
+					criar_botao(dialog, R.id.b05, "05", context.getString(R.string.t05));
+					criar_botao(dialog, R.id.b07, "07", context.getString(R.string.t07));
+					criar_botao(dialog, R.id.b09, "09", context.getString(R.string.t09));
+					criar_botao(dialog, R.id.b11, "11", context.getString(R.string.t11));
+					criar_botao(dialog, R.id.b02, "02", context.getString(R.string.t02));
+					criar_botao(dialog, R.id.b04, "04", context.getString(R.string.t04));
+					criar_botao(dialog, R.id.b06, "06", context.getString(R.string.t06));
+					criar_botao(dialog, R.id.b08, "08", context.getString(R.string.t08));
+					criar_botao(dialog, R.id.b10, "10", context.getString(R.string.t10));
+					criar_botao(dialog, R.id.b12, "12", context.getString(R.string.t12));
+				}
 
 				Button dialogButton = (Button) dialog.findViewById(R.id.b13);
 				dialogButton.setOnClickListener(new OnClickListener() {
@@ -194,12 +209,13 @@ public class ActivityWebView extends Activity {
 		});
 	}
 
-	public void criar_botao(final Dialog dialog, int id, final int tran) {
+	public void criar_botao(final Dialog dialog, int id, final String tran, String text) {
 		Button dialogButton = (Button) dialog.findViewById(id);
+		dialogButton.setText(text);
 		dialogButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				transpor(tran);
+				transpor(Integer.parseInt(tran));
 				dialog.dismiss();
 			}
 		});
@@ -214,12 +230,11 @@ public class ActivityWebView extends Activity {
 			path = path + "/";
 		}
 
-		montaWeb(path + html + ".HTML");
+		// montaWeb(path + html + ".HTML");
 
 		int transSalv = settings.getInt("TRANSP_" + html, 0);
-		if (transSalv != 0) {
-			transpor(transSalv);
-		}
+		transpor(transSalv);
+
 	}
 
 	private void salvar() {
@@ -419,9 +434,19 @@ public class ActivityWebView extends Activity {
 		hasTransp = numero;
 		String[] escalaTmp = (new String[] { "zerofiller", "@01", "@02", "@03", "@04", "@05", "@06", "@07", "@08",
 				"@09", "@10", "@11", "@12" });
-		String[] escala = (new String[] { "zerofiller", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#",
-				"La", "Sib", "Si", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "Sib", "Si" });
+		String[] escalaEuropeia = (new String[] { "zerofiller", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol",
+				"Sol#", "La", "Sib", "Si", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "Sib",
+				"Si" });
+		String[] escalaAmericana = (new String[] { "zerofiller", "C", "C#", "D", "Eb", "E", "F", "F#", "G", "G#", "A",
+				"Bb", "B", "C", "C#", "D", "Eb", "E", "F", "F#", "G", "G#", "A", "Bb", "B" });
 
+		String[] escalaMenos = (new String[] { "C-", "C#-", "D-", "Eb-", "E-", "F-", "F#-", "G-", "G#-", "A-", "Bb-", "B-" });
+		String[] escalaMenor = (new String[] { "Cm", "C#m", "Dm", "Ebm", "Em", "Fm", "F#m", "Gm", "G#m", "Am", "Bbm", "Bm" });
+
+		String[] escala = escalaEuropeia;
+		if (settings.getBoolean("escalaAmericana", false)) {
+			escala = escalaAmericana;
+		}
 		String receiveString = "";
 		StringBuilder stringBuilder = new StringBuilder();
 		try {
@@ -454,7 +479,7 @@ public class ActivityWebView extends Activity {
 				receiveString = receiveString.replace("Do#", escalaTmp[2]).replace("Fa#", escalaTmp[7]).replace("Sol#",
 						escalaTmp[9]);
 				for (int i = 0; i < escalaTmp.length; i++) {
-					receiveString = receiveString.replace(escala[i], escalaTmp[i]);
+					receiveString = receiveString.replace(escalaEuropeia[i], escalaTmp[i]);
 				}
 				// Logica para descobrir a primeira nota:
 				if (pri == 99) {
@@ -482,6 +507,10 @@ public class ActivityWebView extends Activity {
 					for (int i = 0; i < escalaTmp.length; i++) {
 						receiveString = receiveString.replace(escalaTmp[i], escala[i]);
 					}
+				}
+
+				for (int i = 0; i < escalaMenos.length; i++) {
+					receiveString = receiveString.replace(escalaMenos[i], escalaMenor[i]);
 				}
 
 				stringBuilder.append(receiveString).append("\n");
