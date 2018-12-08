@@ -30,14 +30,14 @@
     <string name="mensagens">Mensagens: </string>
     <string name="updateLater">Lembrar Depois</string>
     <string name="updateNow">Atualizar Agora</string>
-    <string name="atuaCantos">Atualizanndo os Cantos</string>
+    <string name="atuaCantos">Atualizando os Cantos</string>
     <string name="atuaCantosOk">A lista de Cantos foi Atualizada! Reinicie o App.</string>
 
     <!-- Config texts -->
     <string name="config">Configurações</string>
-    <string name="wifiOnly">Apenas Redes Wi-Fi\n        Selecione para não usar Dados Móveis</string>
-    <string name="extTxt">Modo Estendido\n        Exibe o refrão completo dos cantos substituindo as reticências (…) e as barras de BIS</string>
-    <string name="escalaAmericanaTxt">Cifras Americanas</string>
+    <string name="wifiOnly">Apenas Redes Wi-Fi\n Selecione para não usar Dados Móveis</string>
+    <string name="extTxt">Modo Estendido\n Exibe o refrão completo dos cantos substituindo as reticências (…) e as barras de BIS</string>
+    <string name="escalaAmericanaTxt">Cifras Americanas\n (Do,Re,Mi,Fa,Sol,La,Si, viram: C,D,E,F,G,A,B)</string>
     <string name="tom">Descubra seu Tom</string>
     <string name="limpar">Apagar Transposições Salvas</string>
     <string name="eraseText">Transposições salvas apagadas</string>
