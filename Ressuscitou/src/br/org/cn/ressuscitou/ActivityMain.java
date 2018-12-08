@@ -47,7 +47,7 @@ public class ActivityMain extends Activity {
 			// 10/02/2018 - 5 falhas seguidas sem explicacao
 		}
 
-		editor.putInt("cantosVersaoAssets", 10);
+		editor.putInt("cantosVersaoAssets", 11);
 		editor.commit();
 		final GetCantos cantosGetter = new GetCantos(getApplicationContext(), settings.getInt("cantosVersaoAssets", 0), cantosClass);
 		cantosGetter.execute();

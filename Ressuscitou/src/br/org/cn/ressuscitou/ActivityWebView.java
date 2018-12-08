@@ -440,8 +440,10 @@ public class ActivityWebView extends Activity {
 		String[] escalaAmericana = (new String[] { "zerofiller", "C", "C#", "D", "Eb", "E", "F", "F#", "G", "G#", "A",
 				"Bb", "B", "C", "C#", "D", "Eb", "E", "F", "F#", "G", "G#", "A", "Bb", "B" });
 
-		String[] escalaMenos = (new String[] { "C-", "C#-", "D-", "Eb-", "E-", "F-", "F#-", "G-", "G#-", "A-", "Bb-", "B-" });
-		String[] escalaMenor = (new String[] { "Cm", "C#m", "Dm", "Ebm", "Em", "Fm", "F#m", "Gm", "G#m", "Am", "Bbm", "Bm" });
+		String[] escalaMenos = (new String[] { "C-", "C#-", "D-", "Eb-", "E-", "F-", "F#-", "G-", "G#-", "A-", "Bb-",
+				"B-" });
+		String[] escalaMenor = (new String[] { "Cm", "C#m", "Dm", "Ebm", "Em", "Fm", "F#m", "Gm", "G#m", "Am", "Bbm",
+				"Bm" });
 
 		String[] escala = escalaEuropeia;
 		if (settings.getBoolean("escalaAmericana", false)) {
@@ -488,11 +490,18 @@ public class ActivityWebView extends Activity {
 						if (receiveString.charAt(i) == x.charAt(0)) {
 							pri = Integer.parseInt(receiveString.substring(i + 1, i + 3));
 							// dif = quantas casas vai subir ou descer
-							dif = Math.abs(numero - pri);
+							if (numero != 0) {
+								dif = Math.abs(numero - pri);
+							}							
 							break;
 						}
 					}
 				}
+				
+				if (pri == 99) {
+					continue;
+				}
+
 				if ((pri > numero) && !(dif == 0)) {
 					for (int i = 12; i > 0; i--) {
 						receiveString = receiveString.replace(escalaTmp[i], escala[i + 12 - dif]);
@@ -503,7 +512,7 @@ public class ActivityWebView extends Activity {
 						receiveString = receiveString.replace(escalaTmp[i], escala[i + dif]);
 					}
 				}
-				if (pri - numero == 0) {
+				if (pri - numero == 0 || dif == 0) {
 					for (int i = 0; i < escalaTmp.length; i++) {
 						receiveString = receiveString.replace(escalaTmp[i], escala[i]);
 					}

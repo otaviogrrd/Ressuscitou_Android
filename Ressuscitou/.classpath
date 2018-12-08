@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="gen"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.andmore.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="D:/COISAS OTÁVIO/igreja/Projetos APPs/workspace/Ressuscitou/libs/android-support-v4.jar"/>
 	<classpathentry kind="lib" path="D:/COISAS OTÁVIO/igreja/Projetos APPs/workspace/Ressuscitou/libs/chrisbanesPhotoViewlibrary-1.2.1.jar"/>
@@ -18,5 +16,7 @@
 			<accessrule kind="nonaccessible" pattern="com/android/internal/**"/>
 		</accessrules>
 	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
