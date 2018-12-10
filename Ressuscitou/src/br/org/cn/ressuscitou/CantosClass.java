@@ -19,9 +19,10 @@ public class CantosClass extends Application {
 	public ArrayList<Canto> listCantos = new ArrayList<Canto>();
 	public static final String PREFS_NAME = "ArqConfiguracao";
 	private SharedPreferences settings;
+	private SharedPreferences.Editor editor;
 
 
-	public void popular(Context context) {
+	public void popular() {
 
 		Gson gson = new Gson();
 		String json = null;
@@ -32,14 +33,15 @@ public class CantosClass extends Application {
 			in = getApplicationContext().getAssets().open("cantos.json");
 
 			settings = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
-			if (settings.getInt("cantosVersaoDown", 0) > settings.getInt("cantosVersaoAssets", 0)) {
+			if (settings.getInt("cantosVersaoDown", 0) > settings.getInt("cantosVersaoAssets", 12)) {
 				String path = getFilesDir().getAbsolutePath();
 				File file = new File(path, "cantos.json");
 				if (file.exists()) {
 					in = getApplicationContext().openFileInput("cantos.json");
 				} else {
-					final GetCantos cantosGetter = new GetCantos(getApplicationContext(), settings.getInt("cantosVersaoAssets", 0), this);
-					cantosGetter.execute();
+					editor = settings.edit();
+					editor.putInt("cantosVersaoDown",0);
+					editor.commit();
 				}
 			}
 

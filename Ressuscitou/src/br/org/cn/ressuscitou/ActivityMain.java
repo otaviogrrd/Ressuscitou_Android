@@ -6,10 +6,13 @@ import java.util.TimeZone;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -25,7 +28,6 @@ public class ActivityMain extends Activity {
 	private SharedPreferences.Editor editor;
 	private ImageButton optButton;
 	private ImageButton infButton;
-	private String versao = null;
 	private CantosClass cantosClass;
 	Builder mAlertDialog;
 
@@ -39,18 +41,16 @@ public class ActivityMain extends Activity {
 		settings = getSharedPreferences(PREFS_NAME, 0);
 		editor = settings.edit();
 
-		try {
-			cantosClass = ((CantosClass) getApplicationContext());
-			cantosClass.popular(this);
-		} catch (Exception e) { // ClassCastException
-			// falha no android 7.0 em um motorola Moto G(4) Plus (athene_f) no dia
-			// 10/02/2018 - 5 falhas seguidas sem explicacao
-		}
+		cantosClass = ((CantosClass) getApplicationContext());
+		cantosClass.popular();
 
-		editor.putInt("cantosVersaoAssets", 11);
+		editor.putInt("cantosVersaoAssets", 12);
 		editor.commit();
-		final GetCantos cantosGetter = new GetCantos(getApplicationContext(), settings.getInt("cantosVersaoAssets", 0), cantosClass);
-		cantosGetter.execute();
+
+		if (haveWifiConnection() || haveDataConnection()) {
+			final GetCantos cantosGetter = new GetCantos(getApplicationContext(), cantosClass);
+			cantosGetter.execute();
+		}
 
 		if (settings.getInt("messageDate", 0) <= returnDate()) {
 			final GetMessages messageGetter = new GetMessages(this, "");
@@ -80,14 +80,6 @@ public class ActivityMain extends Activity {
 			});
 			mAlertDialog.show();
 		}
-		// if (settings.getInt("remindDate", 0) <= new Assist().returnDate()) {
-		try {
-			versao = this.getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-		} catch (NameNotFoundException e) {
-			e.printStackTrace();
-		}
-		// new AppVersion().execute(versao);
-		// }
 
 		optButton = (ImageButton) findViewById(R.id.option);
 		optButton.setOnClickListener(new OnClickListener() {
@@ -106,6 +98,32 @@ public class ActivityMain extends Activity {
 				info();
 			}
 		});
+	}
+
+	@SuppressWarnings("deprecation")
+	public boolean haveWifiConnection() {
+		boolean haveConnectedWifi = false;
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+		for (NetworkInfo ni : netInfo) {
+			if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+				if (ni.isConnected())
+					haveConnectedWifi = true;
+		}
+		return haveConnectedWifi;
+	}
+
+	@SuppressWarnings("deprecation")
+	public boolean haveDataConnection() {
+		boolean haveConnectedMobile = false;
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+		for (NetworkInfo ni : netInfo) {
+			if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+				if (ni.isConnected())
+					haveConnectedMobile = true;
+		}
+		return haveConnectedMobile;
 	}
 
 	public int returnDate() {
@@ -129,88 +147,22 @@ public class ActivityMain extends Activity {
 		return Integer.parseInt(data);
 	}
 
-	// private class AppVersion extends AsyncTask<String, Void, Void> {
-	// String appVersion;
-	// String curVersion;
-	// Context context = ActivityMain.this;
-	//
-	// public static final String PREFS_NAME = "ArqConfiguracao";
-	// private SharedPreferences settings;
-	// private SharedPreferences.Editor editor;
-	//
-	// @Override
-	// protected Void doInBackground(String... params) {
-	// curVersion = params[0];// = versao;
-	// try {
-	// appVersion = Jsoup
-	// .connect(context.getString(R.string.app_url) + "&hl=" +
-	// context.getString(R.string.app_lang))
-	// .get().select("div[itemprop=softwareVersion]").first().ownText();
-	//
-	// } catch (Exception e) {
-	// // e.printStackTrace();
-	// }
-	// return null;
-	// }
-	//
-	// @Override
-	// protected void onPostExecute(Void result) {
-	// if (appVersion != null) {
-	// appVersion = appVersion.replaceAll("\\.", "");
-	// curVersion = curVersion.replaceAll("\\.", "");
-	// while (curVersion.length() < 5)
-	// curVersion = curVersion + "0";
-	// while (appVersion.length() < 5)
-	// appVersion = appVersion + "0";
-	// if (Integer.parseInt(appVersion) > Integer.parseInt(curVersion)) {
-	// mAlertDialog = new AlertDialog.Builder(context);
-	// mAlertDialog.setCancelable(false);
-	//
-	// mAlertDialog.setMessage(context.getString(R.string.version));
-	//
-	// mAlertDialog.setNegativeButton(context.getString(R.string.updateLater),
-	// new DialogInterface.OnClickListener() {
-	// @Override
-	// public void onClick(DialogInterface dialog, int which) {
-	// settings = getSharedPreferences(PREFS_NAME, 0);
-	// editor = settings.edit();
-	// editor.putInt("remindDate", new Assist().returnDate() + 1);
-	// editor.commit();
-	// }
-	// });
-	// mAlertDialog.setPositiveButton(context.getString(R.string.updateNow),
-	// new DialogInterface.OnClickListener() {
-	// @Override
-	// public void onClick(DialogInterface dialog, int which) {
-	// Intent intent = new Intent(Intent.ACTION_VIEW,
-	// Uri.parse(context.getString(R.string.app_url) + "&hl="
-	// + context.getString(R.string.app_lang)));
-	// startActivity(intent);
-	// }
-	// });
-	// mAlertDialog.show();
-	// }
-	// }
-	// }
-	//
-	// }
-
 	public void info() {
-		// mAlertDialog = new AlertDialog.Builder(this);
-		// TextView msg = new TextView(this);
-		String msg = "";
-		msg = this.getString(R.string.app_name) + "\n" 				 // nome
-				+ this.getString(R.string.subtitle) + "\n\n"    	 // subtitulo
-				+ this.getString(R.string.versao) + versao			 // versao
-				+ "\n\n" + this.getString(R.string.terms) + "\n\n";  // termos
+		try {
+			String versao = this.getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
 
-		final GetMessages messageGetter = new GetMessages(this, msg);
-		messageGetter.execute();
+			String msg = "";
+			msg = this.getString(R.string.app_name) + "\n" // nome
+					+ this.getString(R.string.subtitle) + "\n\n" // subtitulo
+					+ this.getString(R.string.versao) + versao // versao
+					+ "\n\n" + this.getString(R.string.terms) + "\n\n"; // termos
 
-		// msg.setPadding(10, 20, 10, 20);
-		// msg.setGravity(Gravity.CENTER);
-		// mAlertDialog.setView(msg);
-		// mAlertDialog.show();
+			final GetMessages messageGetter = new GetMessages(this, msg);
+			messageGetter.execute();
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	public void configuracoes() {

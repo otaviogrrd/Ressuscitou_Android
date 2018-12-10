@@ -20,21 +20,20 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 
 	private Context context;
 	private CantosClass cantosClass;
-	private int cantosVersao;
 	private PowerManager.WakeLock mWakeLock;
 	public static final String PREFS_NAME = "ArqConfiguracao";
 	private SharedPreferences settings;
 	private SharedPreferences.Editor editor;
 
-	public GetCantos(Context context, int cantosVersao, CantosClass cantosClass) {
+	public GetCantos(Context context, CantosClass cantosClass) {
 		this.context = context;
-		this.cantosVersao = cantosVersao;
 		this.cantosClass = cantosClass;
 	}
 
 	@Override
 	protected void onPreExecute() {
 		super.onPreExecute();
+		
 		PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
 		mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, getClass().getName());
 		mWakeLock.acquire();
@@ -74,7 +73,8 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 			}
 			connection.disconnect();
 
-			if (cantosVersao < Integer.parseInt(resultado)) {
+			settings = context.getSharedPreferences(PREFS_NAME, 0);
+			if (settings.getInt("cantosVersaoDown",0) < Integer.parseInt(resultado)) {
 
 				publishProgress(50);
 
@@ -95,12 +95,11 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 				output.close();
 				connection.disconnect();
 
-				settings = context.getSharedPreferences(PREFS_NAME, 0);
 				editor = settings.edit();
-				editor.putInt("cantosVersaoDown", Integer.parseInt(resultado));
+				editor.putInt("cantosVersaoDown",Integer.parseInt(resultado));
 				editor.commit();
 
-				cantosClass.popular(context);
+				cantosClass.popular();
 				publishProgress(100);
 				return "sucess";
 			}

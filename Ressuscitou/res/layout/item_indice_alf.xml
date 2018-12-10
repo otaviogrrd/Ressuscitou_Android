@@ -7,20 +7,24 @@
 
     <ImageView
         android:id="@+id/img1"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_gravity="center_vertical" />
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        android:paddingRight="5dp" />
 
     <RelativeLayout
         android:id="@+id/back"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:gravity="center" >
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:paddingRight="5dp" >
 
         <TextView
             android:id="@+id/number"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
             android:background="@drawable/dotwhite"
             android:gravity="center"
             android:textColor="#333333"
@@ -34,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:textColor="#333333"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:typeface="sans" />
 
