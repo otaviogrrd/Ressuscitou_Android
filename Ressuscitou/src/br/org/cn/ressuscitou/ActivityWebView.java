@@ -474,6 +474,7 @@ public class ActivityWebView extends Activity {
 					stringBuilder.append(receiveString).append("\n");
 					continue;
 				}
+
 				// Para nao baguncar a logica do replace precisamos
 				// substituir todas as notas por valores
 				// temporarios(@xx)
@@ -492,12 +493,12 @@ public class ActivityWebView extends Activity {
 							// dif = quantas casas vai subir ou descer
 							if (numero != 0) {
 								dif = Math.abs(numero - pri);
-							}							
+							}
 							break;
 						}
 					}
 				}
-				
+
 				if (pri == 99) {
 					continue;
 				}
