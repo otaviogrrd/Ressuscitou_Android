@@ -53,7 +53,7 @@ public class ActivityMain extends Activity {
 		}
 
 		if (settings.getInt("messageDate", 0) <= returnDate()) {
-			final GetMessages messageGetter = new GetMessages(this, "");
+			final GetMessages messageGetter = new GetMessages( ActivityMain.this, "");
 			messageGetter.execute();
 			editor.putInt("messageDate", returnDate() + 1);
 			editor.commit();

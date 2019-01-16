@@ -18,7 +18,7 @@ import android.view.Gravity;
 import android.widget.TextView;
 
 @SuppressLint("Wakelock")
-public class GetMessages extends AsyncTask<String, Integer, String> {
+public class GetMessages extends AsyncTask<String, Void, String> {
 
 	private Context context;
 	private String incMsg;
@@ -85,4 +85,5 @@ public class GetMessages extends AsyncTask<String, Integer, String> {
 		}
 		return null;
 	}
+
 }
