@@ -1,0 +1,374 @@
+[
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_part_chronometer.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ctrlrwnd.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\ctrlrwnd.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_item_lista_audio.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\item_lista_audio.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ctrlpause.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\ctrlpause.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\xml_searchable.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\xml\\searchable.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_big_media_narrow_custom.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\06acba3fd7630f43d78ef5b505b1103f\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_banner2.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\banner2.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_indice_alfabetico.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\activity_indice_alfabetico.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_ic_round_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xxhdpi\\ic_round_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_lines_media.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\06acba3fd7630f43d78ef5b505b1103f\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_parent_indice_liturgico.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\parent_indice_liturgico.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_dotbeige.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\dotbeige.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_imageview.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\activity_imageview.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_action.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ic_round_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\ic_round_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_media_action.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\06acba3fd7630f43d78ef5b505b1103f\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_banner.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\banner.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_action.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_bttndown.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\bttndown.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_unsave.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\unsave.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_bttnmusic.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\bttnmusic.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_voltar.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\voltar.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable_notification_icon_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_acordes.jpg.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\acordes.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_bttnoption.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\bttnoption.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ctrlplay.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\ctrlplay.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_ic_round_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-mdpi\\ic_round_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_item_lista_personal.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\item_lista_personal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_new_item.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\new_item.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_aud_n.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\aud_n.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_aud_d.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\aud_d.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_custom.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_indice_liturgico.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\activity_indice_liturgico.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable_notification_bg_low.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi_ic_round_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_round_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_child_indice_liturgico.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\child_indice_liturgico.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_configuracoes.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\activity_configuracoes.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_trash_can.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\trash_can.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable_notification_bg.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout-v16_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout-v16\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_item_indice_alf.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\item_indice_alf.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_aud_y.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\aud_y.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_arpejos.jpg.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\arpejos.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_save.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\save.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_push_right.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\push_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_media.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\06acba3fd7630f43d78ef5b505b1103f\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_media_cancel_action.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\06acba3fd7630f43d78ef5b505b1103f\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_part_time.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_bttninfo.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\bttninfo.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_media_custom.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\06acba3fd7630f43d78ef5b505b1103f\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ctrlstop.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\ctrlstop.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable_notification_tile_bg.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-v21_notification_action_background.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_dotgreen.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\dotgreen.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_big_media_custom.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\06acba3fd7630f43d78ef5b505b1103f\\res\\layout\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_scrolld.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\scrolld.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_dotblue.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\dotblue.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_logocat.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\logocat.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_dotwhite.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\dotwhite.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_big_media.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\06acba3fd7630f43d78ef5b505b1103f\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_bttntrans.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\bttntrans.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_webview.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\activity_webview.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_big_media_narrow.xml.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-28.0.0.aar\\06acba3fd7630f43d78ef5b505b1103f\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ctrlfwrd.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xhdpi\\ctrlfwrd.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\c40021877233145f0c7e7d7a25278920\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_lista_personal.xml.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\layout\\activity_lista_personal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_ic_round_launcher.png.flat",
+        "source": "C:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\src\\main\\res\\drawable-hdpi\\ic_round_launcher.png"
+    }
+]

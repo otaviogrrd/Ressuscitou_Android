@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.org.cn.ressuscitou"
-    android:versionCode="32"
-    android:versionName="2.0.5" >
+    android:versionCode="33"
+    android:versionName="2.0.6" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -37,21 +37,21 @@
             android:configChanges="orientation|screenSize" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.jesus.ressuscitou.ActivityMain" />
+                android:value="br.org.cn.ressuscitou.ActivityMain" />
         </activity>
         <activity
             android:name="br.org.cn.ressuscitou.ActivityIndiceAlfabetico"
             android:configChanges="orientation|screenSize" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.jesus.ressuscitou.ActivityMain" />
+                android:value="br.org.cn.ressuscitou.ActivityMain" />
         </activity>
         <activity
             android:name="br.org.cn.ressuscitou.ActivityConfiguracoes"
             android:configChanges="orientation|screenSize" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.jesus.ressuscitou.ActivityMain" />
+                android:value="br.org.cn.ressuscitou.ActivityMain" />
         </activity>
         <activity
             android:name="br.org.cn.ressuscitou.ActivityWebView"
@@ -64,7 +64,7 @@
             android:theme="@android:style/Theme.NoTitleBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.jesus.ressuscitou.ActivityMain" />
+                android:value="br.org.cn.ressuscitou.ActivityMain" />
         </activity>
 
         <provider

@@ -1,0 +1,4 @@
+#Wed Jan 16 12:05:38 BRST 2019
+base.0=C\:\\Users\\Admin\\Downloads\\Ressuscitou\\app\\build\\intermediates\\transforms\\dexMerger\\release\\0
+path.0=classes.dex
+renamed.0=classes.dex
