@@ -99,8 +99,10 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 				editor.putInt("cantosVersaoDown",Integer.parseInt(resultado));
 				editor.commit();
 
+			if (settings.getInt("cantosVersaoDown", 0) > settings.getInt("cantosVersaoAssets", 1)) {
 				cantosClass.popular();
 				publishProgress(100);
+			}
 				return "sucess";
 			}
 		} catch (Exception e) {

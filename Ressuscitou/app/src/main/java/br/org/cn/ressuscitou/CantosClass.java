@@ -33,7 +33,7 @@ public class CantosClass extends Application {
 			in = getApplicationContext().getAssets().open("cantos.json");
 
 			settings = getApplicationContext().getSharedPreferences(PREFS_NAME, 0);
-			if (settings.getInt("cantosVersaoDown", 0) > settings.getInt("cantosVersaoAssets", 12)) {
+			if (settings.getInt("cantosVersaoDown", 0) > settings.getInt("cantosVersaoAssets", 1)) {
 				String path = getFilesDir().getAbsolutePath();
 				File file = new File(path, "cantos.json");
 				if (file.exists()) {
