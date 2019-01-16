@@ -81,7 +81,7 @@ public class ActivityMain extends Activity {
 			mAlertDialog.show();
 		}
 
-		optButton = (ImageButton) findViewById(R.id.option);
+		optButton = findViewById(R.id.option);
 		optButton.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -90,7 +90,7 @@ public class ActivityMain extends Activity {
 			}
 		});
 
-		infButton = (ImageButton) findViewById(R.id.info);
+		infButton = findViewById(R.id.info);
 		infButton.setOnClickListener(new OnClickListener() {
 
 			@Override

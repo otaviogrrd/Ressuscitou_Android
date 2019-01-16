@@ -67,13 +67,13 @@ public class ActivityWebView extends Activity {
 		html = intent.getStringExtra("html");
 		iniciaCanto();
 
-		downBar = (ProgressBar) findViewById(R.id.downloadBar);
-		downloader = (LinearLayout) findViewById(R.id.downloader);
+		downBar = findViewById(R.id.downloadBar);
+		downloader = findViewById(R.id.downloader);
 		downloader.setVisibility(View.GONE);
 
-		progressBar = (ProgressBar) findViewById(R.id.progressBar1);
-		musicButton = (ImageButton) findViewById(R.id.music);
-		controles = (LinearLayout) findViewById(R.id.controlador);
+		progressBar = findViewById(R.id.progressBar1);
+		musicButton = findViewById(R.id.music);
+		controles = findViewById(R.id.controlador);
 		controles.setVisibility(View.GONE);
 
 		if (getIntent().getStringExtra("url").isEmpty()) {
@@ -96,21 +96,21 @@ public class ActivityWebView extends Activity {
 			}
 		});
 
-		backButton = (ImageButton) findViewById(R.id.voltar);
+		backButton = findViewById(R.id.voltar);
 		backButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				onBackPressed();
 			}
 		});
-		backButton2 = (ImageButton) findViewById(R.id.voltar2);
+		backButton2 = findViewById(R.id.voltar2);
 		backButton2.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				onBackPressed();
 			}
 		});
-		scrollButton = (ImageButton) findViewById(R.id.scrolld);
+		scrollButton = findViewById(R.id.scrolld);
 		scrollButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -127,7 +127,7 @@ public class ActivityWebView extends Activity {
 			}
 		});
 
-		transButton = (ImageButton) findViewById(R.id.transp);
+		transButton = findViewById(R.id.transp);
 		transButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -164,7 +164,7 @@ public class ActivityWebView extends Activity {
 					criar_botao(dialog, R.id.b12, "12", context.getString(R.string.t12));
 				}
 
-				Button dialogButton = (Button) dialog.findViewById(R.id.b13);
+				Button dialogButton = dialog.findViewById(R.id.b13);
 				dialogButton.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -172,7 +172,7 @@ public class ActivityWebView extends Activity {
 						dialog.dismiss();
 					}
 				});
-				Button dialogButton2 = (Button) dialog.findViewById(R.id.b14);
+				Button dialogButton2 = dialog.findViewById(R.id.b14);
 				dialogButton2.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -210,7 +210,7 @@ public class ActivityWebView extends Activity {
 	}
 
 	public void criar_botao(final Dialog dialog, int id, final String tran, String text) {
-		Button dialogButton = (Button) dialog.findViewById(id);
+		Button dialogButton = dialog.findViewById(id);
 		dialogButton.setText(text);
 		dialogButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -310,7 +310,7 @@ public class ActivityWebView extends Activity {
 			musicButton.setImageResource(R.drawable.bttndown);
 		}
 
-		((ImageButton) findViewById(R.id.ctrlrwnd))
+		findViewById(R.id.ctrlrwnd)
 				.setOnTouchListener(new RepeatListener(400, 100, new OnClickListener() {
 					@Override
 					public void onClick(View view) {
@@ -318,31 +318,31 @@ public class ActivityWebView extends Activity {
 							voltar();
 					}
 				}));
-		((ImageButton) findViewById(R.id.ctrlpause)).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.ctrlpause).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				if (mPlayer.isPlaying()) {
 					pause();
-					ImageButton btn = (ImageButton) findViewById(R.id.ctrlpause);
+					ImageButton btn = findViewById(R.id.ctrlpause);
 					btn.setImageResource(R.drawable.ctrlplay);
 				} else {
 					play2();
-					ImageButton btn = (ImageButton) findViewById(R.id.ctrlpause);
+					ImageButton btn = findViewById(R.id.ctrlpause);
 					btn.setImageResource(R.drawable.ctrlpause);
 				}
 			}
 		});
-		((ImageButton) findViewById(R.id.ctrlstop)).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.ctrlstop).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				if (mPlayer.isPlaying()) {
 					stop();
-					ImageButton btn = (ImageButton) findViewById(R.id.ctrlpause);
+					ImageButton btn = findViewById(R.id.ctrlpause);
 					btn.setImageResource(R.drawable.ctrlplay);
 				}
 			}
 		});
-		((ImageButton) findViewById(R.id.ctrlfwrd))
+		findViewById(R.id.ctrlfwrd)
 				.setOnTouchListener(new RepeatListener(400, 100, new OnClickListener() {
 					@Override
 					public void onClick(View view) {
@@ -391,7 +391,7 @@ public class ActivityWebView extends Activity {
 	}
 
 	public void montaWeb(String link) {
-		webView = (WebView) findViewById(R.id.webView1);
+		webView = findViewById(R.id.webView1);
 		webView.setWebChromeClient(new WebChromeClient());
 		webView.getSettings().setAppCacheEnabled(false);
 		webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);

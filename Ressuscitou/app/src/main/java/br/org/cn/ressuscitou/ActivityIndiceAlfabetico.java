@@ -45,7 +45,7 @@ public class ActivityIndiceAlfabetico extends Activity {
 				data.add(data2.get(i));
 			}
 		}
-		ListView listview = (ListView) findViewById(R.id.listview);
+		ListView listview = findViewById(R.id.listview);
 		listview.removeAllViewsInLayout();// adicionado 26/04 para ver se para o
 											// bug da lista crescendo s�
 		AdapterIndiceAlf adapter = new AdapterIndiceAlf(this, data);
@@ -53,7 +53,7 @@ public class ActivityIndiceAlfabetico extends Activity {
 		adapter2 = adapter;
 
 		EditText inputSearch;
-		inputSearch = (EditText) findViewById(R.id.inputSearch);
+		inputSearch = findViewById(R.id.inputSearch);
 		inputSearch.addTextChangedListener(new TextWatcher() {
 			@Override
 			public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
@@ -82,14 +82,14 @@ public class ActivityIndiceAlfabetico extends Activity {
 				startActivity(intent);
 			}
 		});
-		backButton = (ImageButton) findViewById(R.id.voltar);
+		backButton = findViewById(R.id.voltar);
 		backButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				onBackPressed();
 			}
 		});
-		backButton2 = (ImageButton) findViewById(R.id.voltar2);
+		backButton2 = findViewById(R.id.voltar2);
 		backButton2.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {

@@ -21,7 +21,7 @@ public class ActivityImageView extends Activity {
 		String imagem = intent.getStringExtra("imagem");
 		
 		 // Any implementation of ImageView can be used!
-	    mImageView = (ImageView) findViewById(R.id.imageView);
+	    mImageView = findViewById(R.id.imageView);
 
 	    // Set the Drawable displayed
 	    if (imagem.equals("acordes")){

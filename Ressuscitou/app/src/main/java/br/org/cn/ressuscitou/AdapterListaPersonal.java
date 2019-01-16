@@ -55,9 +55,9 @@ public class AdapterListaPersonal extends BaseAdapter {
 			convertView = layoutInflater.inflate(R.layout.item_lista_audio, null);
 			holder = new ViewHolder();
 
-			checkBox = (CheckBox) convertView.findViewById(R.id.checkBox1);
-			holder.titulo = (TextView) convertView.findViewById(R.id.titulo);
-			holder.tamanho = (TextView) convertView.findViewById(R.id.tamanho);
+			checkBox = convertView.findViewById(R.id.checkBox1);
+			holder.titulo = convertView.findViewById(R.id.titulo);
+			holder.tamanho = convertView.findViewById(R.id.tamanho);
 			convertView.setTag(holder);
 
 		} else {

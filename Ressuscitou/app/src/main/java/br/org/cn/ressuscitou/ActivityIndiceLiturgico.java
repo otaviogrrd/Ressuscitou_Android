@@ -32,7 +32,7 @@ public class ActivityIndiceLiturgico extends Activity {
 		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
 		getActionBar().hide();
 		setContentView(R.layout.activity_indice_liturgico);
-		exp_list = (ExpandableListView) findViewById(R.id.expandableListView);
+		exp_list = findViewById(R.id.expandableListView);
 
 		CantosClass cantosClass = ((CantosClass) getApplicationContext());
 		data = cantosClass.listCantos;
@@ -66,14 +66,14 @@ public class ActivityIndiceLiturgico extends Activity {
 				return true;
 			}
 		});
-		backButton = (ImageButton) findViewById(R.id.voltar);
+		backButton = findViewById(R.id.voltar);
 		backButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				onBackPressed();
 			}
 		});
-		backButton2 = (ImageButton) findViewById(R.id.voltar2);
+		backButton2 = findViewById(R.id.voltar2);
 		backButton2.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {

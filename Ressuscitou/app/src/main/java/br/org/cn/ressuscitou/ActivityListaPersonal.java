@@ -50,18 +50,18 @@ public class ActivityListaPersonal extends Activity {
 		getActionBar().hide();
 		setContentView(R.layout.activity_configuracoes);
 		settings = getSharedPreferences(PREFS_NAME, 0);
-		scrollView = (ScrollView) findViewById(R.id.scrollView);
+		scrollView = findViewById(R.id.scrollView);
 		scrollView.smoothScrollTo(0, 0);
 
 		CantosClass cantosClass = ((CantosClass) getApplicationContext());
 		data = cantosClass.listCantos;
 		buscaCantos();
 
-		downBar = (ProgressBar) findViewById(R.id.downloadBar);
-		downloader = (LinearLayout) findViewById(R.id.downloader);
+		downBar = findViewById(R.id.downloadBar);
+		downloader = findViewById(R.id.downloader);
 		downloader.setVisibility(View.GONE);
 
-		downloadAll = (TextView) findViewById(R.id.downlAll);
+		downloadAll = findViewById(R.id.downlAll);
 		downloadAll.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -70,7 +70,7 @@ public class ActivityListaPersonal extends Activity {
 			}
 		});
 
-		tomTxt = (TextView) findViewById(R.id.tom);
+		tomTxt = findViewById(R.id.tom);
 		tomTxt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -78,7 +78,7 @@ public class ActivityListaPersonal extends Activity {
 			}
 		});
 
-		limparTxt = (TextView) findViewById(R.id.limpar);
+		limparTxt = findViewById(R.id.limpar);
 		limparTxt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -86,7 +86,7 @@ public class ActivityListaPersonal extends Activity {
 			}
 		});
 
-		wfOnly = (CheckBox) findViewById(R.id.wifiOnly);
+		wfOnly = findViewById(R.id.wifiOnly);
 		if (settings.getBoolean("wfOnly", false))
 			wfOnly.setChecked(true);
 		wfOnly.setOnClickListener(new OnClickListener() {
@@ -95,7 +95,7 @@ public class ActivityListaPersonal extends Activity {
 				marca_chckBox(wfOnly, "wfOnly");
 			}
 		});
-		wifiTxt = (TextView) findViewById(R.id.wifiTxt);
+		wifiTxt = findViewById(R.id.wifiTxt);
 		wifiTxt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -103,7 +103,7 @@ public class ActivityListaPersonal extends Activity {
 			}
 		});
 
-		estendido = (CheckBox) findViewById(R.id.extend);
+		estendido = findViewById(R.id.extend);
 		if (settings.getBoolean("estendido", false))
 			estendido.setChecked(true);
 		estendido.setOnClickListener(new OnClickListener() {
@@ -112,7 +112,7 @@ public class ActivityListaPersonal extends Activity {
 				marca_chckBox(estendido, "estendido");
 			}
 		});
-		extTxt = (TextView) findViewById(R.id.extTxt);
+		extTxt = findViewById(R.id.extTxt);
 		extTxt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -120,14 +120,14 @@ public class ActivityListaPersonal extends Activity {
 			}
 		});
 
-		backButton = (ImageButton) findViewById(R.id.voltar);
+		backButton = findViewById(R.id.voltar);
 		backButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				onBackPressed();
 			}
 		});
-		backButton2 = (ImageButton) findViewById(R.id.voltar2);
+		backButton2 = findViewById(R.id.voltar2);
 		backButton2.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -227,21 +227,21 @@ public class ActivityListaPersonal extends Activity {
 		}
 		adapter = new AdapterListaAudios(this, data2);
 
-		listview = (LinearLayout) findViewById(R.id.listView1);
+		listview = findViewById(R.id.listView1);
 
 		for (int i = 0; i < adapter.getCount(); i++) {
 			View view = adapter.getView(i, null, listview);
 			listview.addView(view);
 		}
 
-		((ImageButton) findViewById(R.id.apagar)).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.apagar).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				String path = getFilesDir().getAbsolutePath();
 				ArrayList<String> list = adapter.getSelected();
 				int count = 0;
 				for (int i = 0; i < list.size(); i++) {
-					File file = new File(path, list.get(i).toString() + ".mp3");
+					File file = new File(path, list.get(i) + ".mp3");
 					if (file.exists()) {
 						file.delete();
 						count++;

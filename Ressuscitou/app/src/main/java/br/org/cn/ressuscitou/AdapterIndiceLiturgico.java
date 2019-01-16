@@ -66,7 +66,7 @@ public class AdapterIndiceLiturgico extends BaseExpandableListAdapter {
 			LayoutInflater inflator = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			convertView = inflator.inflate(R.layout.parent_indice_liturgico, parentView, false);
 		}
-		TextView parent_textview  = (TextView) convertView.findViewById(R.id.parent_txt);
+		TextView parent_textview  = convertView.findViewById(R.id.parent_txt);
 		parent_textview.setTypeface(null, Typeface.BOLD);
 		parent_textview.setText(parent_title);
 		return convertView;
@@ -79,7 +79,7 @@ public class AdapterIndiceLiturgico extends BaseExpandableListAdapter {
 			LayoutInflater inflator = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			convertView = inflator.inflate(R.layout.child_indice_liturgico, parentView, false);
 		}
-		TextView child_textview = (TextView) convertView.findViewById(R.id.child_txt);
+		TextView child_textview = convertView.findViewById(R.id.child_txt);
 		child_textview.setText(child_title);
 		return convertView;
 	}

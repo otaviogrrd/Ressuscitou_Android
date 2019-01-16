@@ -52,9 +52,9 @@ public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 		if (convertView == null) {
 			convertView = layoutInflater.inflate(R.layout.item_indice_alf, null);
 			holder = new ViewHolder();
-			holder.titulo = (TextView) convertView.findViewById(R.id.title);
-			holder.numero = (TextView) convertView.findViewById(R.id.number);
-			holder.img1 = (ImageView) convertView.findViewById(R.id.img1);
+			holder.titulo = convertView.findViewById(R.id.title);
+			holder.numero = convertView.findViewById(R.id.number);
+			holder.img1 = convertView.findViewById(R.id.img1);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
@@ -72,7 +72,7 @@ public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 		if (listData.get(position).getCategoria() == 4)
 		holder.numero.setBackgroundResource(R.drawable.dotbeige);
 
-		if (listData.get(position).getUrl().toString().isEmpty()) {
+		if (listData.get(position).getUrl().isEmpty()) {
 			holder.img1.setImageResource(R.drawable.aud_n);
 		} else {
 			Context context = parent.getContext();
