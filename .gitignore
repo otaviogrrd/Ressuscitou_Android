@@ -1,3 +1,4 @@
-
-Ressuscitou/bin/**/*.*
-GeradorJson/bin/**/*.*
+GeradorJson/bin/
+Ressuscitou/app/build/
+Ressuscitou/app/app.iml
+Ressuscitou/.idea/workspace.xml
