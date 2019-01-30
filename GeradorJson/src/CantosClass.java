@@ -1,7 +1,4 @@
-package br.org.cn.gerador;
-
 import java.util.ArrayList;
-
 
 public class CantosClass { 
 

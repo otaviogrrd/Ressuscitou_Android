@@ -1,5 +1,3 @@
-package br.org.cn.gerador;
-
 public class Canto {
 	String titulo;
 	String html;
