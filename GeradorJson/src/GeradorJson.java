@@ -27,7 +27,7 @@ public class GeradorJson {
 
 		}
 
-		PrintStream out = new PrintStream(new FileOutputStream("cantos.json"));
+		PrintStream out = new PrintStream(new FileOutputStream("./../cantos.json"));
 		out.println(gson.toJson(cantosClass.listCantos));
 		out.close();
 		System.out.println("Finalizado");;
