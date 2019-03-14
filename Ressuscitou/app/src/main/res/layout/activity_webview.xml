@@ -127,8 +127,8 @@
             android:id="@+id/music"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="5dp"
             android:layout_toLeftOf="@+id/scrolld"
             android:background="@null"
             android:src="@drawable/bttnmusic" />
@@ -137,11 +137,21 @@
             android:id="@+id/scrolld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="4dp"
-            android:layout_toLeftOf="@+id/transp"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/capot"
             android:background="@null"
             android:src="@drawable/scrolld" />
+
+        <ImageButton
+            android:id="@+id/capot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/transp"
+            android:background="@null"
+            android:src="@drawable/bttncapo" />
 
         <ImageButton
             android:id="@+id/transp"

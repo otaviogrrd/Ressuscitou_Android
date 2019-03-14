@@ -1,8 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.org.cn.ressuscitou"
-    android:versionCode="33"
-    android:versionName="2.0.6" >
-
+    android:versionCode="35"
+    android:versionName="2.0.7" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,8 +13,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:roundIcon="@drawable/ic_round_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:label="@string/app_name">
         <activity
             android:name="br.org.cn.ressuscitou.ActivityMain"
             android:configChanges="orientation|screenSize" >
@@ -49,7 +47,7 @@
         <activity
             android:name="br.org.cn.ressuscitou.ActivityWebView"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/AppTheme2" >
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
             android:name="br.org.cn.ressuscitou.ActivityImageView"

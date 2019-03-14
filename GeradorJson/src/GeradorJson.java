@@ -30,6 +30,11 @@ public class GeradorJson {
 		PrintStream out = new PrintStream(new FileOutputStream("./../cantos.json"));
 		out.println(gson.toJson(cantosClass.listCantos));
 		out.close();
+
+		PrintStream out2 = new PrintStream(new FileOutputStream("./../Ressuscitou/app/src/main/assets/cantos.json"));
+		out2.println(gson.toJson(cantosClass.listCantos));
+		out2.close();
+		
 		System.out.println("Finalizado");;
 	}
 
