@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.org.cn.ressuscitou"
-    android:versionCode="37"
-    android:versionName="2.0.7.2" >
+    android:versionCode="38"
+    android:versionName="2.0.8" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
