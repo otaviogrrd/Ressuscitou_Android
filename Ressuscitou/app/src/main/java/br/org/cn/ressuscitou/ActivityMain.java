@@ -44,7 +44,7 @@ public class ActivityMain extends Activity {
 		cantosClass = ((CantosClass) getApplicationContext());
 		cantosClass.popular();
 
-		editor.putInt("cantosVersaoAssets", 22);
+		editor.putInt("cantosVersaoAssets", 23);
 		editor.commit();
 
 		if (haveWifiConnection() || haveDataConnection()) {

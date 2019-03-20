@@ -58,28 +58,99 @@
       <file leaf-file-name="ActivityMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
+            <state relative-caret-position="17">
               <caret line="163" column="56" selection-start-line="163" selection-start-column="56" selection-end-line="163" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityWebView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityWebView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="500" selection-start-line="500" selection-end-line="500" />
               <folding>
-                <element signature="e#2063#2093#0" expanded="true" />
-                <element signature="e#2261#2462#0" expanded="true" />
-                <element signature="e#2461#2462#0" expanded="true" />
-                <element signature="e#2566#2669#0" expanded="true" />
-                <element signature="e#2668#2669#0" expanded="true" />
-                <element signature="e#2743#2837#0" expanded="true" />
-                <element signature="e#2836#2837#0" expanded="true" />
-                <element signature="e#2845#2877#0" expanded="true" />
-                <element signature="e#3280#3312#0" expanded="true" />
-                <element signature="e#4601#4634#0" expanded="true" />
-                <element signature="e#4657#4690#0" expanded="true" />
-                <element signature="e#4720#4751#0" expanded="true" />
-                <element signature="e#4817#4847#0" expanded="true" />
+                <element signature="e#3092#3230#0" expanded="true" />
+                <element signature="e#3229#3230#0" expanded="true" />
+                <element signature="e#3320#3467#0" expanded="true" />
+                <element signature="e#3466#3467#0" expanded="true" />
+                <element signature="e#3559#3706#0" expanded="true" />
+                <element signature="e#3705#3706#0" expanded="true" />
+                <element signature="e#3800#4344#0" expanded="true" />
+                <element signature="e#3920#4318#0" expanded="true" />
+                <element signature="e#4317#4318#0" expanded="true" />
+                <element signature="e#4343#4344#0" expanded="true" />
+                <element signature="e#4435#5707#0" expanded="true" />
+                <element signature="e#5122#5681#0" expanded="true" />
+                <element signature="e#5680#5681#0" expanded="true" />
+                <element signature="e#5706#5707#0" expanded="true" />
+                <element signature="e#5798#9117#0" expanded="true" />
+                <element signature="e#6188#6219#0" expanded="true" />
+                <element signature="e#6278#6309#0" expanded="true" />
+                <element signature="e#6368#6399#0" expanded="true" />
+                <element signature="e#6458#6489#0" expanded="true" />
+                <element signature="e#6548#6579#0" expanded="true" />
+                <element signature="e#6638#6669#0" expanded="true" />
+                <element signature="e#6728#6759#0" expanded="true" />
+                <element signature="e#6818#6849#0" expanded="true" />
+                <element signature="e#6908#6939#0" expanded="true" />
+                <element signature="e#6998#7029#0" expanded="true" />
+                <element signature="e#7088#7119#0" expanded="true" />
+                <element signature="e#7178#7209#0" expanded="true" />
+                <element signature="e#7293#7324#0" expanded="true" />
+                <element signature="e#7383#7414#0" expanded="true" />
+                <element signature="e#7473#7504#0" expanded="true" />
+                <element signature="e#7563#7594#0" expanded="true" />
+                <element signature="e#7653#7684#0" expanded="true" />
+                <element signature="e#7743#7774#0" expanded="true" />
+                <element signature="e#7833#7864#0" expanded="true" />
+                <element signature="e#7923#7954#0" expanded="true" />
+                <element signature="e#8013#8044#0" expanded="true" />
+                <element signature="e#8103#8134#0" expanded="true" />
+                <element signature="e#8193#8224#0" expanded="true" />
+                <element signature="e#8283#8314#0" expanded="true" />
+                <element signature="e#8453#8672#0" expanded="true" />
+                <element signature="e#8671#8672#0" expanded="true" />
+                <element signature="e#8794#9091#0" expanded="true" />
+                <element signature="e#9090#9091#0" expanded="true" />
+                <element signature="e#9116#9117#0" expanded="true" />
+                <element signature="e#9149#9935#0" expanded="true" />
+                <element signature="e#9295#9700#0" expanded="true" />
+                <element signature="e#9699#9700#0" expanded="true" />
+                <element signature="e#9934#9935#0" expanded="true" />
+                <element signature="e#10167#10362#0" expanded="true" />
+                <element signature="e#10361#10362#0" expanded="true" />
+                <element signature="e#11234#11265#0" expanded="true" />
+                <element signature="e#11554#11580#0" expanded="true" />
+                <element signature="e#11711#11740#0" expanded="true" />
+                <element signature="e#13409#13642#0" expanded="true" />
+                <element signature="e#13641#13642#0" expanded="true" />
+                <element signature="e#13702#14223#0" expanded="true" />
+                <element signature="e#14222#14223#0" expanded="true" />
+                <element signature="e#14281#14615#0" expanded="true" />
+                <element signature="e#14614#14615#0" expanded="true" />
+                <element signature="e#14719#14953#0" expanded="true" />
+                <element signature="e#14952#14953#0" expanded="true" />
+                <element signature="e#16609#16641#0" expanded="true" />
+                <element signature="e#17126#17158#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetMessages.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetMessages.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/GetMessages.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -2396,22 +2467,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ressuscitou" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ressuscitou" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2432,18 +2487,23 @@
             </path>
             <path>
               <item name="Ressuscitou" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Ressuscitou" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Ressuscitou" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ressuscitou" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ressuscitou" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2617,22 +2677,22 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5033557" side_tool="true" visible="true" weight="0.32909605" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32909605" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.3983051" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32909605" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49932885" weight="0.32909605" />
       <window_info anchor="bottom" id="Logcat" order="7" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.25302014" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4966443" visible="true" weight="0.32909605" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.25302014" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4966443" weight="0.32909605" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3295302" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3983051" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.3983051" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Preview" order="4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2659,7 +2719,6 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50201344" side_tool="true" weight="0.32909605" />
       <window_info anchor="right" id="Preview" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32909605" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Logcat" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
@@ -2672,6 +2731,7 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32909605" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3983051" />
     </layout-to-restore>
   </component>
@@ -2685,7 +2745,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -2911,13 +2971,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityWebView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-777">
-          <caret line="326" column="47" lean-forward="true" selection-start-line="326" selection-start-column="47" selection-end-line="326" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_imageview.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state />
@@ -2988,22 +3041,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="191" column="45" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="45" />
-          <folding>
-            <element signature="e#1129#1142#0" expanded="true" />
-            <element signature="e#1665#1678#0" expanded="true" />
-            <element signature="e#2201#2214#0" expanded="true" />
-            <element signature="e#2737#2750#0" expanded="true" />
-            <element signature="e#3273#3286#0" expanded="true" />
-            <element signature="e#3809#3822#0" expanded="true" />
-            <element signature="e#4359#4374#0" expanded="true" />
-            <element signature="e#5298#5311#0" expanded="true" />
-            <element signature="e#5834#5847#0" expanded="true" />
-            <element signature="e#6441#6454#0" expanded="true" />
-            <element signature="e#6814#6827#0" expanded="true" />
-            <element signature="e#7350#7363#0" expanded="true" />
-            <element signature="e#7886#7899#0" expanded="true" />
-            <element signature="e#8351#8366#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
@@ -3059,42 +3096,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="66" lean-forward="true" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="163" column="56" selection-start-line="163" selection-start-column="56" selection-end-line="163" selection-end-column="56" />
-          <folding>
-            <element signature="e#2063#2093#0" expanded="true" />
-            <element signature="e#2261#2462#0" expanded="true" />
-            <element signature="e#2461#2462#0" expanded="true" />
-            <element signature="e#2566#2669#0" expanded="true" />
-            <element signature="e#2668#2669#0" expanded="true" />
-            <element signature="e#2743#2837#0" expanded="true" />
-            <element signature="e#2836#2837#0" expanded="true" />
-            <element signature="e#2845#2877#0" expanded="true" />
-            <element signature="e#3280#3312#0" expanded="true" />
-            <element signature="e#4601#4634#0" expanded="true" />
-            <element signature="e#4657#4690#0" expanded="true" />
-            <element signature="e#4720#4751#0" expanded="true" />
-            <element signature="e#4817#4847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/GetMessages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="47" column="75" selection-start-line="47" selection-start-column="75" selection-end-line="47" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="163" column="56" selection-start-line="163" selection-start-column="56" selection-end-line="163" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityWebView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="500" selection-start-line="500" selection-end-line="500" />
+          <folding>
+            <element signature="e#3092#3230#0" expanded="true" />
+            <element signature="e#3229#3230#0" expanded="true" />
+            <element signature="e#3320#3467#0" expanded="true" />
+            <element signature="e#3466#3467#0" expanded="true" />
+            <element signature="e#3559#3706#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3800#4344#0" expanded="true" />
+            <element signature="e#3920#4318#0" expanded="true" />
+            <element signature="e#4317#4318#0" expanded="true" />
+            <element signature="e#4343#4344#0" expanded="true" />
+            <element signature="e#4435#5707#0" expanded="true" />
+            <element signature="e#5122#5681#0" expanded="true" />
+            <element signature="e#5680#5681#0" expanded="true" />
+            <element signature="e#5706#5707#0" expanded="true" />
+            <element signature="e#5798#9117#0" expanded="true" />
+            <element signature="e#6188#6219#0" expanded="true" />
+            <element signature="e#6278#6309#0" expanded="true" />
+            <element signature="e#6368#6399#0" expanded="true" />
+            <element signature="e#6458#6489#0" expanded="true" />
+            <element signature="e#6548#6579#0" expanded="true" />
+            <element signature="e#6638#6669#0" expanded="true" />
+            <element signature="e#6728#6759#0" expanded="true" />
+            <element signature="e#6818#6849#0" expanded="true" />
+            <element signature="e#6908#6939#0" expanded="true" />
+            <element signature="e#6998#7029#0" expanded="true" />
+            <element signature="e#7088#7119#0" expanded="true" />
+            <element signature="e#7178#7209#0" expanded="true" />
+            <element signature="e#7293#7324#0" expanded="true" />
+            <element signature="e#7383#7414#0" expanded="true" />
+            <element signature="e#7473#7504#0" expanded="true" />
+            <element signature="e#7563#7594#0" expanded="true" />
+            <element signature="e#7653#7684#0" expanded="true" />
+            <element signature="e#7743#7774#0" expanded="true" />
+            <element signature="e#7833#7864#0" expanded="true" />
+            <element signature="e#7923#7954#0" expanded="true" />
+            <element signature="e#8013#8044#0" expanded="true" />
+            <element signature="e#8103#8134#0" expanded="true" />
+            <element signature="e#8193#8224#0" expanded="true" />
+            <element signature="e#8283#8314#0" expanded="true" />
+            <element signature="e#8453#8672#0" expanded="true" />
+            <element signature="e#8671#8672#0" expanded="true" />
+            <element signature="e#8794#9091#0" expanded="true" />
+            <element signature="e#9090#9091#0" expanded="true" />
+            <element signature="e#9116#9117#0" expanded="true" />
+            <element signature="e#9149#9935#0" expanded="true" />
+            <element signature="e#9295#9700#0" expanded="true" />
+            <element signature="e#9699#9700#0" expanded="true" />
+            <element signature="e#9934#9935#0" expanded="true" />
+            <element signature="e#10167#10362#0" expanded="true" />
+            <element signature="e#10361#10362#0" expanded="true" />
+            <element signature="e#11234#11265#0" expanded="true" />
+            <element signature="e#11554#11580#0" expanded="true" />
+            <element signature="e#11711#11740#0" expanded="true" />
+            <element signature="e#13409#13642#0" expanded="true" />
+            <element signature="e#13641#13642#0" expanded="true" />
+            <element signature="e#13702#14223#0" expanded="true" />
+            <element signature="e#14222#14223#0" expanded="true" />
+            <element signature="e#14281#14615#0" expanded="true" />
+            <element signature="e#14614#14615#0" expanded="true" />
+            <element signature="e#14719#14953#0" expanded="true" />
+            <element signature="e#14952#14953#0" expanded="true" />
+            <element signature="e#16609#16641#0" expanded="true" />
+            <element signature="e#17126#17158#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
