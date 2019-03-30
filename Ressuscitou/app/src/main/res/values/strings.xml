@@ -31,7 +31,7 @@
     <string name="updateLater">Lembrar Depois</string>
     <string name="updateNow">Atualizar Agora</string>
     <string name="atuaCantos">Atualizando os Cantos</string>
-    <string name="atuaCantosOk">A lista de Cantos foi Atualizada! Reinicie o App.</string>
+    <string name="atuaCantosOk">A lista de Cantos foi Atualizada!</string>
 
     <!-- Config texts -->
     <string name="config">Configurações</string>

@@ -7,7 +7,7 @@
     android:layout_alignParentTop="true"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context="com.resucitou.otavio.ressuscitou2.IndiceLiturgico" >
+    tools:context="br.org.cn.ressuscitou.ActivityIndiceLiturgico" >
 
     <RelativeLayout
         android:id="@+id/back"

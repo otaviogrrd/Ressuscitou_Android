@@ -59,6 +59,7 @@ public class GetCantos extends AsyncTask<String, Integer, String> {
 		try {
 			URL url = new URL(context.getString(R.string.cantos_versao));
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+			connection.setUseCaches( false );
 			connection.setRequestMethod("GET");
 			connection.setDoOutput(false);
 			connection.connect();

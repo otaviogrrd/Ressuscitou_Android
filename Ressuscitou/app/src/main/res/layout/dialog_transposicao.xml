@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollX="0px">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/c01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/b01"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t01"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b03"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t03"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b05"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t05"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b07"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t07"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b09"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t09"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b11"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t11"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b13"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#bfbfbf"
+                    android:drawableLeft="@drawable/save"
+                    android:text="@string/tSalv"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/c02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/c01"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/b02"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t02"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b04"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t04"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b06"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:padding="10dp"
+                    android:text="@string/t06" />
+
+                <Button
+                    android:id="@+id/b08"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t08"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b10"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t10"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b12"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#bfbfbf"
+                    android:padding="10dp"
+                    android:text="@string/t12"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/b14"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#bfbfbf"
+                    android:drawableLeft="@drawable/unsave"
+                    android:text="@string/tRest"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/app.TextAppearance"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

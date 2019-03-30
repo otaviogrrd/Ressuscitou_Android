@@ -44,7 +44,7 @@ public class ActivityMain extends Activity {
 		cantosClass = ((CantosClass) getApplicationContext());
 		cantosClass.popular();
 
-		editor.putInt("cantosVersaoAssets", 12);
+		editor.putInt("cantosVersaoAssets", 23);
 		editor.commit();
 
 		if (haveWifiConnection() || haveDataConnection()) {
@@ -150,12 +150,16 @@ public class ActivityMain extends Activity {
 	public void info() {
 		try {
 			String versao = this.getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-
+			int versaoLista = settings.getInt("cantosVersaoAssets", 1);
+			int versaoDown = settings.getInt("cantosVersaoDown", 0);
+			if (versaoDown > versaoLista ) {
+				versaoLista = versaoDown;
+			}
 			String msg = "";
 			msg = this.getString(R.string.app_name) + "\n" // nome
 					+ this.getString(R.string.subtitle) + "\n\n" // subtitulo
-					+ this.getString(R.string.versao) + versao // versao
-					+ "\n\n" + this.getString(R.string.terms) + "\n\n"; // termos
+					+ this.getString(R.string.versao) + versao + "  (" + versaoLista + ")\n\n" // versao
+					+ this.getString(R.string.terms) + "\n\n"; // termos
 
 			final GetMessages messageGetter = new GetMessages(this, msg);
 			messageGetter.execute();
