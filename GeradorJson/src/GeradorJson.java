@@ -20,8 +20,6 @@ public class GeradorJson {
 
 		CantosClass cantosClass = new CantosClass();
 		cantosClass.popular();
-
-		PrintStream out3 = new PrintStream(new FileOutputStream("./../strings.txt"));
 		
 		for (int i = 0; i < cantosClass.listCantos.size(); i++) {
 
@@ -34,8 +32,8 @@ public class GeradorJson {
 			cantosClass.listCantos.get(i).setExt_base64(base64);
 
 			String conteudo = getStrigao(path, cantosClass.listCantos.get(i).getNumero());
-			//cantosClass.listCantos.get(i).setConteudo(conteudo);
-			out3.println(conteudo);
+			conteudo = conteudo.trim();
+			cantosClass.listCantos.get(i).setConteudo(conteudo);
 		}
 
 		PrintStream out = new PrintStream(new FileOutputStream("./../cantos.json"));
@@ -45,7 +43,8 @@ public class GeradorJson {
 		PrintStream out2 = new PrintStream(new FileOutputStream("./../Ressuscitou/app/src/main/assets/cantos.json"));
 		out2.println(gson.toJson(cantosClass.listCantos));
 		out2.close();
-
+		
+		
 		System.out.println("Finalizado");
 	}
 
