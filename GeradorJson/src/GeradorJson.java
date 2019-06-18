@@ -21,6 +21,8 @@ public class GeradorJson {
 		CantosClass cantosClass = new CantosClass();
 		cantosClass.popular();
 
+		PrintStream out3 = new PrintStream(new FileOutputStream("./../strings.txt"));
+		
 		for (int i = 0; i < cantosClass.listCantos.size(); i++) {
 
 			String path = "./../html/" + cantosClass.listCantos.get(i).getHtml() + ".HTML";
@@ -32,8 +34,8 @@ public class GeradorJson {
 			cantosClass.listCantos.get(i).setExt_base64(base64);
 
 			String conteudo = getStrigao(path, cantosClass.listCantos.get(i).getNumero());
-			cantosClass.listCantos.get(i).setConteudo(conteudo);
-
+			//cantosClass.listCantos.get(i).setConteudo(conteudo);
+			out3.println(conteudo);
 		}
 
 		PrintStream out = new PrintStream(new FileOutputStream("./../cantos.json"));
@@ -45,7 +47,6 @@ public class GeradorJson {
 		out2.close();
 
 		System.out.println("Finalizado");
-		;
 	}
 
 	public static String getStrigao(String path, String numero) {
