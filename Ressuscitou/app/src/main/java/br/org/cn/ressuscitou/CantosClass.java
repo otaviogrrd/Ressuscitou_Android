@@ -4,10 +4,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.util.ArrayList;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 
 import android.app.Application;
 import android.content.Context;
@@ -54,7 +56,11 @@ public class CantosClass extends Application {
 			json = new String(buffer, "UTF-8");
 
 			listCantos.clear();
-			listCantos = gson.fromJson(json, new TypeToken<ArrayList<Canto>>() {
+
+			JsonReader reader = new JsonReader(new StringReader(json));
+			reader.setLenient(true);
+
+			listCantos = gson.fromJson(reader, new TypeToken<ArrayList<Canto>>() {
 			}.getType());
 
 			for (int i = 0; i < listCantos.size(); i++) {
