@@ -97,6 +97,9 @@ public class DownloadTaskMult extends AsyncTask<ArrayList<String>, Integer, Stri
 
 				connection.disconnect();
 			}
+		} catch (Exception e) {
+			return context.getString(R.string.conErr);
+		}
 
 			for (int i = 0; i < multDown.size(); i++) {
 
@@ -108,6 +111,7 @@ public class DownloadTaskMult extends AsyncTask<ArrayList<String>, Integer, Stri
 					if (audio.exists())
 						break;
 
+					try {
 					String link = links.get(j);
 
 					String urlfinal = new String(link + nomeCanto + ".mp3").replaceAll(" ", "%20");// monta a url final
@@ -151,11 +155,11 @@ public class DownloadTaskMult extends AsyncTask<ArrayList<String>, Integer, Stri
 						}
 						connection.disconnect();
 					}
+				} catch (Exception e) {
+					continue;
+				}
 				}
 			}
-		} catch (Exception e) {
-			return context.getString(R.string.conErr);
-		}
 		return null;
 	}
 
