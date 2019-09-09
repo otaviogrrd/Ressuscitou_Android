@@ -113,31 +113,31 @@ public class ActivityIndiceLiturgico extends Activity {
 		String scfin = "CANTO FINAL";
 
 		for (int i = 0; i < data.size(); i++) {
-			if (data.get(i).isAdve())
+			if (data.get(i).getAdve())
 				ladve.add(data.get(i).getTitulo());
-			if (data.get(i).isLaud())
+			if (data.get(i).getLaud())
 				llaud.add(data.get(i).getTitulo());
-			if (data.get(i).isEntr())
+			if (data.get(i).getEntr())
 				lentr.add(data.get(i).getTitulo());
-			if (data.get(i).isNata())
+			if (data.get(i).getNata())
 				lnata.add(data.get(i).getTitulo());
-			if (data.get(i).isQuar())
+			if (data.get(i).getQuar())
 				lquar.add(data.get(i).getTitulo());
-			if (data.get(i).isPasc())
+			if (data.get(i).getPasc())
 				lpasc.add(data.get(i).getTitulo());
-			if (data.get(i).isPent())
+			if (data.get(i).getPent())
 				lpent.add(data.get(i).getTitulo());
-			if (data.get(i).isVirg())
+			if (data.get(i).getVirg())
 				lvirg.add(data.get(i).getTitulo());
-			if (data.get(i).isCria())
+			if (data.get(i).getCria())
 				lcria.add(data.get(i).getTitulo());
-			if (data.get(i).isCpaz())
+			if (data.get(i).getCpaz())
 				lcpaz.add(data.get(i).getTitulo());
-			if (data.get(i).isFpao())
+			if (data.get(i).getFpao())
 				lfpao.add(data.get(i).getTitulo());
-			if (data.get(i).isComu())
+			if (data.get(i).getComu())
 				lcomu.add(data.get(i).getTitulo());
-			if (data.get(i).isCfin())
+			if (data.get(i).getCfin())
 				lcfin.add(data.get(i).getTitulo());
 		}
 

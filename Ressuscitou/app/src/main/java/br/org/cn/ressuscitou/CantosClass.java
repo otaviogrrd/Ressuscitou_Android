@@ -73,7 +73,7 @@ public class CantosClass extends Application {
 				fos = null;
 			}
 			for (int i = 0; i < listCantos.size(); i++) {
-				byte[] decodedByteArray = Base64.decode(listCantos.get(i).getHtml_base64(), Base64.DEFAULT);
+				byte[] decodedByteArray = Base64.decode(listCantos.get(i).getHtmlbase64(), Base64.DEFAULT);
 				FileOutputStream fos = getApplicationContext().openFileOutput(listCantos.get(i).getHtml() + ".HTML", Context.MODE_PRIVATE);
 				fos.write(decodedByteArray);
 				fos.flush();

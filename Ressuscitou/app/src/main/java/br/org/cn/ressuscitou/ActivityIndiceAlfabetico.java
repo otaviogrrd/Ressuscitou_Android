@@ -76,9 +76,9 @@ public class ActivityIndiceAlfabetico extends Activity {
 				Object item = parent.getItemAtPosition(position);
 				Canto canto = (Canto) item;
 				Intent intent = new Intent(context, ActivityWebView.class);
-				intent.putExtra("html", canto.html);
-				intent.putExtra("url", canto.url);
-				intent.putExtra("cat", Integer.toString(canto.categoria));
+				intent.putExtra("html", canto.getHtml());
+				intent.putExtra("url", canto.getUrl());
+				intent.putExtra("cat", Integer.toString(canto.getCategoria()));
 				startActivity(intent);
 			}
 		});

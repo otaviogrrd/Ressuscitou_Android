@@ -25,13 +25,13 @@ public class GeradorJson {
 
 			String path = "./../html/" + cantosClass.listCantos.get(i).getHtml() + ".HTML";
 			String base64 = DatatypeConverter.printBase64Binary(Files.readAllBytes(Paths.get(path)));
-			cantosClass.listCantos.get(i).setHtml_base64(base64);
+			cantosClass.listCantos.get(i).setHtmlBase64(base64);
 
 			path = "./../html/ext/" + cantosClass.listCantos.get(i).getHtml() + ".HTML";
 			base64 = DatatypeConverter.printBase64Binary(Files.readAllBytes(Paths.get(path)));
-			cantosClass.listCantos.get(i).setExt_base64(base64);
+			cantosClass.listCantos.get(i).setExtBase64(base64);
 
-			String conteudo = getStrigao(path, cantosClass.listCantos.get(i).getNumero());
+			String conteudo = getStrigao(path, cantosClass.listCantos.get(i).getNumero(), cantosClass.listCantos.get(i).getNr2019() );
 			conteudo = conteudo.trim();
 			cantosClass.listCantos.get(i).setConteudo(conteudo);
 		}
@@ -48,7 +48,7 @@ public class GeradorJson {
 		System.out.println("Finalizado");
 	}
 
-	public static String getStrigao(String path, String numero) {
+	public static String getStrigao(String path, String numero, String numero_2019) {
 		StringBuilder textBuilder = new StringBuilder();
 		String line;
 		InputStream in;
@@ -56,6 +56,9 @@ public class GeradorJson {
 			in = new FileInputStream(path);
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 			textBuilder.append(numero);
+			textBuilder.append("|");
+			textBuilder.append(numero_2019);
+			textBuilder.append("|");
 			while ((line = bufferedReader.readLine()) != null) {
 
 				if (line.contains("html"))

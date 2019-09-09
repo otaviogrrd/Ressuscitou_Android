@@ -1,222 +1,302 @@
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Canto {
-	String titulo;
-	String html;
-	String url;
-	int categoria;
-	String numero;
-	boolean adve;
-	boolean laud;
-	boolean entr;
-	boolean nata;
-	boolean quar;
-	boolean pasc;
-	boolean pent;
-	boolean virg;
-	boolean cria;
-	boolean cpaz;
-	boolean fpao;
-	boolean comu;
-	boolean cfin;
-	String conteudo;
-	String html_base64;
-	String ext_base64;
 
-	public Canto() {
+@SerializedName("titulo")
+@Expose
+private String titulo;
+@SerializedName("html")
+@Expose
+private String html;
+@SerializedName("url")
+@Expose
+private String url;
+@SerializedName("categoria")
+@Expose
+private int categoria;
+@SerializedName("numero")
+@Expose
+private String numero;
+@SerializedName("nr_2019")
+@Expose
+private String nr2019;
+@SerializedName("adve")
+@Expose
+private Boolean adve;
+@SerializedName("laud")
+@Expose
+private Boolean laud;
+@SerializedName("entr")
+@Expose
+private Boolean entr;
+@SerializedName("nata")
+@Expose
+private Boolean nata;
+@SerializedName("quar")
+@Expose
+private Boolean quar;
+@SerializedName("pasc")
+@Expose
+private Boolean pasc;
+@SerializedName("pent")
+@Expose
+private Boolean pent;
+@SerializedName("virg")
+@Expose
+private Boolean virg;
+@SerializedName("cria")
+@Expose
+private Boolean cria;
+@SerializedName("cpaz")
+@Expose
+private Boolean cpaz;
+@SerializedName("fpao")
+@Expose
+private Boolean fpao;
+@SerializedName("comu")
+@Expose
+private Boolean comu;
+@SerializedName("cfin")
+@Expose
+private Boolean cfin;
+@SerializedName("conteudo")
+@Expose
+private String conteudo;
+@SerializedName("html_base64")
+@Expose
+private String htmlBase64;
+@SerializedName("ext_base64")
+@Expose
+private String extBase64;
 
-	}
+public Canto() {
+}
 
-	public Canto(String titulo, String html, String url, int categoria, String numero, boolean adve, boolean laud,
-			boolean entr, boolean nata, boolean quar, boolean pasc, boolean pent, boolean virg, boolean cria,
-			boolean cpaz, boolean fpao, boolean comu, boolean cfin, String conteudo) {
-		super();
-		this.titulo = titulo;
-		this.html = html;
-		this.url = url;
-		this.categoria = categoria;
-		this.numero = numero;
-		this.adve = adve;
-		this.laud = laud;
-		this.entr = entr;
-		this.nata = nata;
-		this.quar = quar;
-		this.pasc = pasc;
-		this.pent = pent;
-		this.virg = virg;
-		this.cria = cria;
-		this.cpaz = cpaz;
-		this.fpao = fpao;
-		this.comu = comu;
-		this.cfin = cfin;
-		this.conteudo = conteudo;
-	}
+public Canto(String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo, String htmlBase64, String extBase64) {
+super();
+this.titulo = titulo;
+this.html = html;
+this.url = url;
+this.categoria = categoria;
+this.numero = numero;
+this.nr2019 = nr2019;
+this.adve = adve;
+this.laud = laud;
+this.entr = entr;
+this.nata = nata;
+this.quar = quar;
+this.pasc = pasc;
+this.pent = pent;
+this.virg = virg;
+this.cria = cria;
+this.cpaz = cpaz;
+this.fpao = fpao;
+this.comu = comu;
+this.cfin = cfin;
+this.conteudo = conteudo;
+this.htmlBase64 = htmlBase64;
+this.extBase64 = extBase64;
+}
 
-	public String getTitulo() {
-		return titulo;
-	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
+public Canto(String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo) {
+super();
+this.titulo = titulo;
+this.html = html;
+this.url = url;
+this.categoria = categoria;
+this.numero = numero;
+this.adve = adve;
+this.laud = laud;
+this.entr = entr;
+this.nata = nata;
+this.quar = quar;
+this.pasc = pasc;
+this.pent = pent;
+this.virg = virg;
+this.cria = cria;
+this.cpaz = cpaz;
+this.fpao = fpao;
+this.comu = comu;
+this.cfin = cfin;
+this.conteudo = conteudo;
+}
 
-	public String getHtml() {
-		return html;
-	}
+public String getTitulo() {
+return titulo;
+}
 
-	public void setHtml(String html) {
-		this.html = html;
-	}
+public void setTitulo(String titulo) {
+this.titulo = titulo;
+}
 
-	public String getUrl() {
-		return url;
-	}
+public String getHtml() {
+return html;
+}
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+public void setHtml(String html) {
+this.html = html;
+}
 
-	public int getCategoria() {
-		return categoria;
-	}
+public String getUrl() {
+return url;
+}
 
-	public void setCategoria(int categoria) {
-		this.categoria = categoria;
-	}
+public void setUrl(String url) {
+this.url = url;
+}
 
-	public boolean isAdve() {
-		return adve;
-	}
+public Integer getCategoria() {
+return categoria;
+}
 
-	public void setAdve(boolean adve) {
-		this.adve = adve;
-	}
+public void setCategoria(Integer categoria) {
+this.categoria = categoria;
+}
 
-	public boolean isLaud() {
-		return laud;
-	}
+public String getNumero() {
+return numero;
+}
 
-	public void setLaud(boolean laud) {
-		this.laud = laud;
-	}
+public void setNumero(String numero) {
+this.numero = numero;
+}
 
-	public boolean isEntr() {
-		return entr;
-	}
+public String getNr2019() {
+return nr2019;
+}
 
-	public void setEntr(boolean entr) {
-		this.entr = entr;
-	}
+public void setNr2019(String nr2019) {
+this.nr2019 = nr2019;
+}
 
-	public boolean isNata() {
-		return nata;
-	}
+public Boolean getAdve() {
+return adve;
+}
 
-	public void setNata(boolean nata) {
-		this.nata = nata;
-	}
+public void setAdve(Boolean adve) {
+this.adve = adve;
+}
 
-	public boolean isQuar() {
-		return quar;
-	}
+public Boolean getLaud() {
+return laud;
+}
 
-	public void setQuar(boolean quar) {
-		this.quar = quar;
-	}
+public void setLaud(Boolean laud) {
+this.laud = laud;
+}
 
-	public boolean isPasc() {
-		return pasc;
-	}
+public Boolean getEntr() {
+return entr;
+}
 
-	public void setPasc(boolean pasc) {
-		this.pasc = pasc;
-	}
+public void setEntr(Boolean entr) {
+this.entr = entr;
+}
 
-	public boolean isPent() {
-		return pent;
-	}
+public Boolean getNata() {
+return nata;
+}
 
-	public void setPent(boolean pent) {
-		this.pent = pent;
-	}
+public void setNata(Boolean nata) {
+this.nata = nata;
+}
 
-	public boolean isVirg() {
-		return virg;
-	}
+public Boolean getQuar() {
+return quar;
+}
 
-	public void setVirg(boolean virg) {
-		this.virg = virg;
-	}
+public void setQuar(Boolean quar) {
+this.quar = quar;
+}
 
-	public boolean isCria() {
-		return cria;
-	}
+public Boolean getPasc() {
+return pasc;
+}
 
-	public void setCria(boolean cria) {
-		this.cria = cria;
-	}
+public void setPasc(Boolean pasc) {
+this.pasc = pasc;
+}
 
-	public boolean isCpaz() {
-		return cpaz;
-	}
+public Boolean getPent() {
+return pent;
+}
 
-	public void setCpaz(boolean cpaz) {
-		this.cpaz = cpaz;
-	}
+public void setPent(Boolean pent) {
+this.pent = pent;
+}
 
-	public boolean isFpao() {
-		return fpao;
-	}
+public Boolean getVirg() {
+return virg;
+}
 
-	public void setFpao(boolean fpao) {
-		this.fpao = fpao;
-	}
+public void setVirg(Boolean virg) {
+this.virg = virg;
+}
 
-	public boolean isComu() {
-		return comu;
-	}
+public Boolean getCria() {
+return cria;
+}
 
-	public void setComu(boolean comu) {
-		this.comu = comu;
-	}
+public void setCria(Boolean cria) {
+this.cria = cria;
+}
 
-	public boolean isCfin() {
-		return cfin;
-	}
+public Boolean getCpaz() {
+return cpaz;
+}
 
-	public void setCfin(boolean cfin) {
-		this.cfin = cfin;
-	}
+public void setCpaz(Boolean cpaz) {
+this.cpaz = cpaz;
+}
 
-	public String getHtml_base64() {
-		return html_base64;
-	}
+public Boolean getFpao() {
+return fpao;
+}
 
-	public void setHtml_base64(String html_base64) {
-		this.html_base64 = html_base64;
-	}
+public void setFpao(Boolean fpao) {
+this.fpao = fpao;
+}
 
-	public String getExt_base64() {
-		return ext_base64;
-	}
+public Boolean getComu() {
+return comu;
+}
 
-	public void setExt_base64(String ext_base64) {
-		this.ext_base64 = ext_base64;
-	}
+public void setComu(Boolean comu) {
+this.comu = comu;
+}
 
-	public String getConteudo() {
-		return conteudo;
-	}
+public Boolean getCfin() {
+return cfin;
+}
 
-	public void setConteudo(String conteudo) {
-		this.conteudo = conteudo;
-	}
+public void setCfin(Boolean cfin) {
+this.cfin = cfin;
+}
 
-	public String getNumero() {
-		return numero;
-	}
+public String getConteudo() {
+return conteudo;
+}
 
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
+public void setConteudo(String conteudo) {
+this.conteudo = conteudo;
+}
+
+public String getHtmlBase64() {
+return htmlBase64;
+}
+
+public void setHtmlBase64(String htmlBase64) {
+this.htmlBase64 = htmlBase64;
+}
+
+public String getExtBase64() {
+return extBase64;
+}
+
+public void setExtBase64(String extBase64) {
+this.extBase64 = extBase64;
+}
 
 }
