@@ -13,23 +13,25 @@
 
         <ImageButton
             android:id="@+id/option"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="2dp"
             android:background="@null"
-            android:src="@drawable/bttnoption" />
-        
+            android:src="@drawable/bttnoption"
+            android:tint="#191818" />
+
         <ImageButton
             android:id="@+id/info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
             android:background="@null"
-            android:src="@drawable/bttninfo" />
+            android:src="@drawable/bttninfo"
+            android:tint="#191818" />
     </RelativeLayout>
 
     <ScrollView
@@ -117,6 +119,31 @@
 
                     <View
                         android:id="@+id/linha2"
+                        android:layout_width="250dp"
+                        android:layout_height="3.0dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#ff0000" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/buttonListas"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="buttonListas"
+                        android:text="@string/buttonLista" />
+                        <ImageView
+                            android:layout_alignTop="@id/buttonListas"
+                            android:rotation="-90"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/novo_flag" />
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/linha3"
                         android:layout_width="250dp"
                         android:layout_height="3.0dip"
                         android:layout_marginBottom="5dp"

@@ -44,7 +44,7 @@ public class ActivityMain extends Activity {
 		cantosClass = ((CantosClass) getApplicationContext());
 		cantosClass.popular();
 
-		editor.putInt("cantosVersaoAssets", 34);
+		editor.putInt("cantosVersaoAssets", 35);
 		editor.commit();
 
 		if (haveWifiConnection() || haveDataConnection()) {
@@ -206,6 +206,11 @@ public class ActivityMain extends Activity {
 	public void buttonLit(View v) {
 		Intent intent = new Intent(this, ActivityIndiceAlfabetico.class);
 		intent.putExtra("categoria", "4");
+		startActivity(intent);
+	}
+
+	public void buttonListas(View v) {
+		Intent intent = new Intent(this, ActivityListaPersonal.class);
 		startActivity(intent);
 	}
 

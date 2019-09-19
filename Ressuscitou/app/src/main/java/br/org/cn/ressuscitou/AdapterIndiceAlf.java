@@ -7,6 +7,7 @@ import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
+
+	public static final String PREFS_NAME = "ArqConfiguracao";
 	private ArrayList<Canto> listData;
 	private ArrayList<Canto> mOriginalValues; // Original Values
 	private LayoutInflater layoutInflater;
+	private Context context;
 
 	public AdapterIndiceAlf() {
 
@@ -28,6 +32,7 @@ public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 	public AdapterIndiceAlf(Context aContext, ArrayList<Canto> listData) {
 		this.listData = listData;
 		layoutInflater = LayoutInflater.from(aContext);
+		this.context = aContext;
 	}
 
 	@Override
@@ -61,16 +66,22 @@ public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 		}
 
 		holder.titulo.setText(listData.get(position).getTitulo());
-		holder.numero.setText(listData.get(position).getNumero());
-		
+
+
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		if ( settings.getBoolean("numeracao2015", false ))
+			holder.numero.setText(listData.get(position).getNumero());
+		else
+			holder.numero.setText(listData.get(position).getNr2019());
+
 		if (listData.get(position).getCategoria() == 1)
 			holder.numero.setBackgroundResource(R.drawable.dotwhite);
 		if (listData.get(position).getCategoria() == 2)
-		holder.numero.setBackgroundResource(R.drawable.dotblue);
+			holder.numero.setBackgroundResource(R.drawable.dotblue);
 		if (listData.get(position).getCategoria() == 3)
-		holder.numero.setBackgroundResource(R.drawable.dotgreen);
+			holder.numero.setBackgroundResource(R.drawable.dotgreen);
 		if (listData.get(position).getCategoria() == 4)
-		holder.numero.setBackgroundResource(R.drawable.dotbeige);
+			holder.numero.setBackgroundResource(R.drawable.dotbeige);
 
 		if (listData.get(position).getUrl().isEmpty()) {
 			holder.img1.setImageResource(R.drawable.aud_n);
@@ -104,7 +115,7 @@ public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 				listData = (ArrayList<Canto>) results.values; // has the filtered values
 				notifyDataSetChanged(); // notifies the data with new filtered values
 			}
- 
+
 			@SuppressLint("DefaultLocale")
 			@Override
 			protected FilterResults performFiltering(CharSequence constraint) {

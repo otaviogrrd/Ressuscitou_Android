@@ -1,7 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".ActivityListaPersonal" >
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -37,9 +40,6 @@
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
-
-            <!-- Lista dos Áudios -->
-
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -48,36 +48,37 @@
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="10dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal" >
 
                     <ImageButton
                         android:id="@+id/newItem"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
+                        android:layout_height="40dp"
                         android:background="@null"
-                        android:src="@drawable/new_item" />
+                        android:src="@drawable/bttnadd_list"
+                        android:onClick="criarLista"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:text="@string/listaPersonal" />
+                        android:text="@string/listaPersonal"
+                        android:onClick="criarLista" />
                 </LinearLayout>
             </RelativeLayout>
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="2dip" />
-            <LinearLayout
+
+            <LinearLayout
                 android:id="@+id/listPersonalizada"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:background="@android:color/white"
-                android:divider="@null"
                 android:orientation="vertical" />
         </LinearLayout>
     </ScrollView>

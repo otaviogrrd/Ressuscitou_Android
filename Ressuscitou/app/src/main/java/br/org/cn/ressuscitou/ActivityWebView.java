@@ -2,8 +2,10 @@ package br.org.cn.ressuscitou;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -12,25 +14,32 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputType;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class ActivityWebView extends Activity {
 
@@ -40,12 +49,7 @@ public class ActivityWebView extends Activity {
     private SharedPreferences.Editor editor;
     private WebView webView;
     private MediaPlayer mPlayer = new MediaPlayer();
-    private ImageButton transButton;
-    private ImageButton capotButton;
     private ImageButton musicButton;
-    private ImageButton backButton;
-    private ImageButton backButton2;
-    private ImageButton scrollButton;
     private LinearLayout controles;
     private ProgressBar progressBar;
     private ProgressBar downBar;
@@ -53,6 +57,7 @@ public class ActivityWebView extends Activity {
     private Thread thread;
     private Handler handler = new Handler();
     private boolean threadRunning = false;
+    private boolean menuOptionsVisible = false;
     private int hasTransp = 0;
     private Dialog dialog;
     private String html;
@@ -88,7 +93,7 @@ public class ActivityWebView extends Activity {
         String path = getFilesDir().getAbsolutePath();
         File file = new File(path, html + ".mp3");
         if (file.exists()) {
-            musicButton.setVisibility(View.VISIBLE);
+            //musicButton.setVisibility(View.VISIBLE);
             criaBotoes();
         }
 
@@ -99,21 +104,21 @@ public class ActivityWebView extends Activity {
             }
         });
 
-        backButton = findViewById(R.id.voltar);
+        ImageButton backButton = findViewById(R.id.voltar);
         backButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 onBackPressed();
             }
         });
-        backButton2 = findViewById(R.id.voltar2);
+        ImageButton backButton2 = findViewById(R.id.voltar2);
         backButton2.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 onBackPressed();
             }
         });
-        scrollButton = findViewById(R.id.scrolld);
+        ImageButton scrollButton = findViewById(R.id.scrolld);
         scrollButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -130,7 +135,8 @@ public class ActivityWebView extends Activity {
             }
         });
 
-        capotButton = findViewById(R.id.capot);
+
+        ImageButton capotButton = findViewById(R.id.capot);
         capotButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -144,7 +150,7 @@ public class ActivityWebView extends Activity {
                 np.setMaxValue(21);
                 int capotSalv = settings.getInt("CAPOT_" + html, 0);
                 np.setValue(capotSalv);
-               //Gets whether the selector wheel wraps when reaching the min/max value.
+                //Gets whether the selector wheel wraps when reaching the min/max value.
                 np.setWrapSelectorWheel(true);
                 np.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
                     @Override
@@ -161,7 +167,7 @@ public class ActivityWebView extends Activity {
                 });
             }
         });
-        transButton = findViewById(R.id.transp);
+        ImageButton transButton = findViewById(R.id.transp);
         transButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -513,13 +519,13 @@ public class ActivityWebView extends Activity {
                     }else if (receiveString.contains("@capot@")) {
                         int capotSalv = settings.getInt("CAPOT_" + html, 0);
                         if (capotSalv != 0) {
-                        receiveString = "<FONT COLOR=\"#8a00e0\">  Salvo: Braçadeira " + capotSalv + "ª Traste</FONT>";
+                            receiveString = "<FONT COLOR=\"#8a00e0\">  Salvo: Braçadeira " + capotSalv + "ª Traste</FONT>";
                             pri = 98;
                         } else {
                             if (receiveString.contains("Braçadeira")) {
                                 stringBuilder.append(receiveString).append("\n");
                             }
-                           continue;
+                            continue;
                         }
                     }else {
                         stringBuilder.append(receiveString).append("\n");
@@ -599,5 +605,173 @@ public class ActivityWebView extends Activity {
             e.printStackTrace();
         }
     }
+    public void escolhe(View view) {
+        settings = getSharedPreferences(PREFS_NAME, 0);
+        String listas = settings.getString("Listas", "" );
+        Gson gson = new Gson();
+        ArrayList<CantoList> data = gson.fromJson(listas, new TypeToken<ArrayList<CantoList>>() {}.getType());
+        if (data == null  || data.size() == 0 ){
+            Toast.makeText(context, context.getString(R.string.crie_uma_lista), Toast.LENGTH_LONG).show();
+            criarLista();
+            return;
+        }
 
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(this, R.style.FullHeightDialog);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item);
+        final Context context = this;
+
+        arrayAdapter.add(context.getString(R.string.listaPersonal));
+        arrayAdapter.add(context.getString(R.string.escolha_lista2));
+
+        builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (which == 0)
+                    criarLista( );
+                else
+                    escolheLista();
+            }
+        });
+        builderSingle.show();
+    }
+
+    public void criarLista(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.FullHeightDialog);
+        builder.setTitle(this.getString(R.string.nome_lista));
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setView(input);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String titulo = input.getText().toString();
+                if (!titulo.equals("")){
+                    settings = getSharedPreferences(PREFS_NAME, 0);
+                    String listas = settings.getString("Listas", "");
+                    Gson gson = new Gson();
+                    ArrayList<CantoList> data = new ArrayList<CantoList>();
+                    ArrayList<CantoList> data2 = gson.fromJson(listas, new TypeToken<ArrayList<CantoList>>() {
+                    }.getType());
+                    if ( data2 != null)
+                        data = data2;
+                    CantoList lista = new CantoList();
+                    lista.setTitulo(titulo);
+                    for (int i = 0; i < data.size(); i++) {
+                        if(data.get(i).getTitulo().equals(titulo)){
+                            Toast.makeText(context, context.getString(R.string.ja_existe), Toast.LENGTH_LONG).show();
+                            criarLista();
+                            return;
+                        }
+                    }
+                    data.add(lista);
+                    listas = gson.toJson(data);
+                    editor = settings.edit();
+
+                    CantosClass cantosClass = new CantosClass();
+                    cantosClass = ((CantosClass) getApplicationContext());
+
+                    CantoList listCanto = new CantoList();
+                    ArrayList<Integer> cantos = new ArrayList<>();
+                    cantos.add(cantosClass.getCantoId(html));
+                    listCanto.setTitulo(titulo);
+                    listCanto.setCantos(cantos);
+
+                    String listaNova = gson.toJson(listCanto);
+                    editor = settings.edit();
+                    editor.putString(titulo,listaNova);
+                    editor.putString("Listas",listas);
+                    editor.apply();
+                    Toast.makeText(context, context.getString(R.string.adicionadoalista), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        builder.show();
+    }
+
+    public void escolheLista( ) {
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(this, R.style.FullHeightDialog);
+        builderSingle.setTitle(context.getString(R.string.escolha_lista));
+
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item);
+        final Context context = this;
+        settings = getSharedPreferences(PREFS_NAME, 0);
+        String listas = settings.getString("Listas", "" );
+        Gson gson = new Gson();
+        ArrayList<CantoList> data = gson.fromJson(listas, new TypeToken<ArrayList<CantoList>>() {}.getType());
+        if (data != null) {
+            for (int i = 0; i < data.size(); i++) {
+                arrayAdapter.add(data.get(i).getTitulo());
+            }
+        }
+        if (data.size() == 0 ){
+            criarLista();
+            return;
+        }
+
+        builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String strName = arrayAdapter.getItem(which);
+                String listaJson = settings.getString(strName, "" );
+                Gson gson = new Gson();
+                CantoList listCanto = gson.fromJson(listaJson, new TypeToken<CantoList>() {}.getType());
+
+                CantosClass cantosClass = new CantosClass();
+                cantosClass = ((CantosClass) getApplicationContext());
+
+                if (listCanto != null) {
+                    ArrayList<Integer> cantos = listCanto.getCantos();
+                    if (cantos.contains(cantosClass.getCantoId(html))) {
+                        Toast.makeText(context, context.getString(R.string.ja_na_lista), Toast.LENGTH_LONG).show();
+                        return;
+                    }  else {
+                        cantos.add(cantosClass.getCantoId(html));
+                    }
+                    listCanto.setCantos(cantos);
+                }else{
+                    listCanto = new CantoList();
+                    ArrayList<Integer> cantos = new ArrayList<>();
+                    cantos.add(cantosClass.getCantoId(html));
+                    listCanto.setTitulo(strName);
+                    listCanto.setCantos(cantos);
+                }
+
+                String listas = gson.toJson(listCanto);
+                editor = settings.edit();
+                editor.putString(strName,listas);
+                editor.apply();
+                Toast.makeText(context, context.getString(R.string.adicionadoalista), Toast.LENGTH_LONG).show();
+
+            }
+        });
+        builderSingle.show();
+    }
+    public void  hideShowAnimate( int id, int visib, Animation anima ){
+        ImageButton imageButton =  findViewById(id);
+        imageButton.startAnimation(anima);
+        imageButton.setVisibility(visib);
+    }
+    public void showMenu(View view) {
+        Animation animation;
+        int visibility;
+        if ( menuOptionsVisible ) {
+            animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_down);
+            visibility = View.INVISIBLE;
+            menuOptionsVisible = false;
+        }else {
+            animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slide_up);
+            visibility = View.VISIBLE;
+            menuOptionsVisible = true;
+        }
+
+        hideShowAnimate(R.id.scrolld,visibility,animation);
+        hideShowAnimate(R.id.capot,visibility,animation);
+        hideShowAnimate(R.id.transp,visibility,animation);
+        hideShowAnimate(R.id.addLista,visibility,animation);
+        if (!getIntent().getStringExtra("url").isEmpty())
+            if (!mPlayer.isPlaying())
+                hideShowAnimate(R.id.music,visibility,animation);
+
+    }
 }

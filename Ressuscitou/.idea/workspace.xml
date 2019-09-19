@@ -14,6 +14,9 @@
       </layout>
     </layouts>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
@@ -28,8 +31,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="RX8M305GL2J" />
   <component name="ExternalProjectsData">
@@ -58,18 +60,36 @@
     <favorites_list name="Ressuscitou" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_webview.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+            <state relative-caret-position="198">
+              <caret line="256" column="42" selection-start-line="256" selection-start-column="42" selection-end-line="256" selection-end-column="42" />
             </state>
           </provider>
-          <provider editor-type-id="android-manifest" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/round.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="resourceFile" />
+        <option value="valueResourceFile" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -79,9 +99,30 @@
       <find>material</find>
       <find>android:textColor=&quot;@android:color/white&quot;</find>
       <find>bfbfbf</find>
+      <find>settings</find>
+      <find>onres</find>
+      <find>setOnClickListener</find>
+      <find>Righ</find>
+      <find>capotButton</find>
+      <find>capo</find>
+      <find>Toast</find>
+      <find>intent</find>
+      <find>backButton</find>
+      <find>prog</find>
+      <find>escalaAmericanaTxt</find>
+      <find>onProgressUpdate</find>
+      <find>numeracao2019</find>
+      <find>dotwhite</find>
     </findStrings>
+    <replaceStrings>
+      <replace>numeracao2015</replace>
+      <replace />
+    </replaceStrings>
     <dirStrings>
       <dir>C:\git\Ressuscitou_Android\Ressuscitou\app</dir>
+      <dir>C:\git\Ressuscitou_Android\Ressuscitou\app\src\main\java\br\org\cn\ressuscitou</dir>
+      <dir>C:\git\Ressuscitou_Android\Ressuscitou\app\src\main\res</dir>
+      <dir>C:\git\Ressuscitou_Android\Ressuscitou\app\src\main\res\layout</dir>
     </dirStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -94,30 +135,45 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/capot.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityWebView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_capotraste.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_webview.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_indice_liturgico.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_indice_alfabetico.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_transposicao.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/GetCantos.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/GetMessages.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/DownloadTaskMult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/DownloadTaskMultCopy.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityConfiguracoes.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/CantosClass.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/Canto.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityIndiceAlfabetico.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/CantoList.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/CantosClass.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/slide_up.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/slide_down.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/slide_up.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/slide_down.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/round.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_capotraste.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_lista_personal.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityIndiceLiturgico.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityMain.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_indice_alfabetico.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityIndiceAlfabetico.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityListaPersonal.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_webview.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_configuracoes.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityMain.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/AdapterIndiceAlf.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityConfiguracoes.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityWebView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/AdapterListaPersonal.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_personal.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/round.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
@@ -160,10 +216,65 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ressuscitou" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ressuscitou" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ressuscitou" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ressuscitou" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="drawable-xhdpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ressuscitou" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ressuscitou" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="values" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ressuscitou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ressuscitou" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="values-sw600dp" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -175,12 +286,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="RX8M305GL2J" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-09-10T19:38:47.160Z" />
     <property name="ExportApk.ApkPath" value="C:\Users\Admin\Desktop" />
     <property name="ExportApk.BuildType" value="release" />
     <property name="ExportApk.BuildVariants" value="release" />
@@ -189,16 +300,22 @@
     <property name="ExportApk.SignV2" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="RX8M305GL2J" />
-    <property name="last_opened_file_path" value="D:/COISAS OTÁVIO/igreja/Projetos APPs/jpa" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="instant.run" />
+    <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\git\Ressuscitou_Android\Ressuscitou\app\src\main\res\drawable-xhdpi" />
+      <recent name="C:\git\Ressuscitou_Android\Ressuscitou\app\src\main\res\anim" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\git\Ressuscitou_Android\Ressuscitou\app\src\main\res\drawable-xhdpi" />
+      <recent name="C:\git\Ressuscitou_Android\Ressuscitou\app\src\main\res\xml" />
       <recent name="C:\git\Ressuscitou_Android\Ressuscitou\app\src\main\res\layout" />
     </key>
   </component>
@@ -318,11 +435,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
-      <window_info id="Resources Explorer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.25302014" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
@@ -330,61 +445,30 @@
       <window_info id="Favorites" order="5" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
       <window_info id="Captures" order="6" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="7" />
+      <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32909605" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32909605" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.62281877" weight="0.3983051" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49463087" weight="0.32719547" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6221477" weight="0.398017" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932885" weight="0.32909605" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49463087" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4986577" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" sideWeight="0.49395972" visible="true" weight="0.2407932" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5053691" side_tool="true" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Logcat" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5053691" side_tool="true" weight="0.32719547" />
+      <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49932885" weight="0.32909605" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4986577" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
+      <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" weight="0.3295302" />
       <window_info anchor="right" id="Gradle" order="5" weight="0.3295302" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Preview" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.25302014" />
-      <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Build Variants" order="3" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.5010526" side_tool="true" weight="0.25302014" />
-      <window_info id="Captures" order="6" weight="0.25" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32909605" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3983051" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932885" weight="0.32909605" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49798658" weight="0.32909605" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50201344" side_tool="true" weight="0.32909605" />
-      <window_info anchor="bottom" id="Logcat" order="10" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49932885" weight="0.32909605" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
-      <window_info anchor="right" id="Gradle" order="5" weight="0.3295302" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Preview" order="8" />
-    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -392,6 +476,16 @@
     </ignored-roots>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/GetCantos.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
         <watch expression="multDown" />
@@ -399,225 +493,371 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/os/Binder.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_lista_personal.xml">
-      <provider editor-type-id="text-editor" />
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/os/Looper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/widget/BaseAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding>
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/content/ContextWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="107" column="29" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/data/res/layout/select_dialog_singlechoice.xml">
       <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/widget/ImageButton.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="5" selection-start-line="15" selection-start-column="40" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/java/lang/Object.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="2663" column="37" selection-start-line="2663" selection-start-column="37" selection-end-line="2663" selection-end-column="37" />
+          <folding>
+            <element signature="e#75343#75344#0" expanded="true" />
+            <element signature="e#75394#75395#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/banner2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bttntrans.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ctrlfwrd.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bttnoption.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bttncapo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bttninfo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bttndown.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bttnmenu.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/view/animation/TranslateAnimation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/slide_up.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/slide_down.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/widget/LinearLayout.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="388" column="30" selection-start-line="388" selection-start-column="30" selection-end-line="388" selection-end-column="30" />
+          <folding>
+            <element signature="e#11658#11659#0" expanded="true" />
+            <element signature="e#11709#11710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/widget/ImageView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="267" column="16" selection-start-line="267" selection-start-column="16" selection-end-line="267" selection-end-column="16" />
+          <folding>
+            <element signature="e#6998#6999#0" expanded="true" />
+            <element signature="e#7049#7050#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_capotraste.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/CantoList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_lista_personal.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityIndiceLiturgico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_indice_liturgico.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_indice_alfabetico.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="86" column="25" lean-forward="true" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/round_transp_50.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_configuracoes.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="211" column="57" selection-start-line="211" selection-start-column="57" selection-end-line="211" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/AdapterIndiceLiturgico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityIndiceAlfabetico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="25" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/Canto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityImageView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/customview/R.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_lista_personal.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_lista_audio.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-sw720dp-land/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-sw600dp/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/br/org/cn/ressuscitou/R.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_webview.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_imageview.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_indice_alfabetico.xml">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/os/AsyncTask.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="38" lean-forward="true" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+        <state>
+          <folding>
+            <element signature="e#0#2364#0" expanded="true" />
+          </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_indice_liturgico.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/CantosClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityConfiguracoes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-655">
+          <caret line="119" column="51" selection-start-line="119" selection-start-column="51" selection-end-line="119" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/AdapterIndiceAlf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/child_indice_liturgico.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="android-dummy://C:/git/Ressuscitou_Android/Ressuscitou//Theme Editor">
-      <provider selected="true" editor-type-id="themeEditor">
-        <state theme-name="AppTheme" module-name="app" proportion="0.67" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_configuracoes.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3672">
-          <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_transposicao.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="191" column="45" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_capotraste.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/push_right.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="35" />
+          <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/GetCantos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="148">
+          <caret line="45" column="64" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_lista_personal.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="68" column="52" selection-end-line="85" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/AdapterListaPersonal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
           <folding>
-            <element signature="e#1715#1756#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2939#4237#0" expanded="true" />
+            <element signature="e#3147#3186#0" expanded="true" />
+            <element signature="e#3368#3413#0" expanded="true" />
+            <element signature="e#3505#4099#0" expanded="true" />
+            <element signature="e#4098#4099#0" expanded="true" />
+            <element signature="e#4236#4237#0" expanded="true" />
+            <element signature="e#4712#4713#0" expanded="true" />
+            <element signature="e#4802#4803#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityWebView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="639" column="62" selection-start-line="639" selection-start-column="62" selection-end-line="642" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        <state relative-caret-position="559">
+          <caret line="106" column="67" selection-start-line="106" selection-start-column="60" selection-end-line="106" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/GetMessages.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityListaPersonal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="47" column="75" selection-start-line="47" selection-start-column="75" selection-end-line="47" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/view/View.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="278" column="35" selection-start-line="278" selection-start-column="35" selection-end-line="278" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/os/AsyncTask.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/DownloadTaskMultCopy.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/DownloadTaskMult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1390">
-          <caret line="81" selection-start-line="79" selection-start-column="12" selection-end-line="99" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityConfiguracoes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityIndiceLiturgico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityIndiceAlfabetico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="80" column="76" selection-start-line="80" selection-start-column="76" selection-end-line="80" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/Canto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1156">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/CantosClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
-          <caret line="62" column="75" selection-start-line="62" selection-start-column="75" selection-end-line="62" selection-end-column="75" />
+        <state relative-caret-position="213">
+          <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1840">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+        <state relative-caret-position="68">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/org/cn/ressuscitou/ActivityWebView.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_webview.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="500" selection-start-line="500" selection-end-line="500" />
+        <state relative-caret-position="198">
+          <caret line="256" column="42" selection-start-line="256" selection-start-column="42" selection-end-line="256" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/round.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
   </component>
   <component name="masterDetails">

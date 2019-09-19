@@ -45,7 +45,7 @@ public class GeradorJson {
 		out2.close();
 		
 		
-		System.out.println("Finalizado");
+		System.out.println("Finalizado, lembre-se de atualizar a versão no arquivo cantos_versao.txt e também na ActivityMain do aplicativo");
 	}
 
 	public static String getStrigao(String path, String numero, String numero_2019) {
@@ -91,6 +91,7 @@ public class GeradorJson {
 				line = line.replaceAll("S1. ", "");
 				line = line.replaceAll("S2. ", "");
 				line = line.replaceAll("S3. ", "");
+				line = line.replaceAll("A1+A2+A3. ", "");
 				line = line.replaceAll("A1. ", "");
 				line = line.replaceAll("A2. ", "");
 				line = line.replaceAll("A3. ", "");

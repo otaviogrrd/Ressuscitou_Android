@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "br.org.cn.ressuscitou"
-        minSdkVersion 14
+        minSdkVersion 19
         targetSdkVersion 29
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_7

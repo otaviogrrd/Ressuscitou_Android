@@ -22,9 +22,6 @@ public class ActivityIndiceLiturgico extends Activity {
 	AdapterIndiceLiturgico adapter;
 	static ArrayList<Canto> data;
 
-	private ImageButton backButton;
-	private ImageButton backButton2;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		final Context context = this;
@@ -66,14 +63,14 @@ public class ActivityIndiceLiturgico extends Activity {
 				return true;
 			}
 		});
-		backButton = findViewById(R.id.voltar);
+		ImageButton backButton = findViewById(R.id.voltar);
 		backButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				onBackPressed();
 			}
 		});
-		backButton2 = findViewById(R.id.voltar2);
+		ImageButton backButton2 = findViewById(R.id.voltar2);
 		backButton2.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -83,21 +80,21 @@ public class ActivityIndiceLiturgico extends Activity {
 	}
 
 	public static LinkedHashMap<String, List<String>> getList() {
-		LinkedHashMap<String, List<String>> hash_temp = new LinkedHashMap<String, List<String>>();
+		LinkedHashMap<String, List<String>> hash_temp = new LinkedHashMap<>();
 
-		List<String> ladve = new ArrayList<String>();
-		List<String> llaud = new ArrayList<String>();
-		List<String> lnata = new ArrayList<String>();
-		List<String> lentr = new ArrayList<String>();
-		List<String> lpasc = new ArrayList<String>();
-		List<String> lquar = new ArrayList<String>();
-		List<String> lpent = new ArrayList<String>();
-		List<String> lvirg = new ArrayList<String>();
-		List<String> lcria = new ArrayList<String>();
-		List<String> lcpaz = new ArrayList<String>();
-		List<String> lfpao = new ArrayList<String>();
-		List<String> lcomu = new ArrayList<String>();
-		List<String> lcfin = new ArrayList<String>();
+		List<String> ladve = new ArrayList<>();
+		List<String> llaud = new ArrayList<>();
+		List<String> lnata = new ArrayList<>();
+		List<String> lentr = new ArrayList<>();
+		List<String> lpasc = new ArrayList<>();
+		List<String> lquar = new ArrayList<>();
+		List<String> lpent = new ArrayList<>();
+		List<String> lvirg = new ArrayList<>();
+		List<String> lcria = new ArrayList<>();
+		List<String> lcpaz = new ArrayList<>();
+		List<String> lfpao = new ArrayList<>();
+		List<String> lcomu = new ArrayList<>();
+		List<String> lcfin = new ArrayList<>();
 		String sadve = "ADVENTO";
 		String snata = "NATAL";		
 		String squar = "QUARESMA";

@@ -1,263 +1,136 @@
 package br.org.cn.ressuscitou;
 
-import java.io.File;
 import java.util.ArrayList;
-
 import android.app.Activity;
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class ActivityListaPersonal extends Activity {
 
-	public static final String PREFS_NAME = "ArqConfiguracao";
-	private SharedPreferences settings;
-	private SharedPreferences.Editor editor;
+    public static final String PREFS_NAME = "ArqConfiguracao";
+    private SharedPreferences settings;
+    private SharedPreferences.Editor editor;
+    private AdapterListaPersonal adapter = null;
+    private LinearLayout listview;
+    private ImageButton backButton;
+    private ImageButton backButton2;
 
-	private AdapterListaAudios adapter = null;
-	private ScrollView scrollView;
-	private LinearLayout listview;
-	private ImageButton backButton;
-	private ImageButton backButton2;
-	private TextView tomTxt;
-	private TextView limparTxt;
-	private TextView wifiTxt;
-	private TextView extTxt;
-	public CheckBox wfOnly;
-	public CheckBox estendido;
-	private TextView downloadAll;
-	private ProgressBar downBar;
-	private LinearLayout downloader;
-	private ArrayList<Canto> data = new ArrayList<Canto>();
-	private ArrayList<String> multDown = new ArrayList<String>();
-	private DownloadTaskMult downloadTaskMult;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+        getActionBar().hide();
+        setContentView(R.layout.activity_lista_personal);
+        settings = getSharedPreferences(PREFS_NAME, 0);
+        buscaListas();
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-		getActionBar().hide();
-		setContentView(R.layout.activity_configuracoes);
-		settings = getSharedPreferences(PREFS_NAME, 0);
-		scrollView = findViewById(R.id.scrollView);
-		scrollView.smoothScrollTo(0, 0);
+        backButton = findViewById(R.id.voltar);
+        backButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                onBackPressed();
+            }
+        });
+        backButton2 = findViewById(R.id.voltar2);
+        backButton2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                onBackPressed();
+            }
+        });
+    }
 
-		CantosClass cantosClass = ((CantosClass) getApplicationContext());
-		data = cantosClass.listCantos;
-		buscaCantos();
+    public void buscaListas() {
 
-		downBar = findViewById(R.id.downloadBar);
-		downloader = findViewById(R.id.downloader);
-		downloader.setVisibility(View.GONE);
+        settings = getSharedPreferences(PREFS_NAME, 0);
+        String listas = settings.getString("Listas", "" );
+        Gson gson = new Gson();
+        ArrayList<CantoList> data = gson.fromJson(listas, new TypeToken<ArrayList<CantoList>>() {}.getType());
+        ArrayList<CantoList> data2 = new ArrayList<CantoList>();
+        data2.clear();
 
-		downloadAll = findViewById(R.id.downlAll);
-		downloadAll.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				apaga();
-				downloadAll();
-			}
-		});
+        if (data != null) {
+            for (int i = 0; i < data.size(); i++) {
+                data2.add(data.get(i));
+            }
+            if (adapter != null) {
+                adapter.setListData(data2);
+                adapter.notifyDataSetChanged();
+                listview.removeViews(0,listview.getChildCount());
+            } else {
+                adapter = new AdapterListaPersonal(this, data2);
+            }
+            listview = findViewById(R.id.listPersonalizada);
+            for (int i = 0; i < adapter.getCount(); i++) {
+                View view = adapter.getView(i, null, listview);
+                listview.addView(view);
+            }
 
-		tomTxt = findViewById(R.id.tom);
-		tomTxt.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				descobrir_tom();
-			}
-		});
+        }
+    }
 
-		limparTxt = findViewById(R.id.limpar);
-		limparTxt.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				limparTransp();
-			}
-		});
+    public void makeToast(CharSequence charSequence) {
+        Toast.makeText(this, charSequence, Toast.LENGTH_SHORT).show();
+    }
 
-		wfOnly = findViewById(R.id.wifiOnly);
-		if (settings.getBoolean("wfOnly", false))
-			wfOnly.setChecked(true);
-		wfOnly.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				marca_chckBox(wfOnly, "wfOnly");
-			}
-		});
-		wifiTxt = findViewById(R.id.wifiTxt);
-		wifiTxt.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				txt_marca_chckBox(wfOnly, "wfOnly");
-			}
-		});
+    public void criarLista(final View view) {
+        final Context context = this;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(this.getString(R.string.nome_lista));
 
-		estendido = findViewById(R.id.extend);
-		if (settings.getBoolean("estendido", false))
-			estendido.setChecked(true);
-		estendido.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				marca_chckBox(estendido, "estendido");
-			}
-		});
-		extTxt = findViewById(R.id.extTxt);
-		extTxt.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				txt_marca_chckBox(estendido, "estendido");
-			}
-		});
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
+        builder.setView(input);
 
-		backButton = findViewById(R.id.voltar);
-		backButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				onBackPressed();
-			}
-		});
-		backButton2 = findViewById(R.id.voltar2);
-		backButton2.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				onBackPressed();
-			}
-		});
-	}
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String titulo = input.getText().toString();
+                if (!titulo.equals("")){
+                    settings = getSharedPreferences(PREFS_NAME, 0);
+                    String listas = settings.getString("Listas", "");
+                    Gson gson = new Gson();
+                    ArrayList<CantoList> data = new ArrayList<CantoList>();
+                    ArrayList<CantoList> data2 = gson.fromJson(listas, new TypeToken<ArrayList<CantoList>>() {
+                    }.getType());
 
-	public void txt_marca_chckBox(CheckBox chckBox, String str) {
-		if (chckBox.isChecked()) {
-			chckBox.setChecked(false);
-		} else {
-			chckBox.setChecked(true);
-		}
-		marca_chckBox(chckBox, str);
-	}
+                    if ( data2 != null)
+                        data = data2;
 
-	public void marca_chckBox(CheckBox chckBox, String str) {
-		editor = settings.edit();
-		if (chckBox.isChecked()) {
-			editor.putBoolean(str, true);
-		} else {
-			editor.putBoolean(str, false);
-		}
-		editor.commit();
-	}
+                    CantoList lista = new CantoList();
+                    lista.setTitulo(titulo);
 
-	public void limparTransp() {
-		editor = settings.edit();
-		editor.clear();
-		editor.commit();
-		marca_chckBox(wfOnly, "wfOnly");
-		marca_chckBox(estendido, "estendido");
-		makeToast(getText(R.string.eraseText));
-	}
+                    for (int i = 0; i < data.size(); i++) {
+                        if(data.get(i).getTitulo().equals(titulo)){
+                            Toast.makeText(context, context.getString(R.string.ja_existe), Toast.LENGTH_LONG).show();
+                            criarLista(view);
+                            return;
+                        }
+                    }
+                    data.add(lista);
+                    listas = gson.toJson(data);
+                    editor = settings.edit();
+                    editor.putString("Listas",listas);
+                    editor.apply();
+                    buscaListas();
+                }
+            }
+        });
 
-	public void apaga() {
-		String path = getFilesDir().getAbsolutePath();
-		for (int i = 0; i < data.size(); i++) {
-			if (data.get(i).getUrl() != "") {
-				File file = new File(path, data.get(i).getHtml() + ".mp3");
-				if (file.exists() && file.length() == 0) {
-					file.delete();
-				}
-			}
-		}
-		listview.removeAllViews();
-		buscaCantos();
-	}
-
-	@SuppressWarnings("unchecked")
-	public void downloadAll() {
-		if (downloader.getVisibility() == View.GONE) {
-			multDown.clear();
-			String path = getFilesDir().getAbsolutePath();
-			for (int i = 0; i < data.size(); i++) {
-				if (data.get(i).getUrl() != "") {
-					File file = new File(path, data.get(i).getHtml() + ".mp3");
-					if (!file.exists()) {
-						multDown.add(data.get(i).getUrl());
-						multDown.add(data.get(i).getHtml());
-					}
-				}
-			}
-			downloader.setVisibility(View.VISIBLE);
-			downloadTaskMult = new DownloadTaskMult(this, downBar, downloader);
-			downloadTaskMult.execute(multDown);
-		} else {
-			apaga();
-		}
-	}
-
-	public void descobrir_tom() {
-		Uri uri = Uri.parse("http://neo-transposer.leviticus.co.tz/es/login");
-		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-		startActivity(intent);
-	}
-
-	public void buscaCantos() {
-		ArrayList<Audio> data2 = new ArrayList<Audio>();
-		String path = getFilesDir().getAbsolutePath();
-		data2.clear();
-		for (int i = 0; i < data.size(); i++) {
-			File file = new File(path, data.get(i).getHtml() + ".mp3");
-			if (file.exists()) {
-				String titulo = data.get(i).getTitulo();
-				String html = data.get(i).getHtml();
-
-				String value = null;
-				long Filesize = file.length() / 1024;
-				if (Filesize >= 1024)
-					value = Filesize / 1024 + "." + Filesize % 1024 + " Mb";
-				else
-					value = Filesize + " Kb";
-				data2.add(new Audio(titulo, value, html));
-			}
-		}
-		adapter = new AdapterListaAudios(this, data2);
-
-		listview = findViewById(R.id.listView1);
-
-		for (int i = 0; i < adapter.getCount(); i++) {
-			View view = adapter.getView(i, null, listview);
-			listview.addView(view);
-		}
-
-		findViewById(R.id.apagar).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				String path = getFilesDir().getAbsolutePath();
-				ArrayList<String> list = adapter.getSelected();
-				int count = 0;
-				for (int i = 0; i < list.size(); i++) {
-					File file = new File(path, list.get(i) + ".mp3");
-					if (file.exists()) {
-						file.delete();
-						count++;
-					}
-				}
-
-				if (count > 0)
-					makeToast(count + " " + getText(R.string.deletedAudio).toString());
-
-				listview.removeAllViews();
-				buscaCantos();
-			}
-		});
-	}
-
-	public void makeToast(CharSequence charSequence) {
-		Toast.makeText(this, charSequence, Toast.LENGTH_SHORT).show();
-	}
+        builder.show();
+    }
 }

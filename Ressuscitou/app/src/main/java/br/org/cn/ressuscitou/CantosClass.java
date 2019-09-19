@@ -18,11 +18,21 @@ import android.util.Base64;
 
 public class CantosClass extends Application {
 
-	public ArrayList<Canto> listCantos = new ArrayList<Canto>();
+	public static ArrayList<Canto> listCantos = new ArrayList<Canto>();
 	public static final String PREFS_NAME = "ArqConfiguracao";
 	private SharedPreferences settings;
 	private SharedPreferences.Editor editor;
 
+
+	public int getCantoId( String html) {
+		popular();
+		for (int i = 0; i < listCantos.size(); i++) {
+			if (listCantos.get(i).getHtml().equals(html)) {
+				return listCantos.get(i).getId();
+			}
+		}
+		return 0;
+	}
 
 	public void popular() {
 

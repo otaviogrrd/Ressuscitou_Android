@@ -15,6 +15,7 @@
     <string name="buttonAcord">Acordes</string>
     <string name="buttonArpejos">Arpejos</string>
     <string name="buttonLit">Liturgia</string>
+    <string name="buttonList">Listas</string>
     <string name="buttonLista">Listas Personalizadas</string>
     <string name="buttonElec">Eleição</string>
     <string name="buttonCat">Catecumenato</string>
@@ -30,7 +31,7 @@
     <string name="mensagens">Mensagens: </string>
     <string name="updateLater">Lembrar Depois</string>
     <string name="updateNow">Atualizar Agora</string>
-    <string name="atuaCantos">Atualizando os Cantos</string>
+    <string name="atuaCantos">Atualizando os Cantos...</string>
     <string name="atuaCantosOk">A lista de Cantos foi Atualizada!</string>
 
     <!-- Config texts -->
@@ -38,6 +39,7 @@
     <string name="wifiOnly">Apenas Redes Wi-Fi\n Selecione para não usar Dados Móveis</string>
     <string name="extTxt">Modo Estendido\n Exibe o refrão completo dos cantos substituindo as reticências (…) e as barras de BIS</string>
     <string name="escalaAmericanaTxt">Cifras Americanas\n (Do,Re,Mi,Fa,Sol,La,Si, viram: C,D,E,F,G,A,B)</string>
+    <string name="numeracao2015Txt">Numeração dos cantos conforme Edição 2015</string>
     <string name="tom">Descubra seu Tom</string>
     <string name="limpar">Apagar Transposições Salvas</string>
     <string name="eraseText">Transposições salvas apagadas</string>
@@ -49,7 +51,6 @@
     <string name="todosBaixados">Todos cantos já baixados!</string>
     <string name="selecAUD">Selecionar MP3</string>
     <string name="listaAudio">Lista dos áudios baixados\n Apagar para liberar espaço em disco</string>
-    <string name="listaPersonal">Criar Lista</string>
     <!-- transpor -->
     <string name="t01">Do/Do-</string>
     <string name="t02">Do#/Do#-</string>
@@ -89,5 +90,19 @@
     <string name="spaceErr">Sem espaço em disco</string>
     <!-- Search -->
     <string name="searchHint">Buscar…</string>
-
+    <!-- Lista -->
+    <string name="listaPersonal">Criar Lista</string>
+    <string name="nao_existe_lista">Crie uma lista.</string>
+    <string name="crie_uma_lista">Não existem listas, crie uma.</string>
+    <string name="nome_lista">Nome da Lista:</string>
+    <string name="escolha_lista">Escolha uma lista:</string>
+    <string name="escolha_lista2">Adicionar à uma lista existente</string>
+    <string name="lista_vazia">Lista não contém cantos, adicione cantos!</string>
+    <string name="ja_na_lista">Canto já existe na lista!</string>
+    <string name="ja_existe">Lista já existe, escolha outro nome!</string>
+    <string name="adicionadoalista">Canto adicionado a lista com sucesso!</string>
+    <string name="compartilhar_lista">Compartilhar Lista</string>
+    <string name="compartilhar_msg">Confira a lista que criei no App *Ressucitou*:\n\n</string>
+    <string name="confirmacao">Confirmação</string>
+    <string name="confirm_dele_list">Tem certeza que deseja excluir a lista:\n</string>
 </resources>

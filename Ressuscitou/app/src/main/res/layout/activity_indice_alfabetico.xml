@@ -1,73 +1,104 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentTop="true"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context="br.org.cn.ressuscitou.ActivityIndiceAlfabetico" >
-
-    <RelativeLayout
-        android:id="@+id/back"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#191818" >
-
-        <ImageButton
-            android:id="@+id/voltar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:background="@null"
-            android:src="@drawable/voltar" />
-
-        <ImageButton
-            android:id="@+id/voltar2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_toRightOf="@+id/voltar"
-            android:background="@null"
-            android:src="@drawable/ic_launcher" />
-
-        <TextView
-            android:id="@+id/titulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/voltar2"
-            android:padding="10dp"
-            android:textColor="#9c9c9c"
-            android:textSize="16dp" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin" >
-
-        <EditText
-            android:id="@+id/inputSearch"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+        <RelativeLayout
+            android:id="@+id/back"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/searchHint"
-            android:inputType="textPersonName"
-            android:maxLines="1" 
-            android:padding="8dp"
-            android:layout_margin="8dp"/>
+            android:background="#191818" >
 
-        <ListView
-            android:id="@+id/listview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/inputSearch"
-            android:divider="@null"
-            android:scrollingCache="false" />
-    </RelativeLayout>
+            <ImageButton
+                android:id="@+id/voltar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:src="@drawable/voltar" />
 
-</LinearLayout>
+            <ImageButton
+                android:id="@+id/voltar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/voltar"
+                android:background="@null"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/voltar2"
+                android:padding="10dp"
+                android:textColor="#9c9c9c"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin" >
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_share"
+                android:tint="#000000"
+                android:layout_alignBottom="@id/listview"
+                android:layout_alignEnd="@id/listview"
+                android:layout_alignRight="@id/listview"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/inputSearch"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/searchHint"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:layout_margin="8dp"/>
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/inputSearch"
+                android:divider="@null"
+                android:scrollingCache="false" >
+
+            </ListView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/sharebttn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@id/content"
+        android:layout_alignBottom="@id/content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round"
+        android:onClick="share"
+        android:visibility="gone"
+        android:src="@android:drawable/ic_menu_share"
+        android:tint="#000000" />
+
+</RelativeLayout>

@@ -5,6 +5,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Canto {
 
+	@SerializedName("id")
+	@Expose
+	private int id;
 	@SerializedName("titulo")
 	@Expose
 	private String titulo;
@@ -75,8 +78,9 @@ public class Canto {
 	public Canto() {
 	}
 
-	public Canto(String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo, String htmlBase64, String extBase64) {
+	public Canto(int id, String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo, String htmlBase64, String extBase64) {
 		super();
+		this.id = id;
 		this.titulo = titulo;
 		this.html = html;
 		this.url = url;
@@ -102,8 +106,9 @@ public class Canto {
 	}
 
 
-	public Canto(String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo) {
+	public Canto(int id, String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo) {
 		super();
+		this.id = id;
 		this.titulo = titulo;
 		this.html = html;
 		this.url = url;
@@ -124,6 +129,10 @@ public class Canto {
 		this.cfin = cfin;
 		this.conteudo = conteudo;
 	}
+
+	public int getId() { return id; }
+
+	public void setId(int id) { this.id = id; }
 
 	public String getTitulo() {
 		return titulo;

@@ -27,19 +27,11 @@ public class ActivityConfiguracoes extends Activity {
 	private SharedPreferences.Editor editor;
 
 	private AdapterListaAudios adapter = null;
-	private ScrollView scrollView;
 	private LinearLayout listview;
-	private ImageButton backButton;
-	private ImageButton backButton2;
-	private TextView tomTxt;
-	private TextView limparTxt;
-	private TextView wifiTxt;
-	private TextView extTxt;
-	private TextView escalaAmericanaTxt;
 	public CheckBox wfOnly;
 	public CheckBox estendido;
 	public CheckBox escalaAmericana;
-	private TextView downloadAll;
+	public CheckBox numeracao2015;
 	private ArrayList<Canto> data = new ArrayList<Canto>();
 	private ArrayList<String> multDown = new ArrayList<String>();
 	public ProgressBar downBar;
@@ -53,7 +45,7 @@ public class ActivityConfiguracoes extends Activity {
 		getActionBar().hide();
 		setContentView(R.layout.activity_configuracoes);
 		settings = getSharedPreferences(PREFS_NAME, 0);
-		scrollView = findViewById(R.id.scrollView);
+		ScrollView scrollView = findViewById(R.id.scrollView);
 		scrollView.smoothScrollTo(0, 0);
 
 		CantosClass cantosClass = ((CantosClass) getApplicationContext());
@@ -64,7 +56,7 @@ public class ActivityConfiguracoes extends Activity {
 		downloader = findViewById(R.id.downloader);
 		downloader.setVisibility(View.GONE);
 
-		downloadAll = findViewById(R.id.downlAll);
+		TextView downloadAll = findViewById(R.id.downlAll);
 		downloadAll.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -73,7 +65,7 @@ public class ActivityConfiguracoes extends Activity {
 			}
 		});
 
-		tomTxt = findViewById(R.id.tom);
+		TextView tomTxt = findViewById(R.id.tom);
 		tomTxt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -81,7 +73,7 @@ public class ActivityConfiguracoes extends Activity {
 			}
 		});
 
-		limparTxt = findViewById(R.id.limpar);
+		TextView limparTxt = findViewById(R.id.limpar);
 		limparTxt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -98,15 +90,15 @@ public class ActivityConfiguracoes extends Activity {
 				marca_chckBox(wfOnly, "wfOnly");
 			}
 		});
-		wifiTxt = findViewById(R.id.wifiTxt);
+		TextView wifiTxt = findViewById(R.id.wifiTxt);
 		wifiTxt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				txt_marca_chckBox(wfOnly, "wfOnly");
 			}
 		});
-	
-		
+
+
 		escalaAmericana = findViewById(R.id.escalaAmericana);
 		if (settings.getBoolean("escalaAmericana", false))
 			escalaAmericana.setChecked(true);
@@ -116,14 +108,31 @@ public class ActivityConfiguracoes extends Activity {
 				marca_chckBox(escalaAmericana, "escalaAmericana");
 			}
 		});
-		escalaAmericanaTxt = findViewById(R.id.escalaAmericanaTxt);
+		TextView escalaAmericanaTxt = findViewById(R.id.escalaAmericanaTxt);
 		escalaAmericanaTxt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				txt_marca_chckBox(escalaAmericana, "escalaAmericana");
 			}
 		});
-	
+
+
+		numeracao2015 = findViewById(R.id.numeracao2015);
+		if (settings.getBoolean("numeracao2015", false))
+			numeracao2015.setChecked(true);
+		numeracao2015.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				marca_chckBox(numeracao2015, "numeracao2015");
+			}
+		});
+		TextView numeracao2015Txt = findViewById(R.id.numeracao2015Txt);
+		numeracao2015Txt.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				txt_marca_chckBox(numeracao2015, "numeracao2015");
+			}
+		});
 
 		estendido = findViewById(R.id.extend);
 		if (settings.getBoolean("estendido", true))
@@ -133,8 +142,8 @@ public class ActivityConfiguracoes extends Activity {
 			public void onClick(View arg0) {
 				marca_chckBox(estendido, "estendido");
 			}
-		});	
-		extTxt = findViewById(R.id.extTxt);
+		});
+		TextView extTxt = findViewById(R.id.extTxt);
 		extTxt.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -142,14 +151,14 @@ public class ActivityConfiguracoes extends Activity {
 			}
 		});
 
-		backButton = findViewById(R.id.voltar);
+		ImageButton backButton = findViewById(R.id.voltar);
 		backButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				onBackPressed();
 			}
 		});
-		backButton2 = findViewById(R.id.voltar2);
+		ImageButton backButton2 = findViewById(R.id.voltar2);
 		backButton2.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -184,6 +193,7 @@ public class ActivityConfiguracoes extends Activity {
 		marca_chckBox(wfOnly, "wfOnly");
 		marca_chckBox(estendido, "estendido");
 		marca_chckBox(escalaAmericana, "escalaAmericana");
+		marca_chckBox(numeracao2015, "numeracao2015");
 		makeToast(getText(R.string.eraseText));
 	}
 

@@ -3,6 +3,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Canto {
 
+@SerializedName("id")
+@Expose
+private int id;
 @SerializedName("titulo")
 @Expose
 private String titulo;
@@ -73,8 +76,9 @@ private String extBase64;
 public Canto() {
 }
 
-public Canto(String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo, String htmlBase64, String extBase64) {
+public Canto(int id, String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo, String htmlBase64, String extBase64) {
 super();
+this.id = id;
 this.titulo = titulo;
 this.html = html;
 this.url = url;
@@ -100,13 +104,15 @@ this.extBase64 = extBase64;
 }
 
 
-public Canto(String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo) {
+public Canto(int id, String titulo, String html, String url, Integer categoria, String numero, String nr2019, Boolean adve, Boolean laud, Boolean entr, Boolean nata, Boolean quar, Boolean pasc, Boolean pent, Boolean virg, Boolean cria, Boolean cpaz, Boolean fpao, Boolean comu, Boolean cfin, String conteudo) {
 super();
+this.id = id;
 this.titulo = titulo;
 this.html = html;
 this.url = url;
 this.categoria = categoria;
 this.numero = numero;
+this.nr2019 = nr2019;
 this.adve = adve;
 this.laud = laud;
 this.entr = entr;
@@ -123,6 +129,10 @@ this.cfin = cfin;
 this.conteudo = conteudo;
 }
 
+public int getId() { return id; }
+
+public void setId(int id) { this.id = id; }
+	
 public String getTitulo() {
 return titulo;
 }

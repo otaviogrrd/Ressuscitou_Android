@@ -1,172 +1,261 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_view"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".ActivityWebView">
 
-    <RelativeLayout
-        android:id="@+id/back"
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#191818" >
-
-        <ImageButton
-            android:id="@+id/voltar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:background="@null"
-            android:src="@drawable/voltar" />
-
-        <ImageButton
-            android:id="@+id/voltar2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_toRightOf="@+id/voltar"
-            android:background="@null"
-            android:src="@drawable/ic_launcher" />
-
-        <LinearLayout
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+        <RelativeLayout
+            android:id="@+id/back"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/music"
-            android:layout_toRightOf="@+id/voltar2"
-            android:gravity="fill_vertical"
-            android:orientation="horizontal" >
+            android:background="#191818" >
+
+            <ImageButton
+                android:id="@+id/voltar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:src="@drawable/voltar" />
+
+            <ImageButton
+                android:id="@+id/voltar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/voltar"
+                android:background="@null"
+                android:src="@drawable/ic_launcher" />
 
             <LinearLayout
-                android:id="@+id/downloader"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical|center_horizontal"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"
-                    android:text="@string/downTxt"
-                    android:textColor="#9c9c9c"
-                    android:textSize="13sp" />
-
-                <ProgressBar
-                    android:id="@+id/downloadBar"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:indeterminate="false"
-                    android:minHeight="5dp"
-                    android:minWidth="150dp"
-                    android:padding="5dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/controlador"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical" >
+                android:gravity="fill_vertical"
+                android:orientation="horizontal" >
 
                 <LinearLayout
+                    android:id="@+id/downloader"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:layout_marginRight="5dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal" >
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/ctrlrwnd"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:src="@drawable/ctrlrwnd" />
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="5dp"
+                        android:text="@string/downTxt"
+                        android:textColor="#9c9c9c"
+                        android:textSize="13sp" />
 
-                    <ImageButton
-                        android:id="@+id/ctrlpause"
+                    <ProgressBar
+                        android:id="@+id/downloadBar"
+                        style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:src="@drawable/ctrlpause" />
-
-                    <ImageButton
-                        android:id="@+id/ctrlstop"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:src="@drawable/ctrlstop" />
-
-                    <ImageButton
-                        android:id="@+id/ctrlfwrd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:src="@drawable/ctrlfwrd" />
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:indeterminate="false"
+                        android:minWidth="150dp"
+                        android:minHeight="5dp"
+                        android:padding="5dp" />
                 </LinearLayout>
 
-                <ProgressBar
-                    android:id="@+id/progressBar1"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/controlador"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_marginRight="5dp"
-                    android:indeterminate="false"
-                    android:minHeight="1dp"
-                    android:minWidth="150dp" />
-            </LinearLayout>
-        </LinearLayout>
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
 
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        tools:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/ctrlrwnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:src="@drawable/ctrlrwnd" />
+
+                        <ImageButton
+                            android:id="@+id/ctrlpause"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:src="@drawable/ctrlpause" />
+
+                        <ImageButton
+                            android:id="@+id/ctrlstop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:src="@drawable/ctrlstop" />
+
+                        <ImageButton
+                            android:id="@+id/ctrlfwrd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:src="@drawable/ctrlfwrd" />
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/progressBar1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginEnd="5dp"
+                        android:indeterminate="false"
+                        android:minHeight="1dp"
+                        android:minWidth="150dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--
+                        <ImageButton
+                            android:id="@+id/music"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@+id/scrolld"
+                            android:background="@null"
+                            android:src="@drawable/bttnmusic" />
+
+                        <ImageButton
+                            android:id="@+id/scrolld"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="6dp"
+                            android:layout_toLeftOf="@+id/capot"
+                            android:background="@null"
+                            android:src="@drawable/scrolld" />
+
+                        <ImageButton
+                            android:id="@+id/capot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@+id/transp"
+                            android:background="@null"
+                            android:src="@drawable/bttncapo" />
+
+                        <ImageButton
+                            android:id="@+id/transp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@null"
+                            android:src="@drawable/bttntrans" /> -->
+        </RelativeLayout>
+
+        <WebView
+            android:id="@+id/webView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="45dp"
+        android:orientation="vertical"
+        android:layout_alignEnd="@id/linearlayout"
+        android:layout_alignBottom="@id/linearlayout">
+        <!--android:animateLayoutChanges="true" > -->
         <ImageButton
             android:id="@+id/music"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@+id/scrolld"
-            android:background="@null"
-            android:src="@drawable/bttnmusic" />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round"
+            android:tint="#000000"
+            android:visibility="gone"
+            android:src="@drawable/bttnmusic"/>
 
         <ImageButton
             android:id="@+id/scrolld"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="6dp"
-            android:layout_toLeftOf="@+id/capot"
-            android:background="@null"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round"
+            android:tint="#000000"
+            android:visibility="gone"
             android:src="@drawable/scrolld" />
 
         <ImageButton
             android:id="@+id/capot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@+id/transp"
-            android:background="@null"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round"
+            android:tint="#000000"
+            android:visibility="gone"
             android:src="@drawable/bttncapo" />
 
         <ImageButton
             android:id="@+id/transp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="2dp"
-            android:background="@null"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round"
+            android:tint="#000000"
+            android:visibility="gone"
             android:src="@drawable/bttntrans" />
-    </RelativeLayout>
 
-    <WebView
-        android:id="@+id/webView1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        <ImageButton
+            android:id="@+id/addLista"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round"
+            android:tint="#000000"
+            android:visibility="gone"
+            android:onClick="escolhe"
+            android:src="@android:drawable/ic_input_add"/>
 
-</LinearLayout>
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@drawable/round"
+            android:tint="#000000"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/menuOpions"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@id/linearlayout"
+        android:layout_alignBottom="@id/linearlayout"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round"
+        android:tint="#000000"
+        android:onClick="showMenu"
+        android:src="@drawable/bttnmenu" />
+</RelativeLayout>
