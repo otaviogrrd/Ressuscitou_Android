@@ -1,4 +1,6 @@
+import java.awt.Desktop;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,7 +22,7 @@ public class GeradorJson {
 
 		CantosClass cantosClass = new CantosClass();
 		cantosClass.popular();
-		
+
 		for (int i = 0; i < cantosClass.listCantos.size(); i++) {
 
 			String path = "./../html/" + cantosClass.listCantos.get(i).getHtml() + ".HTML";
@@ -31,7 +33,8 @@ public class GeradorJson {
 			base64 = DatatypeConverter.printBase64Binary(Files.readAllBytes(Paths.get(path)));
 			cantosClass.listCantos.get(i).setExtBase64(base64);
 
-			String conteudo = getStrigao(path, cantosClass.listCantos.get(i).getNumero(), cantosClass.listCantos.get(i).getNr2019() );
+			String conteudo = getStrigao(path, cantosClass.listCantos.get(i).getNumero(),
+					cantosClass.listCantos.get(i).getNr2019());
 			conteudo = conteudo.trim();
 			cantosClass.listCantos.get(i).setConteudo(conteudo);
 		}
@@ -43,9 +46,17 @@ public class GeradorJson {
 		PrintStream out2 = new PrintStream(new FileOutputStream("./../Ressuscitou/app/src/main/assets/cantos.json"));
 		out2.println(gson.toJson(cantosClass.listCantos));
 		out2.close();
-		
-		
-		System.out.println("Finalizado, lembre-se de atualizar a versão no arquivo cantos_versao.txt e também na ActivityMain do aplicativo");
+
+		System.out.println("Finalizado, atualize a versão no arquivo cantos_versao e ActivityMain");
+		Desktop desktop = Desktop.getDesktop();
+		try {
+			File dirToOpen = new File("./../Ressuscitou/app/src/main/java/br/org/cn/ressuscitou/ActivityMain.java");
+			desktop.open(dirToOpen);
+			dirToOpen = new File("./../cantos_versao.txt");
+			desktop.open(dirToOpen);
+		} catch (IllegalArgumentException iae) {
+			System.out.println("File Not Found");
+		}
 	}
 
 	public static String getStrigao(String path, String numero, String numero_2019) {
