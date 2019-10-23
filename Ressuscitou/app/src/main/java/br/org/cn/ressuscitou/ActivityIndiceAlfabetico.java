@@ -25,7 +25,7 @@ public class ActivityIndiceAlfabetico extends Activity {
 
 	public static final String PREFS_NAME = "ArqConfiguracao";
 	String shareBody = "";
-	AdapterIndiceAlf adapter2 = new AdapterIndiceAlf();
+	private AdapterIndiceAlf adapter = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +53,12 @@ public class ActivityIndiceAlfabetico extends Activity {
 			CantoList listCantos = gson.fromJson(listaJson, new TypeToken<CantoList>() {}.getType());
 			if (listCantos != null) {
 				ArrayList<Integer> cantos = listCantos.getCantos();
-				for (int i = 0; i < data2.size(); i++) {
-					for (int j = 0; j < cantos.size(); j++) {
+				if ( cantos.size() == 0 ){
+					Toast.makeText(context, context.getString(R.string.lista_vazia), Toast.LENGTH_LONG).show();
+					onBackPressed();
+				}
+				for (int j = 0; j < cantos.size(); j++) {
+					for (int i = 0; i < data2.size(); i++) {
 						if (data2.get(i).getId() == cantos.get(j)) {
 							data.add(data2.get(i));
 							shareBody = shareBody+ "\n"+ number + " - " + data2.get(i).getTitulo();
@@ -66,7 +70,6 @@ public class ActivityIndiceAlfabetico extends Activity {
 				Toast.makeText(context, context.getString(R.string.lista_vazia), Toast.LENGTH_LONG).show();
 				onBackPressed();
 			}
-
 			ImageButton shareBttn = findViewById(R.id.sharebttn);
 			shareBttn.setVisibility(View.VISIBLE);
 		}else {
@@ -80,9 +83,8 @@ public class ActivityIndiceAlfabetico extends Activity {
 		}
 		ListView listview = findViewById(R.id.listview);
 		listview.removeAllViewsInLayout();
-		AdapterIndiceAlf adapter = new AdapterIndiceAlf(this, data);
+		adapter = new AdapterIndiceAlf(this, data, listaPersonalizada);
 		listview.setAdapter(adapter);
-		adapter2 = adapter;
 
 		EditText inputSearch;
 		inputSearch = findViewById(R.id.inputSearch);
@@ -90,7 +92,7 @@ public class ActivityIndiceAlfabetico extends Activity {
 			@Override
 			public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
 				// When user changed the Text
-				ActivityIndiceAlfabetico.this.adapter2.getFilter().filter(cs.toString());
+				ActivityIndiceAlfabetico.this.adapter.getFilter().filter(cs.toString());
 			}
 
 			@Override

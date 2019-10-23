@@ -717,8 +717,7 @@ public class ActivityWebView extends Activity {
                 Gson gson = new Gson();
                 CantoList listCanto = gson.fromJson(listaJson, new TypeToken<CantoList>() {}.getType());
 
-                CantosClass cantosClass = new CantosClass();
-                cantosClass = ((CantosClass) getApplicationContext());
+                CantosClass cantosClass = ((CantosClass) getApplicationContext());
 
                 if (listCanto != null) {
                     ArrayList<Integer> cantos = listCanto.getCantos();

@@ -26,8 +26,6 @@ public class ActivityListaPersonal extends Activity {
     private SharedPreferences.Editor editor;
     private AdapterListaPersonal adapter = null;
     private LinearLayout listview;
-    private ImageButton backButton;
-    private ImageButton backButton2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,14 +36,14 @@ public class ActivityListaPersonal extends Activity {
         settings = getSharedPreferences(PREFS_NAME, 0);
         buscaListas();
 
-        backButton = findViewById(R.id.voltar);
+        ImageButton backButton = findViewById(R.id.voltar);
         backButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 onBackPressed();
             }
         });
-        backButton2 = findViewById(R.id.voltar2);
+        ImageButton backButton2 = findViewById(R.id.voltar2);
         backButton2.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -64,9 +62,7 @@ public class ActivityListaPersonal extends Activity {
         data2.clear();
 
         if (data != null) {
-            for (int i = 0; i < data.size(); i++) {
-                data2.add(data.get(i));
-            }
+            data2.addAll(data);
             if (adapter != null) {
                 adapter.setListData(data2);
                 adapter.notifyDataSetChanged();
@@ -79,7 +75,6 @@ public class ActivityListaPersonal extends Activity {
                 View view = adapter.getView(i, null, listview);
                 listview.addView(view);
             }
-
         }
     }
 

@@ -1,13 +1,16 @@
 package br.org.cn.ressuscitou;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
@@ -52,7 +55,7 @@ public class CantosClass extends Application {
 					in = getApplicationContext().openFileInput("cantos.json");
 				} else {
 					editor = settings.edit();
-					editor.putInt("cantosVersaoDown",0);
+					editor.putInt("cantosVersaoDown", 0);
 					editor.commit();
 				}
 			}
@@ -90,6 +93,8 @@ public class CantosClass extends Application {
 				fos.close();
 				fos = null;
 			}
+		} catch (JsonSyntaxException e) {
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

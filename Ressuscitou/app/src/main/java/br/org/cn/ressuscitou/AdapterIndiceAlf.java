@@ -15,24 +15,33 @@ import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 
 	public static final String PREFS_NAME = "ArqConfiguracao";
+	private SharedPreferences settings;
+	private SharedPreferences.Editor editor;
 	private ArrayList<Canto> listData;
 	private ArrayList<Canto> mOriginalValues; // Original Values
 	private LayoutInflater layoutInflater;
 	private Context context;
+	private String listapersonal;
 
 	public AdapterIndiceAlf() {
 
 	}
 
-	public AdapterIndiceAlf(Context aContext, ArrayList<Canto> listData) {
+	public AdapterIndiceAlf(Context aContext, ArrayList<Canto> listData, String listapersonal) {
 		this.listData = listData;
 		layoutInflater = LayoutInflater.from(aContext);
 		this.context = aContext;
+		this.listapersonal = listapersonal;
 	}
 
 	@Override
@@ -52,21 +61,21 @@ public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 
 	@SuppressLint("InflateParams")
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
+	public View getView(final int position, View convertView, final ViewGroup parent) {
+		final ViewHolder holder;
 		if (convertView == null) {
 			convertView = layoutInflater.inflate(R.layout.item_indice_alf, null);
 			holder = new ViewHolder();
 			holder.titulo = convertView.findViewById(R.id.title);
 			holder.numero = convertView.findViewById(R.id.number);
-			holder.img1 = convertView.findViewById(R.id.img1);
+			holder.img_mp3_avaiable = convertView.findViewById(R.id.img_mp3_avaiable);
+			holder.trash = convertView.findViewById(R.id.trash);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
 		holder.titulo.setText(listData.get(position).getTitulo());
-
 
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		if ( settings.getBoolean("numeracao2015", false ))
@@ -84,25 +93,61 @@ public class AdapterIndiceAlf extends BaseAdapter implements Filterable {
 			holder.numero.setBackgroundResource(R.drawable.dotbeige);
 
 		if (listData.get(position).getUrl().isEmpty()) {
-			holder.img1.setImageResource(R.drawable.aud_n);
+			holder.img_mp3_avaiable.setImageResource(R.drawable.aud_n);
 		} else {
 			Context context = parent.getContext();
 			String path = context.getApplicationContext().getFilesDir().getAbsolutePath();
 			File file = new File(path, listData.get(position).getHtml() + ".mp3");
 			if (file.exists()) {
-				holder.img1.setImageResource(R.drawable.aud_d);
+				holder.img_mp3_avaiable.setImageResource(R.drawable.aud_d);
 			} else {
-				holder.img1.setImageResource(R.drawable.aud_y);
+				holder.img_mp3_avaiable.setImageResource(R.drawable.aud_y);
 			}
 		}
+		final int idCanto = listData.get(position).getId();
 
-		return convertView;
+		if (listapersonal != null) {
+			holder.trash.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					removeCanto(idCanto);
+					Toast.makeText(context, "Canto removido da lista.", Toast.LENGTH_SHORT).show();
+					listData.remove(position);
+					notifyDataSetChanged();
+				}
+			});
+		}else{
+			holder.trash.setVisibility(View.GONE);
+		}
+			return convertView;
+	}
+
+
+	public void removeCanto(int idCanto){
+		settings = context.getSharedPreferences(PREFS_NAME, 0);
+		editor = settings.edit();
+		String listaJson = settings.getString(listapersonal, "" );
+		Gson gson = new Gson();
+		CantoList listCanto = gson.fromJson(listaJson, new TypeToken<CantoList>() {}.getType());
+
+		ArrayList<Integer> cantos = listCanto.getCantos();
+		ArrayList<Integer> cantos_copy = new ArrayList<>();
+		for (int j = 0; j < cantos.size(); j++) {
+			if (cantos.get(j) != idCanto ) {
+				cantos_copy.add(cantos.get(j));
+			}
+		}
+		listCanto.setCantos(cantos_copy);
+		String listas = gson.toJson(listCanto);
+		editor.putString(listapersonal,listas);
+		editor.apply();
 	}
 
 	static class ViewHolder {
 		TextView titulo;
 		TextView numero;
-		ImageView img1;
+		ImageView img_mp3_avaiable;
+		ImageView trash;
 	}
 
 	@Override
