@@ -14,11 +14,14 @@ import java.text.Normalizer;
 import javax.xml.bind.DatatypeConverter;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class GeradorJson {
 
 	public static void main(String[] args) throws IOException {
-		Gson gson = new Gson();
+		GsonBuilder gsonBuilder = new GsonBuilder();
+		gsonBuilder = gsonBuilder.setPrettyPrinting();
+		Gson gson = gsonBuilder.create();
 
 		CantosClass cantosClass = new CantosClass();
 		cantosClass.popular();
