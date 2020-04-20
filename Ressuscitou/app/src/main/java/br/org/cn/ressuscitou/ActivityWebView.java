@@ -15,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputType;
+import android.util.Base64;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -30,11 +31,13 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -53,12 +56,14 @@ public class ActivityWebView extends Activity {
     private LinearLayout controles;
     private ProgressBar progressBar;
     private ProgressBar downBar;
+    private TextView scrollCountV;
     private LinearLayout downloader;
     private Thread thread;
     private Handler handler = new Handler();
     private boolean threadRunning = false;
     private boolean menuOptionsVisible = false;
     private int hasTransp = 0;
+    private int scrollCount = 0;
     private Dialog dialog;
     private String html;
 
@@ -74,6 +79,9 @@ public class ActivityWebView extends Activity {
         Intent intent = getIntent();
         html = intent.getStringExtra("html");
         iniciaCanto();
+
+        scrollCountV = findViewById(R.id.scrollCount);
+        scrollCountV.setVisibility(View.GONE);
 
         downBar = findViewById(R.id.downloadBar);
         downloader = findViewById(R.id.downloader);
@@ -122,6 +130,11 @@ public class ActivityWebView extends Activity {
         scrollButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
+
+                scrollCount++;
+                scrollCountV.setText(scrollCount + "X");
+                scrollCountV.setVisibility(View.VISIBLE);
+
                 webView.post(new Runnable() {
                     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
                     @Override
@@ -129,6 +142,9 @@ public class ActivityWebView extends Activity {
                         if (webView.canScrollVertically(+1)) {
                             webView.scrollBy(0, 1);
                             handler.postDelayed(this, 200);
+                        }else{
+                            scrollCount = 0;
+                            scrollCountV.setVisibility(View.GONE);
                         }
                     }
                 });
@@ -263,17 +279,24 @@ public class ActivityWebView extends Activity {
     }
 
     private void iniciaCanto() {
-        String path = "file://" + getApplicationContext().getFilesDir().getAbsolutePath();
-        if (settings.getBoolean("estendido", true)) {
-            path = path + "/EXT_";
-        } else {
-            path = path + "/";
+        CantosClass cantosClass = ((CantosClass) getApplicationContext());
+        Canto canto = cantosClass.getCantoByName(html);
+        try {
+            FileOutputStream fos;
+            fos = getApplicationContext().openFileOutput("temp.html", Context.MODE_PRIVATE);
+            byte[] decodedByteArray = Base64.decode(canto.getHtmlbase64(), Base64.DEFAULT);
+            if (settings.getBoolean("estendido", true)) {
+                decodedByteArray = Base64.decode(canto.getExt_base64(), Base64.DEFAULT);
+            }
+            fos.write(decodedByteArray);
+            fos.flush();
+            fos.close();
+
+            int transSalv = settings.getInt("TRANSP_" + html, 0);
+            transpor(transSalv);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        // montaWeb(path + html + ".HTML");
-
-        int transSalv = settings.getInt("TRANSP_" + html, 0);
-        transpor(transSalv);
 
     }
 
@@ -493,10 +516,7 @@ public class ActivityWebView extends Activity {
         String receiveString = "";
         StringBuilder stringBuilder = new StringBuilder();
         try {
-            String file = html + ".HTML";
-            if (settings.getBoolean("estendido", true)) {
-                file = "EXT_" + file;
-            }
+            String file = "temp.html";
             InputStream in = this.openFileInput(file);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
             // Declaracao de variaveis para logica
@@ -511,7 +531,7 @@ public class ActivityWebView extends Activity {
                     if (receiveString.contains("@transp@")) {
                         int transSalv = settings.getInt("TRANSP_" + html, 0);
                         if (transSalv != 0) {
-                            receiveString = "<FONT COLOR=\"#8a00e0\">  Salvo: Transposição " + escalaTmp[transSalv] + "</FONT>";
+                            receiveString = "<FONT COLOR=\"#8a00e0\">" + getString(R.string.saved) + getString(R.string.transpo) + escalaTmp[transSalv] + "</FONT>";
                             pri = 98;
                         } else {
                             continue;
@@ -519,10 +539,10 @@ public class ActivityWebView extends Activity {
                     }else if (receiveString.contains("@capot@")) {
                         int capotSalv = settings.getInt("CAPOT_" + html, 0);
                         if (capotSalv != 0) {
-                            receiveString = "<FONT COLOR=\"#8a00e0\">  Salvo: Braçadeira " + capotSalv + "ª Traste</FONT>";
+                            receiveString = "<FONT COLOR=\"#8a00e0\">" + getString(R.string.saved) + getString(R.string.capo) + capotSalv + "ª " + getString(R.string.traste) + "</FONT>";
                             pri = 98;
                         } else {
-                            if (receiveString.contains("Braçadeira")) {
+                            if (receiveString.contains(getString(R.string.capo))) {
                                 stringBuilder.append(receiveString).append("\n");
                             }
                             continue;
@@ -746,11 +766,6 @@ public class ActivityWebView extends Activity {
         });
         builderSingle.show();
     }
-    public void  hideShowAnimate( int id, int visib, Animation anima ){
-        ImageButton imageButton =  findViewById(id);
-        imageButton.startAnimation(anima);
-        imageButton.setVisibility(visib);
-    }
     public void showMenu(View view) {
         Animation animation;
         int visibility;
@@ -763,14 +778,24 @@ public class ActivityWebView extends Activity {
             visibility = View.VISIBLE;
             menuOptionsVisible = true;
         }
-
-        hideShowAnimate(R.id.scrolld,visibility,animation);
-        hideShowAnimate(R.id.capot,visibility,animation);
-        hideShowAnimate(R.id.transp,visibility,animation);
-        hideShowAnimate(R.id.addLista,visibility,animation);
+        hideShowAnimateImage(R.id.scrolld,visibility,animation);
+        hideShowAnimateText(R.id.scrollCount,visibility,animation);
+        hideShowAnimateImage(R.id.capot,visibility,animation);
+        hideShowAnimateImage(R.id.transp,visibility,animation);
+        hideShowAnimateImage(R.id.addLista,visibility,animation);
         if (!getIntent().getStringExtra("url").isEmpty())
             if (!mPlayer.isPlaying())
-                hideShowAnimate(R.id.music,visibility,animation);
+                hideShowAnimateImage(R.id.music,visibility,animation);
 
+    }
+    public void  hideShowAnimateImage( int id, int visib, Animation anima ){
+        ImageButton imageButton =  findViewById(id);
+        imageButton.startAnimation(anima);
+        imageButton.setVisibility(visib);
+    }
+    public void  hideShowAnimateText( int id, int visib, Animation anima ){
+        TextView text =  findViewById(id);
+        text.startAnimation(anima);
+        text.setVisibility(visib);
     }
 }

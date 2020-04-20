@@ -105,4 +105,10 @@
     <string name="compartilhar_msg">Confira a lista que criei no App *Ressucitou*:\n\n</string>
     <string name="confirmacao">Confirmação</string>
     <string name="confirm_dele_list">Tem certeza que deseja excluir a lista:\n</string>
+    <!--others -->
+    <string name="saved">Salvo</string>
+    <string name="transpo">Transposição</string>
+    <string name="capo">Braçadeira</string>
+    <string name="traste">Traste</string>
+
 </resources>

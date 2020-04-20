@@ -1,12 +1,9 @@
 package br.org.cn.ressuscitou;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import com.google.gson.Gson;
@@ -15,9 +12,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Base64;
 
 public class CantosClass extends Application {
 
@@ -36,6 +31,17 @@ public class CantosClass extends Application {
 		}
 		return 0;
 	}
+
+	public Canto getCantoByName(String html) {
+		popular();
+		for (int i = 0; i < listCantos.size(); i++) {
+			if (listCantos.get(i).getHtml().equals(html)) {
+				return listCantos.get(i);
+			}
+		}
+		return null;
+	}
+
 
 	public void popular() {
 
@@ -76,26 +82,7 @@ public class CantosClass extends Application {
 			listCantos = gson.fromJson(reader, new TypeToken<ArrayList<Canto>>() {
 			}.getType());
 
-			for (int i = 0; i < listCantos.size(); i++) {
-				byte[] decodedByteArray = Base64.decode(listCantos.get(i).getExt_base64(), Base64.DEFAULT);
-				FileOutputStream fos = getApplicationContext().openFileOutput("EXT_" + listCantos.get(i).getHtml() + ".HTML",
-						Context.MODE_PRIVATE);
-				fos.write(decodedByteArray);
-				fos.flush();
-				fos.close();
-				fos = null;
-			}
-			for (int i = 0; i < listCantos.size(); i++) {
-				byte[] decodedByteArray = Base64.decode(listCantos.get(i).getHtmlbase64(), Base64.DEFAULT);
-				FileOutputStream fos = getApplicationContext().openFileOutput(listCantos.get(i).getHtml() + ".HTML", Context.MODE_PRIVATE);
-				fos.write(decodedByteArray);
-				fos.flush();
-				fos.close();
-				fos = null;
-			}
-		} catch (JsonSyntaxException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (JsonSyntaxException | IOException e) {
 			e.printStackTrace();
 		}
 	}

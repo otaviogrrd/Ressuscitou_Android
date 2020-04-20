@@ -196,6 +196,9 @@
             android:visibility="gone"
             android:src="@drawable/bttnmusic"/>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
         <ImageButton
             android:id="@+id/scrolld"
             android:layout_width="60dp"
@@ -205,6 +208,18 @@
             android:tint="#000000"
             android:visibility="gone"
             android:src="@drawable/scrolld" />
+            <TextView
+                android:id="@+id/scrollCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/scrolld"
+                android:layout_alignBottom="@id/scrolld"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                tools:ignore="NotSibling" />
+        </RelativeLayout>
 
         <ImageButton
             android:id="@+id/capot"
