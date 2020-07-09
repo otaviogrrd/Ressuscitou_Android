@@ -1,6 +1,2 @@
-<br/>
-Lançada a nova versão do aplicativo Ressuscitou.
-<br/>
-<br/>
+Lançada a nova versão do aplicativo Ressuscitou.<br/>
 Infelizmente não é possível recuperar os dados salvos no antigo aplicativo.
-<br/>
