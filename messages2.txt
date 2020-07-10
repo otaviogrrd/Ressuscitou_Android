@@ -1,2 +1,7 @@
-Lançada a nova versão do aplicativo Ressuscitou.<br/>
-Infelizmente não é possível recuperar os dados salvos no antigo aplicativo.
+Bem vindo ao novo Ressuscitou.
+
+As mesmas funcionalidades, mas totalmente repaginado!
+
+Infelizmente não é possível recuperar os dados salvos da versão anterior.
+
+É recomendado realizar a limpeza(ou reinstalação) para reduzir o tamanho do aplicativo em seu celular.
