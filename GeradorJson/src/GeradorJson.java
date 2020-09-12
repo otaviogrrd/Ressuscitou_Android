@@ -97,29 +97,30 @@ public class GeradorJson {
 				line = line.replaceAll("\\*", "");
 				line = line.replaceAll("_", "");
 
-				line = line.replaceAll("S.A.  ", "");
-				line = line.replaceAll("S.  ", "");
-				line = line.replaceAll("A.  ", "");
-				line = line.replaceAll("P.  ", "");
-				line = line.replaceAll("C.  ", "");
-				line = line.replaceAll("S1. ", "");
-				line = line.replaceAll("S2. ", "");
-				line = line.replaceAll("S3. ", "");
+				line = line.replaceAll("S.A.", "");
+				line = line.replaceAll("S.", "");
+				line = line.replaceAll("A.", "");
+				line = line.replaceAll("P.", "");
+				line = line.replaceAll("C.", "");
+				line = line.replaceAll("S1.", "");
+				line = line.replaceAll("S2.", "");
+				line = line.replaceAll("S3.", "");
 				line = line.replaceAll("A1+A2+A3. ", "");
-				line = line.replaceAll("A1. ", "");
-				line = line.replaceAll("A2. ", "");
-				line = line.replaceAll("A3. ", "");
+				line = line.replaceAll("A1.", "");
+				line = line.replaceAll("A2.", "");
+				line = line.replaceAll("A3.", "");
 				line = line.replaceAll("melisma", "");
 
-				line = line.replaceAll("Crianças  ", "");
-				line = line.replaceAll("   Magos  ", "");
-				line = line.replaceAll("Melchior  ", "");
-				line = line.replaceAll("  Gaspar  ", "");
-				line = line.replaceAll("Baltazar  ", "");
+				line = line.replaceAll("Crianças", "");
+				line = line.replaceAll("Magos", "");
+				line = line.replaceAll("Melchior", "");
+				line = line.replaceAll("Gaspar", "");
+				line = line.replaceAll("Baltazar", "");
 
 				line = Normalizer.normalize(line, Normalizer.Form.NFD);
 				line = line.replaceAll("[^\\p{ASCII}]", "");
 				line = line.replaceAll("[-,.;!?\'\":\\(\\)]", "");
+				line = line.replaceAll("[ ]", "");
 				line = line.replaceAll("[ ]", "");
 				line = line.toLowerCase();
 
