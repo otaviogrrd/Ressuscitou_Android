@@ -84,15 +84,15 @@ public class GeradorJson {
 				if (line.contains("@transp@"))
 					continue;
 				if (line.contains("#FF0000")) {
-					if (!line.contains("#000000") && !line.contains("H2"))
+					if (!line.contains("#000000") && !line.contains("H1"))
 						continue;
 				}
 				line = line.replaceAll("<FONT COLOR=\"#FF0000\">", "");
 				line = line.replaceAll("<FONT COLOR=\"#000000\">", "");
 				line = line.replaceAll("<b>", "");
 				line = line.replaceAll("</b>", "");
-				line = line.replaceAll("<H2>", "");
-				line = line.replaceAll("</H2>", "");
+				line = line.replaceAll("<H1>", "");
+				line = line.replaceAll("</H1>", "");
 				line = line.replaceAll("</FONT>", "");
 				line = line.replaceAll("\\*", "");
 				line = line.replaceAll("_", "");
