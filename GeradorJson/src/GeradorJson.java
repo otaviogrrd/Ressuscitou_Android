@@ -46,14 +46,16 @@ public class GeradorJson {
 		out.println(gson.toJson(cantosClass.listCantos));
 		out.close();
 
-		PrintStream out2 = new PrintStream(new FileOutputStream("./../Ressuscitou/app/src/main/assets/cantos.json"));
+		//PrintStream out2 = new PrintStream(new FileOutputStream("./../Ressuscitou/app/src/main/assets/cantos.json"));
+		PrintStream out2 = new PrintStream(new FileOutputStream("./../../Ressuscitou_flutter/assets/cantos.json"));
 		out2.println(gson.toJson(cantosClass.listCantos));
 		out2.close();
 
-		System.out.println("Finalizado, atualize a versão no arquivo cantos_versao e ActivityMain");
+		System.out.println("Finalizado, atualize a versão no arquivo cantos_versao.");
 		Desktop desktop = Desktop.getDesktop();
 		try {
-			File dirToOpen = new File("./../Ressuscitou/app/src/main/java/br/org/cn/ressuscitou/ActivityMain.java");
+			//File dirToOpen = new File("./../Ressuscitou/app/src/main/java/br/org/cn/ressuscitou/ActivityMain.java");
+			File dirToOpen = new File("./../../Ressuscitou_flutter/lib/model/canto.dart");
 			desktop.open(dirToOpen);
 			dirToOpen = new File("./../cantos_versao.txt");
 			desktop.open(dirToOpen);
