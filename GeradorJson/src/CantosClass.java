@@ -12,6 +12,7 @@ public class CantosClass {
 		listCantos.add( new Canto(2,"À CEIA DO CORDEIRO","A CEIA DO CORDEIRO","",3,"228","239",false,true,true,false,false,true,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(3,"A CEIFA DAS NAÇÕES","A CEIFA DAS NACOES","X",1,"20","22",false,false,false,false,false,false,false,false,false,false,false,false,true,"") );
 		listCantos.add( new Canto(4,"A CORDEIRA DE DEUS","A CORDEIRA DE DEUS","",3,"229","240",false,false,false,true,false,false,false,true,false,false,false,false,false,"") );
+		listCantos.add( new Canto(227,"A ESPADA","A ESPADA","",1,"23A","X",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(5,"A MARCHA É DURA","A MARCHA E DURA","X",1,"21","23",false,false,false,false,true,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(6,"A NINGUÉM DEMOS OCASIÃO DE TROPEÇO","A NINGUEM DEMOS OCASIAO DE TROPECO","X",1,"22","24",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(7,"A POMBA VOOU","A POMBA VOOU","",3,"230","241",false,true,false,false,false,false,false,false,false,false,false,true,false,"") );
