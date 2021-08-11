@@ -8,7 +8,7 @@ public class CantosClass {
 		listCantos.clear();
 		
 		
-		listCantos.add( new Canto(1,"A CABANA DOS PASTORES","A CABANA DOS PASTORES","",1,"227","21",false,false,false,false,false,true,false,false,false,false,false,true,false,"") );
+		listCantos.add( new Canto(1,"A CABANA DOS PASTORES","A CABANA DOS PASTORES","X",1,"227","21",false,false,false,false,false,true,false,false,false,false,false,true,false,"") );
 		listCantos.add( new Canto(2,"À CEIA DO CORDEIRO","A CEIA DO CORDEIRO","",3,"228","239",false,true,true,false,false,true,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(3,"A CEIFA DAS NAÇÕES","A CEIFA DAS NACOES","X",1,"20","22",false,false,false,false,false,false,false,false,false,false,false,false,true,"") );
 		listCantos.add( new Canto(4,"A CORDEIRA DE DEUS","A CORDEIRA DE DEUS","",3,"229","240",false,false,false,true,false,false,false,true,false,false,false,false,false,"") );
@@ -120,7 +120,7 @@ public class CantosClass {
 		listCantos.add( new Canto(109,"JÁ VEM O MEU DEUS","JA VEM O MEU DEUS","X",1,"92","97",false,false,false,true,false,false,false,false,true,false,false,false,false,"") );
 		listCantos.add( new Canto(110,"JACÓ","JACO","X",2,"213","224",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(111,"JERUSALÉM RECONSTRUÍDA","JERUSALEM RECONSTRUIDA","X",1,"93","98",false,false,false,false,true,false,false,false,false,true,false,false,false,"") );
-		listCantos.add( new Canto(112,"JESUS PERCORRIA TODAS AS CIDADES","JESUS PERCORRIA TODAS AS CIDADES","",3,"241","250",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
+		listCantos.add( new Canto(112,"JESUS PERCORRIA TODAS AS CIDADES","JESUS PERCORRIA TODAS AS CIDADES","X",3,"241","250",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(113,"LADAINHA DE TODOS OS SANTOS","LADAINHA DE TODOS OS SANTOS","",4,"177","185",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(114,"LADAINHA PENITENCIAL I","LADAINHA PENITENCIAL I","",4,"179","187",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(115,"LADAINHA PENITENCIAL II","LADAINHA PENITENCIAL II","",4,"180","188",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
@@ -205,7 +205,7 @@ public class CantosClass {
 		listCantos.add( new Canto(193,"SE O SENHOR NÃO CONSTRÓI A CASA","SE O SENHOR NAO CONSTROI A CASA","",1,"141","147",false,true,true,false,false,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(194,"SE VÓS RESSUSCITASTES COM CRISTO","SE VOS RESSUSCITASTES COM CRISTO","X",1,"142","148",true,false,false,false,false,true,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(195,"SEDUZISTE-ME SENHOR","SEDUZISTE ME SENHOR","",1,"143","149",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
-		listCantos.add( new Canto(196,"SENHOR, AJUDA-ME A NÃO DUVIDAR DE TI","SENHOR AJUDA ME A NAO DUVIDAR DE TI","",1,"144","150",false,false,false,false,false,false,false,false,false,false,false,true,false,"") );
+		listCantos.add( new Canto(196,"SENHOR, AJUDA-ME A NÃO DUVIDAR DE TI","SENHOR AJUDA ME A NAO DUVIDAR DE TI","X",1,"144","150",false,false,false,false,false,false,false,false,false,false,false,true,false,"") );
 		listCantos.add( new Canto(197,"SENHOR, NÃO ME CORRIJAS NA SUA CÓLERA","SENHOR NAO ME CORRIJAS NA SUA COLERA","",1,"145","151",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(198,"SENHOR, TU ME ESCRUTAS E CONHECES","SENHOR TU ME ESCRUTAS E CONHECES","",2,"222","234",false,false,false,false,false,false,false,false,false,false,false,false,false,"") );
 		listCantos.add( new Canto(199,"SENTA-TE SOLITÁRIO E SILENCIOSO","SENTA TE SOLITARIO E SILENCIOSO","",2,"223","235",false,false,false,false,true,false,false,false,false,false,false,false,false,"") );
